@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Project</title>
+    <!-- google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS (optional) -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="">
+    <nav class="bg-white text-black p-4 max-w-[1440px] mx-auto">
+      <!-- Desktop View: Menu left, Logo center, Login right -->
+      <div class="hidden md:flex justify-between items-center font-medium">
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-green-500 underline">Home Page</a>
+          <a href="#" class="hover:text-green-500">Events List</a>
+          <a href="#" class="hover:text-green-500">My Tickets</a>
+        </div>
+        <div class="flex items-center space-x-2">
+          <img src="./image/logo.jpg" alt="Logo Icon" class="h-8" />
+        </div>
+        <button
+          class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] text-[20px] px-4 py-2 rounded-[10px] hover:from-green-500 hover:to-teal-600 font-normal"
+        >
+          Login
+        </button>
+      </div>
+
+      <!-- Mobile View: Dark bar with Hamburger, Icon, Sign up -->
+      <div class="md:hidden flex justify-between items-center bg-white">
+        <button class="focus:outline-none mr-4">
+          <img src="./image/menu.jpg" alt="menu" class="h-8" />
+        </button>
+        <img src="./image/mobile-logo.jpg" alt="Logo Icon" class="h-8" />
+        <button
+          class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] px-4 py-2 text-[24px] leading-[150%] rounded-[10px]"
+        >
+          Sign up
+        </button>
+      </div>
+    </nav>
+    <h1 class="border-b-[0.5px] border-[#404040]"></h1>
+    <!-- Slider Section -->
+    <section class="py-10 p-4">
+      <div class="relative max-w-[1280px] w-full mx-auto">
+        <!-- Slider container -->
+        <div class="overflow-hidden rounded-xl bg-black">
+          <div
+            class="flex transition-transform duration-300 ease-in-out"
+            id="slider"
+          >
+            <!-- Slide 1 -->
+            <div class="min-w-full flex justify-center items-center">
+              <div
+                class="relative w-full h-[60vh] sm:h-[70vh] lg:h-[658px] bg-gradient-to-r from-black to-gray-800 flex items-center justify-center"
+              >
+                <img
+                  src="./image/banner-image.jpg"
+                  alt="Event Poster"
+                  class="w-full h-full object-cover opacity-70"
+                />
+                <div
+                  class="absolute text-white left-4 sm:left-10 bottom-6 sm:bottom-10"
+                >
+                  <h2
+                    class="text-2xl sm:text-4xl lg:text-[48px] font-normal underline"
+                  >
+                    Abu Taymiyyah
+                  </h2>
+                  <p class="text-lg sm:text-2xl lg:text-[31px]">
+                    The Awakening of the Ummah <br />
+                    & The End of Times
+                  </p>
+                  <p class="text-sm sm:text-base lg:text-[20px]">
+                    26th July | Dublin, Ireland
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="min-w-full flex justify-center items-center">
+              <div
+                class="relative w-full h-[60vh] sm:h-[70vh] lg:h-[658px] bg-gradient-to-r from-black to-gray-800 flex items-center justify-center"
+              >
+                <img
+                  src="./image/banner-image.jpg"
+                  alt="Event Poster"
+                  class="w-full h-full object-cover opacity-70"
+                />
+                <div
+                  class="absolute text-white left-4 sm:left-10 bottom-6 sm:bottom-10"
+                >
+                  <h2
+                    class="text-2xl sm:text-4xl lg:text-[48px] font-normal underline"
+                  >
+                    Abu Taymiyyah
+                  </h2>
+                  <p class="text-lg sm:text-2xl lg:text-[31px]">
+                    The Awakening of the Ummah <br />
+                    & The End of Times
+                  </p>
+                  <p class="text-sm sm:text-base lg:text-[20px]">
+                    26th July | Dublin, Ireland
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="min-w-full flex justify-center items-center">
+              <div
+                class="relative w-full h-[60vh] sm:h-[70vh] lg:h-[658px] bg-gradient-to-r from-black to-gray-800 flex items-center justify-center"
+              >
+                <img
+                  src="./image/banner-image.jpg"
+                  alt="Event Poster"
+                  class="w-full h-full object-cover opacity-70"
+                />
+                <div
+                  class="absolute text-white left-4 sm:left-10 bottom-6 sm:bottom-10"
+                >
+                  <h2
+                    class="text-2xl sm:text-4xl lg:text-[48px] font-normal underline"
+                  >
+                    Abu Taymiyyah
+                  </h2>
+                  <p class="text-lg sm:text-2xl lg:text-[31px]">
+                    The Awakening of the Ummah <br />
+                    & The End of Times
+                  </p>
+                  <p class="text-sm sm:text-base lg:text-[20px]">
+                    26th July | Dublin, Ireland
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left Arrow -->
+        <button
+          id="prev"
+          class="absolute hidden md:block left-4 sm:left-10 top-1/2 transform -translate-y-1/2 bg-[#A7A7A7] text-black rounded-[15px] p-2 sm:p-3 focus:outline-none"
+        >
+          ←
+        </button>
+
+        <!-- Right Arrow -->
+        <button
+          id="next"
+          class="absolute right-4 hidden md:block sm:right-10 top-1/2 transform -translate-y-1/2 bg-[#A7A7A7] text-black rounded-[15px] p-2 sm:p-3 focus:outline-none"
+        >
+          →
+        </button>
+
+        <!-- Dots -->
+        <div
+          class="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2"
+          id="dots"
+        >
+          <button
+            class="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full focus:outline-none"
+          ></button>
+          <button
+            class="w-2 h-2 sm:w-3 sm:h-3 bg-gray-500 rounded-full focus:outline-none"
+          ></button>
+          <button
+            class="w-2 h-2 sm:w-3 sm:h-3 bg-gray-500 rounded-full focus:outline-none"
+          ></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="p-4 md:p-8 max-w-[1280px] mx-auto">
+      <h1 class="text-4xl font-bold mb-2">Events</h1>
+      <div
+        class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8"
+      >
+        <p class="text-[#000000] mb-4 md:mb-0 font-korla">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <button class="border border-[#404040] px-6 py-3 hidden md:block">
+          View all
+        </button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:mt-14">
+        <!-- Event Card 1 -->
+        <div class="bg-white rounded-[10px] border-[0.5px] border-[#404040]">
+          <div class="relative rounded-t-[10px] overflow-hidden">
+            <div class="bg-gray-200 flex items-center justify-center">
+              <img
+                src="./image/Placeholder Image.jpg"
+                alt="Event Image"
+                class="h-[270px] w-full object-cover rounded-t-[10px]"
+              />
+            </div>
+            <span
+              class="absolute top-2 right-2 bg-[#89EB8E] tex-[#09090B] text-sm font-semibold px-3 py-1 rounded-full"
+              >Category</span
+            >
+          </div>
+          <div class="p-5">
+            <div
+              class="flex items-center text-[#000000] tracking-[0.5%] text-[15px] my-3 font-korla"
+            >
+              <svg
+                class="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                ></path>
+              </svg>
+              Fri 09 Feb 2024
+              <svg
+                class="w-4 h-4 mx-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+              Location
+            </div>
+            <h2
+              class="text-[31px] font-medium mb-3 leading-[150%] tracking-[1.5%]"
+            >
+              Event Title Heading
+            </h2>
+            <p class="mb-4 text-[#000000] text-[15px] font-korla">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros.
+            </p>
+            <button
+              class="bg-[#89EB8E] tex-[#09090B] p-2 text-[12px] rounded-md flex items-center"
+            >
+              View More
+              <span class="ml-1"
+                ><img
+                  src="./image/arrow-right.png"
+                  alt="Event Image"
+                  class="h-full w-full object-cover"
+              /></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="bg-white rounded-[10px] border-[0.5px] border-[#404040]">
+          <div class="relative rounded-t-[10px] overflow-hidden">
+            <div class="bg-gray-200 flex items-center justify-center">
+              <img
+                src="./image/Placeholder Image.jpg"
+                alt="Event Image"
+                class="h-[270px] w-full object-cover rounded-t-[10px]"
+              />
+            </div>
+            <span
+              class="absolute top-2 right-2 bg-[#89EB8E] tex-[#09090B] text-sm font-semibold px-3 py-1 rounded-full"
+              >Category</span
+            >
+          </div>
+          <div class="p-5">
+            <div
+              class="flex items-center text-[#000000] tracking-[0.5%] text-[15px] my-3 font-korla"
+            >
+              <svg
+                class="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                ></path>
+              </svg>
+              Fri 09 Feb 2024
+              <svg
+                class="w-4 h-4 mx-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+              Location
+            </div>
+            <h2
+              class="text-[31px] font-medium mb-3 leading-[150%] tracking-[1.5%]"
+            >
+              Event Title Heading
+            </h2>
+            <p class="mb-4 text-[#000000] text-[15px] font-korla">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros.
+            </p>
+            <button
+              class="bg-[#89EB8E] tex-[#09090B] p-2 text-[12px] rounded-md flex items-center"
+            >
+              View More
+              <span class="ml-1"
+                ><img
+                  src="./image/arrow-right.png"
+                  alt="Event Image"
+                  class="h-full w-full object-cover"
+              /></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="bg-white rounded-[10px] border-[0.5px] border-[#404040]">
+          <div class="relative rounded-t-[10px] overflow-hidden">
+            <div class="bg-gray-200 flex items-center justify-center">
+              <img
+                src="./image/Placeholder Image.jpg"
+                alt="Event Image"
+                class="h-[270px] w-full object-cover rounded-t-[10px]"
+              />
+            </div>
+            <span
+              class="absolute top-2 right-2 bg-[#89EB8E] tex-[#09090B] text-sm font-semibold px-3 py-1 rounded-full"
+              >Category</span
+            >
+          </div>
+          <div class="p-5">
+            <div
+              class="flex items-center text-[#000000] tracking-[0.5%] text-[15px] my-3 font-korla"
+            >
+              <svg
+                class="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                ></path>
+              </svg>
+              Fri 09 Feb 2024
+              <svg
+                class="w-4 h-4 mx-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+              Location
+            </div>
+            <h2
+              class="text-[31px] font-medium mb-3 leading-[150%] tracking-[1.5%]"
+            >
+              Event Title Heading
+            </h2>
+            <p class="mb-4 text-[#000000] text-[15px] font-korla">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros.
+            </p>
+            <button
+              class="bg-[#89EB8E] tex-[#09090B] p-2 text-[12px] rounded-md flex items-center"
+            >
+              View More
+              <span class="ml-1"
+                ><img
+                  src="./image/arrow-right.png"
+                  alt="Event Image"
+                  class="h-full w-full object-cover"
+              /></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <button class="border border-[#404040] px-6 py-3 block md:hidden mt-10">
+        View all
+      </button>
+    </section>
+    <h1 class="border-b-[0.5px] border-[#404040] my-[40px] md:my-[80px]"></h1>
+    <!-- Footer Section -->
+    <footer class="bg-white px-6 py-10 max-w-[1280px] mx-auto">
+      <!-- Top Section -->
+      <div
+        class="flex flex-col md:flex-row justify-between items-start gap-8 mb-8"
+      >
+        <!-- Logo & Links -->
+        <div class="w-full md:w-1/2">
+          <div class="flex items-center space-x-2 mb-4">
+            <img src="./image/logo.jpg" alt="Logo Icon" class="h-10 w-auto" />
+          </div>
+          <div
+            class="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 text-black text-base leading-[150%]"
+          >
+            <a href="#" class="hover:underline">Support Center</a>
+            <a href="#" class="hover:underline">FAQs</a>
+            <a href="#" class="hover:underline">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="w-full md:w-1/2">
+          <h3 class="text-lg text-[#000000] font-semibold mb-3">Newsletter</h3>
+          <div class="flex flex-col sm:flex-row gap-2 mb-3">
+            <input
+              type="email"
+              placeholder="Email"
+              class="border border-[#404040] rounded-md px-3 py-2 w-full sm:w-2/3 focus:outline-none"
+            />
+            <button
+              class="bg-black text-white px-4 py-2 rounded-md text-sm font-medium leading-[20px] w-full sm:w-auto"
+            >
+              Subscribe
+            </button>
+          </div>
+          <p class="text-[#000000] text-sm">
+            We respect your privacy and will never share your data.
+          </p>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <hr class="border-[#404040] mb-6" />
+
+      <!-- Bottom Section -->
+      <div
+        class="flex flex-col md:flex-row justify-between text-[#000000] text-sm space-y-4 md:space-y-0"
+      >
+        <!-- Links -->
+        <div
+          class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 underline text-left"
+        >
+          <a href="#" class="hover:underline">Privacy Policy</a>
+          <a href="#" class="hover:underline">Terms of Service</a>
+          <a href="#" class="hover:underline">Cookies Settings</a>
+        </div>
+        <!-- Copyright -->
+        <p>© 2025 Event Platform. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Simple JavaScript for Slider -->
+    <script>
+      const slider = document.getElementById("slider");
+      const prevBtn = document.getElementById("prev");
+      const nextBtn = document.getElementById("next");
+      const dotsContainer = document.getElementById("dots");
+      const dots = dotsContainer.children;
+      let currentIndex = 0;
+      const slideCount = slider.children.length;
+
+      function updateSlider() {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        for (let i = 0; i < dots.length; i++) {
+          dots[i].classList.toggle("bg-white", i === currentIndex);
+          dots[i].classList.toggle("bg-gray-500", i !== currentIndex);
+        }
+      }
+
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+        updateSlider();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slideCount;
+        updateSlider();
+      });
+
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].addEventListener("click", () => {
+          currentIndex = i;
+          updateSlider();
+        });
+      }
+
+      updateSlider(); // Initial update
+    </script>
+  </body>
+</html>
