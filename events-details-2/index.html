@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Project</title>
+    <!-- google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS (optional) -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="">
+    <nav class="bg-white text-black p-4 max-w-[1312px] mx-auto">
+      <!-- Desktop View: Menu left, Logo center, Login right -->
+      <div class="hidden md:flex justify-between items-center font-medium">
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-green-500 underline">Home Page</a>
+          <a href="#" class="hover:text-green-500">Events List</a>
+          <a href="#" class="hover:text-green-500">My Tickets</a>
+        </div>
+        <div class="flex items-center space-x-2">
+          <img src="./image/logo.jpg" alt="Logo Icon" class="h-8" />
+        </div>
+        <button
+          class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] text-[20px] px-4 py-2 rounded-[10px] hover:from-green-500 hover:to-teal-600 font-normal"
+        >
+          Login
+        </button>
+      </div>
+
+      <!-- Mobile View: Dark bar with Hamburger, Icon, Sign up -->
+      <div class="md:hidden flex justify-between items-center bg-white">
+        <button class="focus:outline-none mr-4">
+          <img src="./image/menu.jpg" alt="menu" class="h-8" />
+        </button>
+        <img src="./image/mobile-logo.jpg" alt="Logo Icon" class="h-8" />
+        <button
+          class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] px-4 py-2 text-[24px] leading-[150%] rounded-[10px]"
+        >
+          Sign up
+        </button>
+      </div>
+    </nav>
+    <h1 class="border-b-[0.5px] border-[#404040]"></h1>
+    <!-- Event Banner Section -->
+    <div
+      class="bg_color text-white px-6 h-[820px] md:h-[600px] flex flex-col justify-end"
+    >
+      <div class="w-full">
+        <div
+          class="flex justify-between max-w-[1280px] flex-col md:flex-row mx-auto gap-[80px] pb-[60px]"
+        >
+          <div class="max-w-[800px] w-full text-left">
+            <h1 class="text-[48px] font-semibold mb-2">
+              Community Event Title
+            </h1>
+            <p class="text-[18px] mb-4 font-karla leading-[150%]">
+              Join us for a vibrant celebration of culture, faith, and community
+              engagement.
+            </p>
+            <div
+              class="flex flex-wrap gap-2 text-sm pb-10 text-[#09090B] font-medium"
+            >
+              <span class="bg-[#89EB8E] px-3 py-1 rounded-full"
+                >Charity Event</span
+              >
+              <span class="bg-[#89EB8E] px-3 py-1 rounded-full"
+                >Family Gathering</span
+              >
+              <span class="bg-[#89EB8E] px-3 py-1 rounded-full"
+                >Cultural Festival</span
+              >
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-2 gap-4 text-[20px] font-semibold max-w-[480px] w-full"
+          >
+            <p>
+              Organizer: <br />
+              <span class="text-[16px] font-karla font-normal"
+                >Growing Muslim</span
+              >
+            </p>
+            <p>
+              Date: <br />
+              <span class="text-[16px] font-karla font-normal"
+                >September 25</span
+              >
+            </p>
+            <p>
+              Location: <br />
+              <span class="text-[16px] font-karla font-normal"
+                >UCC, Dublin, Ireland</span
+              >
+            </p>
+            <p>
+              Type: <br />
+              <span class="text-[16px] font-karla font-normal"
+                >Charity Event</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Event Details Section -->
+    <div class="py-10 bg-white px-4">
+      <div
+        class="flex flex-col md:flex-row gap-[80px] md:gap-[192px] max-w-[1280px] mx-auto"
+      >
+        <aside class="w-full max-w-[320px]">
+          <h2
+            class="border-[1.5px] border-[#000000] md:border-none font-normal p-2 text-[#000000] text-[18px] md:text-[20px] mb-4 flex items-center justify-between"
+          >
+            Event Overview
+            <span>
+              <img
+                src="./image/arrow_down.jpg"
+                alt="chevron_right"
+                class="h-auto w-auto block md:hidden"
+            /></span>
+          </h2>
+          <div
+            class="border-[1.5px] border-[#000000] text-[18px] md:text-[20px] font-bold p-2 mb-2 pl-3"
+          >
+            Event Agenda
+          </div>
+          <ul
+            class="space-y-2 text-black font-medium text-[18px] md:text-[20px]"
+          >
+            <li class="pl-[32px]">Featured Speakers</li>
+            <li class="pl-[48px]">Interactive Activities</li>
+            <li class="pl-[62px]">Networking Opportunities</li>
+            <li class="pl-[78px]">Registration Info</li>
+          </ul>
+        </aside>
+        <main class="w-full md:w-3/4">
+          <section class="mb-6">
+            <h3 class="font-normal text-[20px] md:text-[38px]">
+              Registration & Welcome Refreshments
+            </h3>
+            <p class="text-[#000000] font-[350] mb-2">9:00 AM - 9:30 AM</p>
+            <p
+              class="mb-4 font-normal md:font-bold text-[14px] md:text-[15px] font-karla text-[#000000]"
+            >
+              Dolor enim eu tortor urna sed duis nulla. Aliquam vestibulum,
+              nulla odio nisl vitae. In aliquet pellentesque aenean hac
+              vestibulum turpis mi bibendum diam. Tempor integer aliquam in
+              vitae malesuada fringilla.
+            </p>
+            <p
+              class="text-[#000000] font-normal md:font-bold text-[14px] md:text-[15px]font-karla"
+            >
+              Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
+              suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum
+              quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris
+              posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At
+              feugiat sapien varius id.
+            </p>
+          </section>
+          <hr class="my-4 border-[#11D8F5]" />
+          <section class="mb-6">
+            <h3 class="text-[20px] md:text-[38px]">
+              Opening Qur'an Recitation
+            </h3>
+            <p class="text-[#000000] font-[350] mb-2">9:30 AM – 9:50 AM</p>
+            <p
+              class="mb-4 font-normal md:font-bold text-[14px] md:text-[15px] font-karla text-[#000000]"
+            >
+              Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat
+              mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu
+              quis fusce augue enim. Quis at habitant diam at. Suscipit
+              tristique risus, at donec. In turpis vel et quam imperdiet. Ipsum
+              molestie aliquet sodales id est ac volutpat.
+            </p>
+            <p
+              class="text-[#000000] font-normal md:font-bold text-[14px] md:text-[15px] font-karla"
+            >
+              Tristique odio senectus nam posuere ornare leo metus, ultricies.
+              Blandit duis ultricies vulputate morbi feugiat cras placerat elit.
+              Aliquam tellus lorem sed ac. Montes, sed mattis pellentesque
+              suscipit accumsan. Cursus viverra aenean magna risus elementum
+              faucibus molestie pellentesque. Arcu ultricies sed mauris
+              vestibulum.
+            </p>
+          </section>
+          <hr class="my-4 border-[#11D8F5]" />
+          <section class="mb-6">
+            <h3 class="text-[20px] md:text-[38px]">Opening Remarks</h3>
+            <p class="text-[#000000] font-[350] mb-2">9:50 AM – 10:00 AM</p>
+            <p
+              class="mb-4 font-normal md:font-bold text-[14px] md:text-[15px] font-karla text-[#000000]"
+            >
+              Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus
+              id scelerisque est ultricies ultricies. Duis est sit sed leo nisl,
+              blandit elit sagittis. Quisque tristique consequat quam sed. Nisl
+              at scelerisque amet nulla purus habitasse.
+            </p>
+          </section>
+          <hr class="my-4 border-[#11D8F5]" />
+          <section class="mb-6">
+            <h3 class="text-[20px] md:text-[38px]">
+              Keynote: “Sincerity in Seeking Jannah”
+            </h3>
+            <p class="text-[#000000] font-[350] mb-2">10:00 AM – 10:45 AM</p>
+            <p
+              class="mb-4 font-normal md:font-bold text-[14px] md:text-[15px] font-karla text-[#000000]"
+            >
+              Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus
+              id scelerisque est ultricies ultricies. Duis est sit sed leo nisl,
+              blandit elit sagittis. Quisque tristique consequat quam sed. Nisl
+              at scelerisque amet nulla purus habitasse.
+            </p>
+          </section>
+          <hr class="my-4 border-[#11D8F5]" />
+          <section class="mb-6">
+            <h3 class="text-[20px] md:text-[38px]">
+              Lecture: “The Rights of Our Parents”
+            </h3>
+            <p class="text-[#000000] font-[350] mb-2">10:45 AM – 11:30 AM</p>
+            <p
+              class="mb-4 font-normal md:font-bold text-[14px] md:text-[15px] font-karla text-[#000000]"
+            >
+              Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas
+              condimentum mi massa. In tincidunt pharetra consectetur sed duis
+              facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit
+              dictum eget nibh tortor commodo cursus.
+            </p>
+          </section>
+        </main>
+      </div>
+    </div>
+    <div class="md:py-8 bg-white px-4">
+      <div class="max-w-[1280px] mx-auto">
+        <h2 class="font-semibold text-[48px] text-[#000000] mb-4">Reach Out</h2>
+        <p class="text-[#000000] font-karla mb-6">
+          For any inquiries, please contact us directly.
+        </p>
+        <div
+          class="flex mt-[80px] flex-col md:flex-row justify-start space-y-6 md:space-y-0 md:space-x-12"
+        >
+          <div class="space-y-2">
+            <img src="./image/mail.jpg" alt="mail Icon" class="h-auto w-auto" />
+            <p class="font-semibold test-[20px] text-[#000000]">Email</p>
+            <p class="text-[16px] font-karla font-normal text-[#000000]">
+              info@eventplatform.com
+            </p>
+            <p class="text-[16px] font-karla font-normal text-[#000000]">
+              info@eventplatform.com
+            </p>
+          </div>
+          <div class="space-y-2">
+            <img src="./image/call.jpg" alt="call Icon" class="h-auto w-auto" />
+            <p class="font-semibold test-[20px] text-[#000000]">Phone</p>
+            <p class="text-[16px] font-karla font-normal text-[#000000]">
+              Call us anytime
+            </p>
+            <p class="text-[16px] font-karla font-normal text-[#000000]">
+              +1 (555) 123-4567
+            </p>
+          </div>
+          <div class="space-y-2">
+            <img
+              src="./image/location_on.jpg"
+              alt="location_on"
+              class="h-auto w-auto"
+            />
+            <p class="font-semibold test-[20px] text-[#000000]">Office</p>
+            <p class="text-[16px] font-karla font-normal text-[#000000]">
+              Dublin, Ireland
+            </p>
+            <p
+              class="text-[16px] font-karla font-normal text-[#000000] flex items-center"
+            >
+              Get Directions
+              <span>
+                <img
+                  src="./image/chevron_right.jpg"
+                  alt="chevron_right"
+                  class="h-auto w-auto"
+                />
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="border-b-[0.5px] border-[#404040] my-[40px] md:my-[80px]"></h1>
+    <!-- Footer Section -->
+    <footer class="bg-white py-10 px-4">
+      <div class="max-w-[1280px] mx-auto">
+        <!-- Top Section -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-start gap-8 mb-8"
+        >
+          <!-- Logo & Links -->
+          <div class="w-full md:w-1/2">
+            <div class="flex items-center space-x-2 mb-4">
+              <img src="./image/logo.jpg" alt="Logo Icon" class="h-10 w-auto" />
+            </div>
+            <div
+              class="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 text-black text-base leading-[150%]"
+            >
+              <a href="#" class="hover:underline">Support Center</a>
+              <a href="#" class="hover:underline">FAQs</a>
+              <a href="#" class="hover:underline">Contact Us</a>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="w-full md:w-1/2">
+            <h3 class="text-lg text-[#000000] font-semibold mb-3">
+              Newsletter
+            </h3>
+            <div class="flex flex-col sm:flex-row gap-2 mb-3">
+              <input
+                type="email"
+                placeholder="Email"
+                class="border border-[#404040] rounded-md px-3 py-2 w-full sm:w-2/3 focus:outline-none"
+              />
+              <button
+                class="bg-black text-white px-4 py-2 rounded-md text-sm font-medium leading-[20px] w-full sm:w-auto"
+              >
+                Subscribe
+              </button>
+            </div>
+            <p class="text-[#000000] text-sm">
+              We respect your privacy and will never share your data.
+            </p>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="border-[#404040] mb-6" />
+
+        <!-- Bottom Section -->
+        <div
+          class="flex flex-col md:flex-row justify-between text-[#000000] text-sm space-y-4 md:space-y-0"
+        >
+          <!-- Links -->
+          <div
+            class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 underline text-left"
+          >
+            <a href="#" class="hover:underline">Privacy Policy</a>
+            <a href="#" class="hover:underline">Terms of Service</a>
+            <a href="#" class="hover:underline">Cookies Settings</a>
+          </div>
+          <!-- Copyright -->
+          <p>© 2025 Event Platform. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
