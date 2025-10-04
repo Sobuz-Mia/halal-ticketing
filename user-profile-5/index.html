@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .sidebar-link {
+        transition: all 0.3s ease;
+      }
+      .sidebar-link:hover {
+        background-color: #f3f4f6;
+      }
+      .sidebar-link.active {
+        background-color: #f3f4f6;
+        font-weight: 600;
+      }
+      .sub-link {
+        transition: all 0.3s ease;
+      }
+      .sub-link:hover {
+        color: #5eead4;
+      }
+      /* Geometric background shapes */
+      .bg-shape {
+        position: absolute;
+        z-index: 0;
+      }
+      .main-content {
+        position: relative;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-white flex flex-col border-r border-r-[#11D8F5]">
+        <!-- Logo/Brand -->
+        <div
+          class="flex items-center gap-3 mb-12 border border-b-[#89EB8E] justify-center p-[5px]"
+        >
+          <img src="./image/logo.jpg" />
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex-1 space-y-6 p-4">
+          <!-- User Profile Section -->
+          <div>
+            <button
+              class="sidebar-link w-full flex items-center gap-2 py-2 rounded-lg text-left text-[#09090B]"
+            >
+              <img src="./image/users.jpg" />
+              <span>User Profile</span>
+            </button>
+            <div class="space-y-2 text-sm text-gray-600">
+              <div class="sub-link cursor-pointer">Personal Information</div>
+              <div class="sub-link cursor-pointer">Location</div>
+              <div class="sub-link cursor-pointer">Preferences</div>
+            </div>
+          </div>
+
+          <!-- My Tickets Section -->
+          <div>
+            <button
+              class="sidebar-link w-full flex items-center gap-2 py-2 rounded-lg text-left text-[#09090B]"
+            >
+              <img src="./image/ticket-check.jpg" />
+              <span>My Tickets</span>
+            </button>
+            <div class="space-y-2 text-sm text-gray-600">
+              <div class="sub-link cursor-pointer">Upcoming Events</div>
+              <div class="sub-link cursor-pointer">Order History</div>
+            </div>
+          </div>
+
+          <!-- General Section -->
+          <div>
+            <button
+              class="sidebar-link w-full flex items-center gap-2 py-2 rounded-lg text-left"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+              <span>General</span>
+            </button>
+            <div class="space-y-2 text-sm text-gray-600">
+              <div class="sub-link cursor-pointer">Change Details</div>
+              <div class="sub-link cursor-pointer">Delete my Account</div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- User Info Card -->
+        <div class="border-t pt-4 flex items-center justify-between p-4">
+          <div class="text-[#09090B]">
+            <div class="font-semibold text-[14px]">Tukai Saleh</div>
+            <div class="text-[12px]">TukaiSaleh@halalticketin.com</div>
+          </div>
+          <button class="text-gray-400 hover:text-gray-600">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 overflow-hidden relative">
+        <!-- Background Shapes -->
+        <div class="absolute inset-0 overflow-hidden">
+          <img src="./image/header pic 1.jpg" class="w-full h-full" />
+        </div>
+
+        <div
+          class="main-content py-[16.5px] pl-[24px] border-b border-b-[#89EB8E] flex justify-start"
+        >
+          <h1 class="text-[18px] font-normal text-[#09090B]">User Profile</h1>
+        </div>
+        <!-- Content Container -->
+        <div class="main-content p-4">
+          <!-- Header -->
+          <div class="flex items-center mb-12 justify-center">
+            <img src="./image/users.jpg" />
+          </div>
+
+          <!-- Welcome Text -->
+          <div class="text-center mt-40">
+            <h2 class="text-[18px] font-semibold text-[#000000]">
+              Asalamu Alaikum Tukai!
+            </h2>
+          </div>
+
+          <!-- Profile Information Grid -->
+          <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 mt-20">
+              <!-- Left Column -->
+              <div class="space-y-6">
+                <!-- Full Name -->
+                <div>
+                  <label
+                    class="block text-[15px] font-medium text-[#000000] mb-2"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    value="Tukai Saleh"
+                    readonly
+                    class="w-full px-3 py-2 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
+                  />
+                </div>
+
+                <!-- Phone Number -->
+                <div>
+                  <label
+                    class="block text-[15px] font-medium text-[#000000] mb-2"
+                    >Phone Number</label
+                  >
+                  <input
+                    type="tel"
+                    value="0892342456"
+                    readonly
+                    class="w-full px-3 py-2 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
+                  />
+                </div>
+
+                <!-- Location -->
+                <div>
+                  <label
+                    class="block text-[15px] font-medium text-[#000000] mb-2"
+                    >Location</label
+                  >
+                  <input
+                    type="text"
+                    value="Dublin, Ireland"
+                    readonly
+                    class="w-full px-3 py-2 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
+                  />
+                </div>
+              </div>
+
+              <!-- Right Column -->
+              <div class="space-y-6">
+                <!-- Email Address -->
+                <div>
+                  <label
+                    class="block text-[15px] font-medium text-[#000000] mb-2"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    value="TukaiSaleh@halalticketin.com"
+                    readonly
+                    class="w-full px-3 py-2 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
+                  />
+                </div>
+
+                <!-- Home Address -->
+                <div>
+                  <label
+                    class="block text-[15px] font-medium text-[#000000] mb-2"
+                    >Home Address</label
+                  >
+                  <input
+                    type="text"
+                    value="131 lower dominick street, Dublin 1"
+                    readonly
+                    class="w-full px-3 py-2 bg-white rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Edit Details Button -->
+            <div class="text-center mt-12">
+              <button
+                class="bg-gray-900 text-white px-8 py-3 rounded-lg font-medium"
+              >
+                Edit Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // Toggle sidebar sections
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        link.addEventListener("click", function () {
+          // Remove active class from all links
+          document
+            .querySelectorAll(".sidebar-link")
+            .forEach((l) => l.classList.remove("active"));
+          // Add active class to clicked link
+          this.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
