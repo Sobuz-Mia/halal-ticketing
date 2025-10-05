@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Creation Form - Date & Location</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white">
+    <div
+      class="max-w-md mx-auto mt-10 bg-[#DCF9FE] rounded-lg shadow-md p-6 relative"
+    >
+      <!-- Title and Close Button -->
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold">What's your event about?</h1>
+        <button class="text-red-500 text-[32px]">&times;</button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex space-x-10 mb-6">
+        <button
+          class="pb-2 text-[#565656] font-semibold border-[#9FEFFB] border-b-2"
+        >
+          Details
+        </button>
+        <button
+          class="pb-2 text-[#000000] font-semibold border-b-2 border-blue-500"
+        >
+          Date & Location
+        </button>
+        <button
+          class="pb-2 text-[#565656] font-semibold border-[#9FEFFB] border-b-2"
+        >
+          Tickets
+        </button>
+      </div>
+
+      <!-- Form Fields -->
+      <form class="space-y-6">
+        <!-- Date and Time -->
+        <div class="grid grid-cols-3 gap-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">Date</label>
+            <div class="relative">
+              <input
+                type="text"
+                value="28th August 2025"
+                class="w-full border border-gray-300 rounded-md px-4 py-2 pr-10"
+              />
+              <div
+                class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-gray-500"
+                >
+                  <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                  <path d="M16 2v4" />
+                  <path d="M8 2v4" />
+                  <path d="M3 10h18" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Start Time</label>
+            <div class="relative">
+              <input
+                type="text"
+                value="13:00"
+                class="w-full border border-gray-300 rounded-md px-4 py-2 pr-10"
+              />
+              <div
+                class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-gray-500"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">End Time</label>
+            <div class="relative">
+              <input
+                type="text"
+                value="16:00"
+                class="w-full border border-gray-300 rounded-md px-4 py-2 pr-10"
+              />
+              <div
+                class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-gray-500"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frequency -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Frequency</label>
+          <label class="flex items-center">
+            <input type="radio" name="frequency" class="mr-2" />
+            Only Once
+          </label>
+          <div class="flex items-center space-x-4 mt-4">
+            <label class="flex items-center">
+              <input type="radio" name="frequency" class="mr-2" checked />
+              Every
+            </label>
+            <div
+              class="flex items-center border border-gray-300 bg-white rounded-md px-2 py-1"
+            >
+              <button class="px-1">-</button>
+              <input
+                type="text"
+                value="2"
+                class="w-8 text-center border-none"
+              />
+              <button class="px-1">+</button>
+            </div>
+            <select class="border border-gray-300 rounded-md px-2 py-1">
+              <option>Months</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Location</label>
+          <div class="flex items-center space-x-4 mb-2">
+            <label class="flex items-center">
+              <input type="radio" name="location" class="mr-2" checked />
+              Physical
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="location" class="mr-2" />
+              Virtual
+            </label>
+          </div>
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Astra Hall, UCD"
+              class="w-full border border-gray-300 rounded-md px-4 py-2 pr-10"
+            />
+            <div
+              class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-gray-500"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map Placeholder -->
+
+        <img src="./image/map.svg" alt="Map" class="w-full rounded-md" />
+
+        <!-- Buttons -->
+        <div class="flex justify-between">
+          <button class="text-[#09090B] font-medium">Back</button>
+          <button
+            class="bg-[#7CEAFA] text-[#09090B] rounded-[12px] px-4 py-2 font-medium flex items-center gap-2"
+          >
+            Next
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

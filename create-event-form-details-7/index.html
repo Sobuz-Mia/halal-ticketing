@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Creation Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white">
+    <div
+      class="max-w-md mx-auto mt-10 bg-[#DCF9FE] rounded-lg shadow-md p-6 relative"
+    >
+      <!-- Title and Close Button -->
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold">What's your event about?</h1>
+        <button class="text-red-500 text-[32px]">&times;</button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex space-x-10 mb-6">
+        <button
+          class="pb-2 text-[#000000] font-semibold border-b-2 border-blue-500"
+        >
+          Details
+        </button>
+        <button
+          class="pb-2 text-[#565656] font-semibold border-[#9FEFFB] border-b-2"
+        >
+          Date & Location
+        </button>
+        <button
+          class="pb-2 text-[#565656] font-semibold border-[#9FEFFB] border-b-2"
+        >
+          Tickets
+        </button>
+      </div>
+
+      <!-- Form Fields -->
+      <form class="space-y-6">
+        <!-- Event Name -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Event Name</label>
+          <input
+            type="text"
+            placeholder="Enter event name"
+            class="w-full border border-gray-300 rounded-md px-4 py-2"
+          />
+        </div>
+
+        <!-- Category -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Category</label>
+          <select
+            class="w-full border border-gray-300 rounded-md px-4 py-2 appearance-none bg-white"
+          >
+            <option>Select a category</option>
+          </select>
+        </div>
+
+        <!-- Description -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Description</label>
+          <textarea
+            placeholder="Type your event description here."
+            class="w-full border border-gray-300 rounded-md px-4 py-2 h-24"
+          ></textarea>
+        </div>
+
+        <!-- Event Image -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Event Image</label>
+          <div class="bg-white p-3 rounded-[4px]">
+            <div
+              class="w-full border-2 border-dashed border-gray-300 rounded-md p-6 text-center"
+            >
+              <div class="flex justify-center">
+                <img
+                  src="./image/image-plus.svg"
+                  alt=""
+                  class="flex justify-center"
+                />
+              </div>
+              <!-- Folder icon approximation -->
+              <p class="font-semibold text-[#606060]">ADD AN EVENT IMAGE</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next Button -->
+        <div class="flex justify-end">
+          <button
+            class="bg-[#7CEAFA] text-[#09090B] rounded-[12px] px-4 py-2 font-medium flex items-center gap-2"
+          >
+            Next
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
