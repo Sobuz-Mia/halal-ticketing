@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "calendar-bg": "#C5E5E5",
+              "event-card": "#E8F5E8",
+              "event-badge": "#89EB8E",
+              "btn-primary": "#6DD5DB",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-sans">
+    <div class="flex h-screen overflow-hidden p-4">
+      <!-- Sidebar -->
+      <div
+        class="w-64 p-6 rounded-[20px] bg-[#CCFFCF] flex flex-col justify-between"
+      >
+        <div>
+          <div class="mb-8 flex justify-center h-[70px] w-[79px] mx-auto">
+            <img src="./image/Logo.svg" />
+          </div>
+          <h3 class="text-[25px] mb-4 text-[#09090B]">MAIN MENU</h3>
+          <ul class="space-y-4 mb-32">
+            <li class="text-[#09090B] text-[20px] flex items-center">
+              <span class="mr-2"><img src="./image/dashboard-icon.svg" /></span>
+              Dashboard
+            </li>
+            <li class="text-[#09090B] text-[20px] flex items-center">
+              <span class="mr-2"><img src="./image/events.svg" /></span>
+              Events
+            </li>
+            <li class="text-[#09090B] text-[20px] flex items-center">
+              <span class="mr-2"><img src="./image/analycies.svg" /></span>
+              Analytics
+            </li>
+            <li class="text-[#09090B] text-[20px] flex items-center">
+              <span class="mr-2"><img src="./image/mail-open.svg" /></span>
+              Email
+            </li>
+          </ul>
+          <h3 class="text-[25px] font-normal mb-4 text-[#09090B]">OTHER</h3>
+          <ul class="space-y-4">
+            <li class="text-[#09090B] text-[20px] flex items-center">
+              <span class="mr-2"><img src="./image/settings.svg" /></span>
+              Settings
+            </li>
+            <li class="text-[#09090B] text-[20px] flex items-center">
+              <span class="mr-2"><img src="./image/badge-help.svg" /></span>
+              Help & Support
+            </li>
+          </ul>
+        </div>
+        <button
+          class="bg-[#A0F2A4] text-[#09090B] py-2 px-4 rounded-[16px] w-full shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] flex items-center justify-center gap-1"
+        >
+          <span><img src="./image/log-out.svg" alt="" /></span> Sign Out
+        </button>
+      </div>
+      <!-- Main Content -->
+      <div class="flex-1 pl-[10px] overflow-auto">
+        <!-- Header -->
+        <div
+          class="flex justify-between items-center mb-4 bg-[#C3F8FF] px-10 rounded-[10px] py-3"
+        >
+          <h1 class="text-2xl font-medium text-[#09090B]">Dashboard</h1>
+          <div class="flex items-center space-x-4">
+            <span class="text-[#000000]"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="32"
+                height="32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+              </svg>
+            </span>
+            <div
+              class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs"
+            >
+              TS
+            </div>
+            <span class="text-[#09090B]"
+              >Tukai Saleh<br /><span class="text-sm text-gray-500"
+                >Event Organiser</span
+              ></span
+            >
+          </div>
+        </div>
+        <div class="bg-[#E2E2E2] px-10 py-[52px] rounded-[40px]">
+          <!-- Top Navigation -->
+          <div class="flex justify-between items-center mb-[50px]">
+            <div class="flex space-x-4">
+              <button
+                class="text-[#09090B] text-[18px] bg-[#26D9F3] px-3 py-2 rounded-md shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+              >
+                Active <span class="text-[12px] font-karla">(2)</span>
+              </button>
+              <button
+                class="text-[#09090B] text-[18px] bg-[#fff] px-3 py-2 rounded-md shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+              >
+                Upcoming <span class="text-[12px] font-karla">(3)</span>
+              </button>
+              <button
+                class="text-[#09090B] text-[18px] bg-[#fff] px-3 py-2 rounded-md shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+              >
+                Past <span class="text-[12px] font-karla">(7)</span>
+              </button>
+            </div>
+            <div class="flex space-x-4">
+              <div class="relative w-[294px]">
+                <input
+                  type="text"
+                  placeholder="Search event, location, tag, etc."
+                  class="bg-[#CCCCCC] rounded-[16px] px-10 py-2 shadow-[0_2px_4px_rgba(0,0,0,0.5)] w-full placeholder:text-gray-700 focus:border-none"
+                />
+                <img
+                  src="./image/search.svg"
+                  alt="search icon"
+                  class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 opacity-70"
+                />
+              </div>
+              <div
+                class="text-[#09090B] text-[15px] font-karla bg-[#ADDFE6] px-3 py-2 rounded-md shadow-[0_2px_4px_rgba(0,0,0,0.5)] flex gap-2"
+              >
+                <img src="./image/tags.svg" alt="" />
+                <select class="bg-[#ADDFE6]">
+                  <option>All Category</option>
+                </select>
+              </div>
+              <div
+                class="text-[#09090B] text-[15px] font-karla bg-[#ADDFE6] px-3 py-2 rounded-md shadow-[0_2px_4px_rgba(0,0,0,0.5)] flex gap-2"
+              >
+                <img src="./image/tags.svg" alt="" />
+                <select class="bg-[#ADDFE6]">
+                  <option>This Month</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Cards -->
+          <div class="space-y-4">
+            <!-- Event 1 -->
+            <div
+              class="bg-white rounded-[8px] p-2 flex items-center justify-between shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+            >
+              <div class="flex items-center gap-4">
+                <img src="./image/coin-glass.svg" alt="" />
+
+                <div class="w-[162px]">
+                  <span
+                    class="bg-event-badge text-[#09090B] rounded-md px-[10px] py-[1.5px] text-[12px] font-normal w-[94px]"
+                    >Charity Event</span
+                  >
+                  <h3 class="text-[25px] font-normal text-[#000000]">
+                    Charity Week
+                  </h3>
+
+                  <p
+                    class="flex items-center gap-2 text-[12px] text-[#373737] font-karla"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div
+                  class="flex items-center gap-2 text-[12px] text-[#373737] font-karla"
+                >
+                  <img src="./image/calendar.svg" alt="" />
+                  <span>1st August 2025 - 10:00 AM</span>
+                </div>
+
+                <div
+                  class="flex items-center gap-2 text-[12px] text-[#373737] font-karla"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span>Astra Hall, UCD, Dublin, IE </span>
+                </div>
+              </div>
+
+              <div class="w-[150px]">
+                <div class="w-full bg-[#B1EDF5] h-[6px] rounded-full">
+                  <div
+                    class="bg-[#7CEAFA] h-[6px] rounded-full"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <p class="mt-1 font-korla">
+                  <span class="text-[#09090B] font-normal text-[25px]"
+                    >100%</span
+                  >
+                  Tickets Sold
+                </p>
+              </div>
+              <span
+                class="border-[2px] border-[#934A00] text-[#934A00] px-5 py-[1px] rounded-md font-bold"
+                >Ongoing</span
+              >
+              <button
+                class="bg-[#7CEAFA] text-[#09090B] rounded-[12px] px-4 py-2 font-medium flex items-center gap-2"
+              >
+                Edit
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Event 2 -->
+            <div
+              class="bg-white rounded-[8px] p-2 flex items-center justify-between shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+            >
+              <div class="flex items-center gap-4">
+                <img src="./image/coin-glass.svg" alt="" />
+
+                <div class="w-[162px]">
+                  <span
+                    class="bg-event-badge text-[#09090B] rounded-md px-[10px] py-[1.5px] text-[12px] font-normal w-[94px]"
+                    >Charity Event</span
+                  >
+                  <h3 class="text-[25px] font-normal text-[#000000]">
+                    Charity Week
+                  </h3>
+
+                  <p
+                    class="flex items-center gap-2 text-[12px] text-[#373737] font-karla"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div
+                  class="flex items-center gap-2 text-[12px] text-[#373737] font-karla"
+                >
+                  <img src="./image/calendar.svg" alt="" />
+                  <span>1st August 2025 - 10:00 AM</span>
+                </div>
+
+                <div
+                  class="flex items-center gap-2 text-[12px] text-[#373737] font-karla"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span>Astra Hall, UCD, Dublin, IE </span>
+                </div>
+              </div>
+
+              <div class="w-[150px]">
+                <div class="w-full bg-[#B1EDF5] h-[6px] rounded-full">
+                  <div
+                    class="bg-[#7CEAFA] h-[6px] rounded-full"
+                    style="width: 60%"
+                  ></div>
+                </div>
+                <p class="mt-1 font-korla">
+                  <span class="text-[#09090B] font-normal text-[25px]"
+                    >60%</span
+                  >
+                  Tickets Sold
+                </p>
+              </div>
+              <span
+                class="border-[2px] border-[#4BA1FF] text-[#4BA1FF] px-5 py-[1px] rounded-md font-bold"
+                >Upcoming</span
+              >
+              <button
+                class="bg-[#7CEAFA] text-[#09090B] rounded-[12px] px-4 py-2 font-medium flex items-center gap-2"
+              >
+                Edit
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Event 3 -->
+            <div
+              class="bg-white rounded-[8px] p-2 flex items-center justify-between shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+            >
+              <div class="flex items-center gap-4">
+                <img src="./image/coin-glass.svg" alt="" />
+
+                <div class="w-[162px]">
+                  <span
+                    class="bg-event-badge text-[#09090B] rounded-md px-[10px] py-[1.5px] text-[12px] font-normal w-[94px]"
+                    >Charity Event</span
+                  >
+                  <h3 class="text-[25px] font-normal text-[#000000]">
+                    Charity Week
+                  </h3>
+
+                  <p
+                    class="flex items-center gap-2 text-[12px] text-[#373737] font-karla"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div
+                  class="flex items-center gap-2 text-[12px] text-[#373737] font-karla"
+                >
+                  <img src="./image/calendar.svg" alt="" />
+                  <span>1st August 2025 - 10:00 AM</span>
+                </div>
+
+                <div
+                  class="flex items-center gap-2 text-[12px] text-[#373737] font-karla"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span>Astra Hall, UCD, Dublin, IE </span>
+                </div>
+              </div>
+
+              <div class="w-[150px]">
+                <div class="w-full bg-[#B1EDF5] h-[6px] rounded-full">
+                  <div
+                    class="bg-[#7CEAFA] h-[6px] rounded-full"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <p class="mt-1 font-korla">
+                  <span class="text-[#09090B] font-normal text-[25px]"
+                    >100%</span
+                  >
+                  Tickets Sold
+                </p>
+              </div>
+              <span
+                class="border-[2px] border-[#EB6F70] text-[#EB6F70] px-5 py-[1px] rounded-md font-bold"
+                >Sold out</span
+              >
+              <button
+                class="bg-[#7CEAFA] text-[#09090B] rounded-[12px] px-4 py-2 font-medium flex items-center gap-2"
+              >
+                Edit
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Event 4 -->
+            <div
+              class="bg-white rounded-[8px] p-2 flex items-center justify-between shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+            >
+              <div class="flex items-center gap-4">
+                <img src="./image/coin-glass.svg" alt="" />
+
+                <div class="w-[162px]">
+                  <span
+                    class="bg-event-badge text-[#09090B] rounded-md px-[10px] py-[1.5px] text-[12px] font-normal w-[94px]"
+                    >Charity Event</span
+                  >
+                  <h3 class="text-[25px] font-normal text-[#000000]">
+                    Charity Week
+                  </h3>
+
+                  <p
+                    class="flex items-center gap-2 text-[12px] text-[#373737] font-karla"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </p>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div
+                  class="flex items-center gap-2 text-[12px] text-[#373737] font-karla"
+                >
+                  <img src="./image/calendar.svg" alt="" />
+                  <span>1st August 2025 - 10:00 AM</span>
+                </div>
+
+                <div
+                  class="flex items-center gap-2 text-[12px] text-[#373737] font-karla"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span>Astra Hall, UCD, Dublin, IE </span>
+                </div>
+              </div>
+
+              <div class="w-[150px]">
+                <div class="w-full bg-[#B1EDF5] h-[6px] rounded-full">
+                  <div
+                    class="bg-[#7CEAFA] h-[6px] rounded-full"
+                    style="width: 60%"
+                  ></div>
+                </div>
+                <p class="mt-1 font-korla">
+                  <span class="text-[#09090B] font-normal text-[25px]"
+                    >60%</span
+                  >
+                  Tickets Sold
+                </p>
+              </div>
+              <span
+                class="border-[2px] border-[#6BC497] text-[#6BC497] px-5 py-[1px] rounded-md font-bold"
+                >Published</span
+              >
+              <button
+                class="bg-[#7CEAFA] text-[#09090B] rounded-[12px] px-4 py-2 font-medium flex items-center gap-2"
+              >
+                Edit
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Bottom Pagination and Create Button -->
+          <div class="flex justify-between items-center mt-[53px]">
+            <div class="flex space-x-2">
+              <button class="text-[#09090B]">&lt;</button>
+              <button class="bg-[#26D9F3] text-[#09090B] px-2 py-1 rounded-md">
+                1
+              </button>
+              <button class="text-[#09090B]">2</button>
+              <button class="text-[#09090B]">3</button>
+              <span class="text-[#09090B]">...</span>
+              <button class="text-[#09090B]">6</button>
+              <button class="text-[#09090B]">&gt;</button>
+            </div>
+            <button
+              class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] text-[#000000] text-[18px] font-karla py-2 px-4 rounded-md flex items-center gap-2"
+            >
+              <span><img src="./image/square-plus.svg" alt="" /></span> Create
+              Event
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
