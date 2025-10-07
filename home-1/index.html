@@ -15,15 +15,19 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="">
-    <nav class="bg-white text-black p-4 max-w-[1440px] mx-auto">
+    <nav class="bg-white text-black py-4 px-8 max-w-[1440px] mx-auto">
       <!-- Desktop View: Menu left, Logo center, Login right -->
-      <div class="hidden md:flex justify-between items-center font-medium">
-        <div class="flex space-x-6">
+      <div
+        class="hidden md:flex justify-between items-center font-medium relative"
+      >
+        <div class="flex space-x-8">
           <a href="#" class="hover:text-green-500 underline">Home Page</a>
           <a href="#" class="hover:text-green-500">Events List</a>
           <a href="#" class="hover:text-green-500">My Tickets</a>
         </div>
-        <div class="flex items-center space-x-2">
+        <div
+          class="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-2"
+        >
           <img src="./image/logo.jpg" alt="Logo Icon" class="h-8" />
         </div>
         <button
@@ -49,7 +53,7 @@
     <h1 class="border-b-[0.5px] border-[#404040]"></h1>
     <!-- Slider Section -->
     <section class="py-10 p-4">
-      <div class="relative max-w-[1280px] w-full mx-auto">
+      <div class="relative max-w-[1360px] w-full mx-auto">
         <!-- Slider container -->
         <div class="overflow-hidden rounded-xl bg-black">
           <div
@@ -59,23 +63,29 @@
             <!-- Slide 1 -->
             <div class="min-w-full flex justify-center items-center">
               <div
-                class="relative w-full h-[60vh] sm:h-[70vh] lg:h-[658px] bg-gradient-to-r from-black to-gray-800 flex items-center justify-center"
+                class="relative w-full h-[90vh] sm:h-[70vh] lg:h-[658px] bg-gradient-to-r from-black to-gray-800 flex items-center justify-center"
               >
                 <img
                   src="./image/banner-image.jpg"
                   alt="Event Poster"
-                  class="w-full h-full object-cover opacity-70"
+                  class="w-full h-full min-h-[90vh] object-cover opacity-70"
                 />
                 <div
-                  class="absolute text-white left-4 sm:left-10 bottom-6 sm:bottom-10"
+                  class="absolute hidden sm:block text-white left-4 sm:left-32 bottom-6 sm:bottom-32"
                 >
                   <h2
-                    class="text-2xl sm:text-4xl lg:text-[48px] font-normal underline"
+                    class="text-2xl sm:text-4xl my-4 lg:text-[48px] font-normal underline"
                   >
                     Abu Taymiyyah
                   </h2>
-                  <p class="text-lg sm:text-2xl lg:text-[31px]">
-                    The Awakening of the Ummah <br />
+                  <p
+                    class="text-lg sm:text-2xl mb-2 leading-10 tracking-[-0.465px] lg:text-[31px]"
+                  >
+                    The Awakening of the Ummah
+                  </p>
+                  <p
+                    class="text-lg sm:text-2xl mb-2 leading-10 tracking-[-0.465px] lg:text-[31px]"
+                  >
                     & The End of Times
                   </p>
                   <p class="text-sm sm:text-base lg:text-[20px]">
@@ -87,23 +97,29 @@
             <!-- Slide 2 -->
             <div class="min-w-full flex justify-center items-center">
               <div
-                class="relative w-full h-[60vh] sm:h-[70vh] lg:h-[658px] bg-gradient-to-r from-black to-gray-800 flex items-center justify-center"
+                class="relative w-full h-[90vh] sm:h-[70vh] lg:h-[658px] bg-gradient-to-r from-black to-gray-800 flex items-center justify-center"
               >
                 <img
                   src="./image/banner-image.jpg"
                   alt="Event Poster"
-                  class="w-full h-full object-cover opacity-70"
+                  class="w-full h-full min-h-[90vh] object-cover opacity-70"
                 />
                 <div
-                  class="absolute text-white left-4 sm:left-10 bottom-6 sm:bottom-10"
+                  class="absolute hidden sm:block text-white left-4 sm:left-32 bottom-6 sm:bottom-32"
                 >
                   <h2
-                    class="text-2xl sm:text-4xl lg:text-[48px] font-normal underline"
+                    class="text-2xl sm:text-4xl my-4 lg:text-[48px] font-normal underline"
                   >
                     Abu Taymiyyah
                   </h2>
-                  <p class="text-lg sm:text-2xl lg:text-[31px]">
-                    The Awakening of the Ummah <br />
+                  <p
+                    class="text-lg sm:text-2xl mb-2 leading-10 tracking-[-0.465px] lg:text-[31px]"
+                  >
+                    The Awakening of the Ummah
+                  </p>
+                  <p
+                    class="text-lg sm:text-2xl mb-2 leading-10 tracking-[-0.465px] lg:text-[31px]"
+                  >
                     & The End of Times
                   </p>
                   <p class="text-sm sm:text-base lg:text-[20px]">
@@ -115,23 +131,29 @@
             <!-- Slide 3 -->
             <div class="min-w-full flex justify-center items-center">
               <div
-                class="relative w-full h-[60vh] sm:h-[70vh] lg:h-[658px] bg-gradient-to-r from-black to-gray-800 flex items-center justify-center"
+                class="relative w-full h-[90vh] sm:h-[70vh] lg:h-[658px] bg-gradient-to-r from-black to-gray-800 flex items-center justify-center"
               >
                 <img
                   src="./image/banner-image.jpg"
                   alt="Event Poster"
-                  class="w-full h-full object-cover opacity-70"
+                  class="w-full h-full min-h-[90vh] object-cover opacity-70"
                 />
                 <div
-                  class="absolute text-white left-4 sm:left-10 bottom-6 sm:bottom-10"
+                  class="absolute hidden sm:block text-white left-4 sm:left-32 bottom-6 sm:bottom-32"
                 >
                   <h2
-                    class="text-2xl sm:text-4xl lg:text-[48px] font-normal underline"
+                    class="text-2xl sm:text-4xl my-4 lg:text-[48px] font-normal underline"
                   >
                     Abu Taymiyyah
                   </h2>
-                  <p class="text-lg sm:text-2xl lg:text-[31px]">
-                    The Awakening of the Ummah <br />
+                  <p
+                    class="text-lg sm:text-2xl mb-2 leading-10 tracking-[-0.465px] lg:text-[31px]"
+                  >
+                    The Awakening of the Ummah
+                  </p>
+                  <p
+                    class="text-lg sm:text-2xl mb-2 leading-10 tracking-[-0.465px] lg:text-[31px]"
+                  >
                     & The End of Times
                   </p>
                   <p class="text-sm sm:text-base lg:text-[20px]">
@@ -146,17 +168,39 @@
         <!-- Left Arrow -->
         <button
           id="prev"
-          class="absolute hidden md:block left-4 sm:left-10 top-1/2 transform -translate-y-1/2 bg-[#A7A7A7] text-black rounded-[15px] p-2 sm:p-3 focus:outline-none"
+          class="absolute hidden md:block left-4 sm:left-10 top-1/2 transform -translate-y-1/2 text-black rounded-[15px] p-2 sm:p-3 focus:outline-none"
         >
-          ←
+          <svg
+            width="68"
+            height="68"
+            viewBox="0 0 68 68"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M34.2739 0.425446C35.0006 0.425446 35.7139 0.432113 36.4139 0.442113L38.4673 0.498779L39.4639 0.542113L41.3939 0.655446L43.2373 0.808779C59.1873 2.35545 65.6773 8.84545 67.2239 24.7954L67.3773 26.6388L67.4906 28.5688C67.5073 28.8954 67.5239 29.2288 67.5339 29.5654L67.5906 31.6188L67.6039 32.6788L67.6073 33.7588C67.6073 34.4854 67.6006 35.1988 67.5906 35.8988L67.5339 37.9521L67.4906 38.9488L67.3773 40.8788L67.2239 42.7221C65.6773 58.6721 59.1873 65.1621 43.2373 66.7088L41.3939 66.8621L39.4639 66.9754C39.1373 66.9921 38.8039 67.0088 38.4673 67.0188L36.4139 67.0755L34.2739 67.0921L32.1339 67.0755L30.0806 67.0188L29.0839 66.9754L27.1539 66.8621L25.3106 66.7088C9.36058 65.1621 2.87058 58.6721 1.32391 42.7221L1.17059 40.8788L1.05725 38.9488C1.04058 38.6221 1.02392 38.2888 1.01392 37.9521L0.957245 35.8988L0.940582 33.7588L0.957245 31.6188L1.01392 29.5654L1.05725 28.5688L1.17059 26.6388L1.32391 24.7954C2.87058 8.84545 9.36058 2.35545 25.3106 0.808779L27.1539 0.655446L29.0839 0.542113C29.4161 0.525896 29.7483 0.511452 30.0806 0.498779L32.1339 0.442113L33.1939 0.428779L34.2739 0.425446ZM32.2306 17.7921L31.9173 18.0688L18.5839 31.4021C18.4664 31.5177 18.3582 31.6426 18.2606 31.7754L18.0239 32.1421L17.8439 32.5221L17.7272 32.8721L17.6273 33.3654L17.6073 33.7588L17.6173 34.0088L17.6739 34.4288L17.7739 34.7988L17.9206 35.1688L18.0939 35.4954L18.3406 35.8421L18.5839 36.1154L31.9173 49.4488C32.5171 50.0466 33.322 50.3937 34.1685 50.4195C35.015 50.4454 35.8396 50.1481 36.4748 49.588C37.1101 49.0278 37.5083 48.2469 37.5886 47.4039C37.6689 46.5608 37.4253 45.7188 36.9073 45.0488L36.6306 44.7354L28.9906 37.0921H47.6073C48.4569 37.0912 49.274 36.7659 49.8918 36.1826C50.5096 35.5994 50.8814 34.8023 50.9312 33.9541C50.9809 33.106 50.705 32.2708 50.1597 31.6193C49.6144 30.9678 48.8409 30.5491 47.9973 30.4488L47.6073 30.4254H28.9906L36.6306 22.7821C37.2045 22.2081 37.5493 21.4445 37.6002 20.6344C37.6512 19.8243 37.4048 19.0235 36.9073 18.3821L36.6306 18.0688C36.0566 17.4949 35.2929 17.1501 34.4829 17.0991C33.6728 17.0482 32.8719 17.2946 32.2306 17.7921Z"
+              fill="#A7A7A7"
+            />
+          </svg>
         </button>
 
         <!-- Right Arrow -->
         <button
           id="next"
-          class="absolute right-4 hidden md:block sm:right-10 top-1/2 transform -translate-y-1/2 bg-[#A7A7A7] text-black rounded-[15px] p-2 sm:p-3 focus:outline-none"
+          class="absolute right-4 hidden md:block sm:right-10 top-1/2 transform -translate-y-1/2 text-black rounded-[15px] p-2 sm:p-3 focus:outline-none"
         >
-          →
+          <svg
+            width="68"
+            height="68"
+            viewBox="0 0 68 68"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M34.2739 0.425446C33.5472 0.425446 32.8339 0.432113 32.1339 0.442113L30.0806 0.498779L29.0839 0.542113L27.1539 0.655446L25.3106 0.808779C9.36055 2.35545 2.87055 8.84545 1.32389 24.7954L1.17055 26.6388L1.05722 28.5688C1.04055 28.8954 1.02389 29.2288 1.01389 29.5654L0.957219 31.6188L0.943885 32.6788L0.940552 33.7588C0.940552 34.4854 0.947219 35.1988 0.957219 35.8988L1.01389 37.9521L1.05722 38.9488L1.17055 40.8788L1.32389 42.7221C2.87055 58.6721 9.36055 65.1621 25.3106 66.7088L27.1539 66.8621L29.0839 66.9754C29.4106 66.9921 29.7439 67.0088 30.0806 67.0188L32.1339 67.0755L34.2739 67.0921L36.4139 67.0755L38.4672 67.0188L39.4639 66.9754L41.3939 66.8621L43.2372 66.7088C59.1872 65.1621 65.6772 58.6721 67.2239 42.7221L67.3772 40.8788L67.4906 38.9488C67.5072 38.6221 67.5239 38.2888 67.5339 37.9521L67.5906 35.8988L67.6072 33.7588L67.5906 31.6188L67.5339 29.5654L67.4906 28.5688L67.3772 26.6388L67.2239 24.7954C65.6772 8.84545 59.1872 2.35545 43.2372 0.808779L41.3939 0.655446L39.4639 0.542113C39.1317 0.525896 38.7995 0.511452 38.4672 0.498779L36.4139 0.442113L35.3539 0.428779L34.2739 0.425446ZM36.3172 17.7921L36.6306 18.0688L49.9639 31.4021C50.0815 31.5177 50.1896 31.6426 50.2872 31.7754L50.5239 32.1421L50.7039 32.5221L50.8206 32.8721L50.9206 33.3654L50.9406 33.7588L50.9306 34.0088L50.8739 34.4288L50.7739 34.7988L50.6272 35.1688L50.4539 35.4954L50.2072 35.8421L49.9639 36.1154L36.6306 49.4488C36.0307 50.0466 35.2258 50.3937 34.3793 50.4195C33.5328 50.4454 32.7082 50.1481 32.073 49.588C31.4377 49.0278 31.0395 48.2469 30.9592 47.4039C30.8789 46.5608 31.1225 45.7188 31.6406 45.0488L31.9172 44.7354L39.5572 37.0921H20.9406C20.091 37.0912 19.2738 36.7659 18.656 36.1826C18.0382 35.5994 17.6664 34.8023 17.6166 33.9541C17.5669 33.106 17.8428 32.2708 18.3881 31.6193C18.9334 30.9678 19.7069 30.5491 20.5506 30.4488L20.9406 30.4254H39.5572L31.9172 22.7821C31.3433 22.2081 30.9985 21.4445 30.9476 20.6344C30.8967 19.8243 31.143 19.0235 31.6406 18.3821L31.9172 18.0688C32.4912 17.4949 33.2549 17.1501 34.0649 17.0991C34.875 17.0482 35.6759 17.2946 36.3172 17.7921Z"
+              fill="#A7A7A7"
+            />
+          </svg>
         </button>
 
         <!-- Dots -->
@@ -165,28 +209,30 @@
           id="dots"
         >
           <button
-            class="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full focus:outline-none"
+            class="w-7 h-7 sm:w-7 sm:h-7 bg-white rounded-xl focus:outline-none"
           ></button>
           <button
-            class="w-2 h-2 sm:w-3 sm:h-3 bg-gray-500 rounded-full focus:outline-none"
+            class="w-7 h-7 sm:w-7 sm:h-7 bg-gray-500 rounded-xl focus:outline-none"
           ></button>
           <button
-            class="w-2 h-2 sm:w-3 sm:h-3 bg-gray-500 rounded-full focus:outline-none"
+            class="w-7 h-7 sm:w-7 sm:h-7 bg-gray-500 rounded-xl focus:outline-none"
           ></button>
         </div>
       </div>
     </section>
 
     <!-- Events Section -->
-    <section class="p-4 md:p-8 max-w-[1280px] mx-auto">
-      <h1 class="text-4xl font-bold mb-2">Events</h1>
+    <section class="p-4 md:px-2 md:py-8 max-w-[1380px] mx-auto">
+      <h1 class="text-5xl font-bold mb-2">Events</h1>
       <div
         class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8"
       >
         <p class="text-[#000000] mb-4 md:mb-0 font-korla">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
-        <button class="border border-[#404040] px-6 py-3 hidden md:block">
+        <button
+          class="border border-[#404040] px-6 py-3 hover:bg-black hover:text-white hidden md:block"
+        >
           View all
         </button>
       </div>
@@ -257,7 +303,7 @@
               Suspendisse varius enim in eros.
             </p>
             <button
-              class="bg-[#89EB8E] tex-[#09090B] p-2 text-[12px] rounded-md flex items-center"
+              class="bg-[#89EB8E] text-[#09090B] hover:bg-gradient-r p-2 text-[12px] rounded-md flex items-center"
             >
               View More
               <span class="ml-1"
@@ -434,7 +480,7 @@
     </section>
     <h1 class="border-b-[0.5px] border-[#404040] my-[40px] md:my-[80px]"></h1>
     <!-- Footer Section -->
-    <footer class="bg-white px-6 py-10 max-w-[1280px] mx-auto">
+    <footer class="bg-white px-6 py-10 max-w-[1380px] mx-auto">
       <!-- Top Section -->
       <div
         class="flex flex-col md:flex-row justify-between items-start gap-8 mb-8"

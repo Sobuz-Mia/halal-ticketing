@@ -1,0 +1,22 @@
+{
+  "name": "halal-ticketing",
+  "version": "1.0.0",
+  "description": "A halal event ticketing platform",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server",
+    "start": "live-server"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "tailwindcss",
+    "ticketing",
+    "events"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
