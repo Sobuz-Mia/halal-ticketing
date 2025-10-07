@@ -5,9 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event Creation Form - Tickets</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Karla", sans-serif;
+      }
+      .tab-button {
+        padding: 8px 16px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 500;
+        color: #565656;
+        transition: color 0.3s ease;
+        text-align: center;
+      }
+      .tab-button.active {
+        color: #000;
+      }
+      .tab-indicator {
+        height: 2px;
+        background: rgba(17, 216, 245, 0.3);
+        transition: background 0.3s ease;
+      }
+      .tab-indicator.active {
+        background: rgba(17, 216, 245, 0.7);
+      }
+      .tabs-container {
+        margin-bottom: 24px;
+      }
+      @media (max-width: 768px) {
+        .tabs-container {
+          width: 100% !important;
+        }
+        .max-w-xl {
+          max-width: 100%;
+          margin: 10px;
+          width: calc(100% - 20px);
+        }
+        .navigation-buttons {
+          margin-top: 20px;
+        }
+      }
+    </style>
   </head>
   <body class="bg-white p-5">
-    <div class="max-w-[704px] mx-auto bg-[#DCF9FE] rounded-lg shadow-md p-6">
+    <div class="max-w-xl mx-auto bg-[#DCF9FE] rounded-lg shadow-md p-6">
       <!-- Title and Close Button -->
       <div class="flex justify-between items-center mb-6">
         <h1 class="text-2xl font-bold">What's your event about?</h1>
@@ -15,22 +64,44 @@
       </div>
 
       <!-- Tabs -->
-      <div class="flex space-x-10 mb-6">
-        <button
-          class="pb-2 text-[#565656] font-semibold border-[#9FEFFB] border-b-2"
-        >
-          Details
-        </button>
-        <button
-          class="pb-2 text-[#565656] font-semibold border-[#9FEFFB] border-b-2"
-        >
-          Date & Location
-        </button>
-        <button
-          class="pb-2 text-[#000000] font-semibold border-b-2 border-blue-500"
-        >
-          Tickets
-        </button>
+      <div
+        class="mb-6 tabs-container"
+        style="
+          display: flex;
+          width: 480px;
+          align-items: flex-start;
+          gap: 12px;
+          flex-direction: column;
+        "
+      >
+        <div class="flex" style="width: 100%; gap: 12px">
+          <button
+            class="tab-button"
+            onclick="switchTab(0, this)"
+            style="flex: 1"
+          >
+            Details
+          </button>
+          <button
+            class="tab-button"
+            onclick="switchTab(1, this)"
+            style="flex: 1"
+          >
+            Date & Location
+          </button>
+          <button
+            class="tab-button active"
+            onclick="switchTab(2, this)"
+            style="flex: 1"
+          >
+            Tickets
+          </button>
+        </div>
+        <div class="flex" style="width: 100%; gap: 12px">
+          <div class="tab-indicator" style="flex: 1"></div>
+          <div class="tab-indicator" style="flex: 1"></div>
+          <div class="tab-indicator active" style="flex: 1"></div>
+        </div>
       </div>
 
       <!-- Form Fields -->
@@ -314,9 +385,12 @@
 
         <!-- Buttons -->
         <div class="flex justify-between">
-          <button class="text-[#09090B] font-medium">Back</button>
+          <button class="text-[#09090B] font-medium" onclick="prevTab()">
+            Back
+          </button>
           <button
             class="bg-[#7CEAFA] text-[#09090B] rounded-[12px] px-4 py-2 font-medium flex items-center gap-2"
+            onclick="nextTab()"
           >
             Review
             <svg
@@ -337,5 +411,41 @@
         </div>
       </form>
     </div>
+
+    <script>
+      function switchTab(tabIndex, buttonElement) {
+        // Remove active class from all tabs and indicators
+        const allButtons = document.querySelectorAll(".tab-button");
+        const allIndicators = document.querySelectorAll(".tab-indicator");
+
+        allButtons.forEach((btn) => btn.classList.remove("active"));
+        allIndicators.forEach((ind) => ind.classList.remove("active"));
+
+        // Add active class to clicked tab and corresponding indicator
+        buttonElement.classList.add("active");
+        allIndicators[tabIndex].classList.add("active");
+
+        // Navigate to different pages based on tab
+        if (tabIndex === 0) {
+          // Details tab - navigate to details page
+          window.location.href = "../create-event-form-details-7/index.html";
+        } else if (tabIndex === 1) {
+          // Date & Location tab - navigate to date location page
+          window.location.href =
+            "../CreateEventFormDate _Location-7/index.html";
+        }
+        // Current page is Tickets (index 2), so no navigation needed
+      }
+
+      function nextTab() {
+        // This is the final step, could show review or submit
+        alert("Event creation complete! Ready for review.");
+      }
+
+      function prevTab() {
+        // Navigate to Date & Location page
+        switchTab(1, document.querySelectorAll(".tab-button")[1]);
+      }
+    </script>
   </body>
 </html>

@@ -17,6 +17,155 @@
         padding: 0;
         background-color: #fff;
       }
+
+      /* Mobile sidebar overlay */
+      .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 40;
+        display: none;
+      }
+
+      .sidebar-overlay.active {
+        display: block;
+      }
+
+      /* Mobile sidebar */
+      .mobile-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .mobile-sidebar.active {
+        transform: translateX(0);
+      }
+
+      /* Mobile-only responsive styles (desktop unchanged) */
+      @media (max-width: 768px) {
+        /* Container adjustments */
+        .mobile-container {
+          padding: 0.5rem !important;
+        }
+
+        /* Header adjustments */
+        .mobile-header {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          padding: 0.75rem 1rem !important;
+          margin-top: 60px !important;
+          gap: 1rem !important;
+        }
+
+        .mobile-user-info {
+          font-size: 0.875rem !important;
+        }
+
+        /* Main content adjustments */
+        .mobile-main {
+          padding-left: 0 !important;
+        }
+
+        .mobile-inner {
+          padding: 1rem !important;
+        }
+
+        /* Greeting section */
+        .mobile-greeting {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 1rem !important;
+        }
+
+        .mobile-greeting-text {
+          font-size: 1rem !important;
+        }
+
+        .mobile-greeting-name {
+          font-size: 1.75rem !important;
+        }
+
+        .mobile-controls {
+          flex-direction: column !important;
+          width: 100% !important;
+          gap: 0.5rem !important;
+        }
+
+        .mobile-button {
+          width: 100% !important;
+          justify-content: center !important;
+          font-size: 0.875rem !important;
+        }
+
+        /* Stats grid */
+        .mobile-stats {
+          grid-template-columns: 1fr 1fr !important;
+          gap: 1rem !important;
+        }
+
+        .mobile-stat-card {
+          padding: 1rem !important;
+        }
+
+        .mobile-stat-number {
+          font-size: 1.75rem !important;
+        }
+
+        .mobile-stat-text {
+          font-size: 0.75rem !important;
+        }
+
+        /* Calendar section */
+        .mobile-calendar-layout {
+          grid-template-columns: 1fr !important;
+          gap: 1rem !important;
+        }
+
+        .mobile-calendar {
+          order: 2;
+          padding: 1.5rem !important;
+        }
+
+        .mobile-events {
+          order: 1;
+          padding: 1rem !important;
+        }
+
+        /* Event cards */
+        .mobile-event-card {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 1rem !important;
+          padding: 1rem !important;
+        }
+
+        .mobile-event-header {
+          width: 100% !important;
+        }
+
+        .mobile-event-title {
+          font-size: 1.25rem !important;
+        }
+
+        .mobile-event-meta {
+          width: 100% !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+        }
+
+        .mobile-event-badges {
+          flex-direction: row !important;
+          gap: 0.5rem !important;
+        }
+
+        .mobile-manage-btn {
+          width: 100% !important;
+          justify-content: center !important;
+        }
+      }
     </style>
     <script>
       tailwind.config = {
@@ -34,10 +183,33 @@
     </script>
   </head>
   <body class="font-sans">
-    <div class="flex h-screen overflow-hidden p-4">
-      <!-- Sidebar -->
+    <!-- Mobile sidebar overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="flex h-screen overflow-hidden p-4 mobile-container">
+      <!-- Mobile Hamburger Button -->
+      <button
+        class="fixed top-4 left-4 z-50 md:hidden bg-[#CCFFCF] p-2 rounded-lg shadow-lg"
+        id="mobileMenuBtn"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Desktop Sidebar (unchanged) -->
       <div
-        class="w-64 p-6 rounded-[20px] bg-[#CCFFCF] flex flex-col justify-between"
+        class="w-64 p-6 rounded-[20px] bg-[#CCFFCF] flex flex-col justify-between hidden md:flex"
       >
         <div>
           <div class="mb-8 flex justify-center h-[70px] w-[79px] mx-auto">
@@ -80,14 +252,107 @@
           <span><img src="./image/log-out.svg" alt="" /></span> Sign Out
         </button>
       </div>
+
+      <!-- Mobile Sidebar -->
+      <div
+        class="fixed inset-y-0 left-0 z-40 w-64 p-4 rounded-[20px] bg-[#CCFFCF] flex flex-col justify-between mobile-sidebar md:hidden"
+        id="sidebar"
+      >
+        <div>
+          <!-- Close button for mobile -->
+          <button
+            class="absolute top-4 right-4 text-[#09090B]"
+            id="closeSidebarBtn"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+
+          <div class="mb-6 flex justify-center h-[50px] w-[60px] mx-auto">
+            <img src="./image/Logo.svg" class="w-full h-full object-contain" />
+          </div>
+          <h3 class="text-[20px] mb-3 text-[#09090B]">MAIN MENU</h3>
+          <ul class="space-y-3 mb-16">
+            <li
+              class="text-[#09090B] text-[16px] flex items-center hover:bg-[#A0F2A4] p-2 rounded-lg transition-colors cursor-pointer"
+            >
+              <span class="mr-2"
+                ><img src="./image/dashboard-icon.svg" class="w-5 h-5"
+              /></span>
+              Dashboard
+            </li>
+            <li
+              class="text-[#09090B] text-[16px] flex items-center hover:bg-[#A0F2A4] p-2 rounded-lg transition-colors cursor-pointer"
+            >
+              <span class="mr-2"
+                ><img src="./image/events.svg" class="w-5 h-5"
+              /></span>
+              Events
+            </li>
+            <li
+              class="text-[#09090B] text-[16px] flex items-center hover:bg-[#A0F2A4] p-2 rounded-lg transition-colors cursor-pointer"
+            >
+              <span class="mr-2"
+                ><img src="./image/analycies.svg" class="w-5 h-5"
+              /></span>
+              Analytics
+            </li>
+            <li
+              class="text-[#09090B] text-[16px] flex items-center hover:bg-[#A0F2A4] p-2 rounded-lg transition-colors cursor-pointer"
+            >
+              <span class="mr-2"
+                ><img src="./image/mail-open.svg" class="w-5 h-5"
+              /></span>
+              Email
+            </li>
+          </ul>
+          <h3 class="text-[20px] font-normal mb-3 text-[#09090B]">OTHER</h3>
+          <ul class="space-y-3">
+            <li
+              class="text-[#09090B] text-[16px] flex items-center hover:bg-[#A0F2A4] p-2 rounded-lg transition-colors cursor-pointer"
+            >
+              <span class="mr-2"
+                ><img src="./image/settings.svg" class="w-5 h-5"
+              /></span>
+              Settings
+            </li>
+            <li
+              class="text-[#09090B] text-[16px] flex items-center hover:bg-[#A0F2A4] p-2 rounded-lg transition-colors cursor-pointer"
+            >
+              <span class="mr-2"
+                ><img src="./image/badge-help.svg" class="w-5 h-5"
+              /></span>
+              Help & Support
+            </li>
+          </ul>
+        </div>
+        <button
+          class="bg-[#A0F2A4] text-[#09090B] py-2 px-4 rounded-[16px] w-full shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] flex items-center justify-center gap-1"
+        >
+          <span><img src="./image/log-out.svg" alt="" class="w-4 h-4" /></span>
+          Sign Out
+        </button>
+      </div>
+
       <!-- Main Content -->
-      <div class="flex-1 pl-[10px] overflow-auto">
+      <div class="flex-1 pl-[10px] overflow-auto mobile-main">
         <!-- Header -->
         <div
-          class="flex justify-between items-center mb-4 bg-[#C3F8FF] px-10 rounded-[10px] py-3"
+          class="flex justify-between items-center mb-4 bg-[#C3F8FF] px-10 rounded-[10px] py-3 mobile-header"
         >
           <h1 class="text-2xl font-medium text-[#09090B]">Dashboard</h1>
-          <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-4 mobile-user-info">
             <span class="text-[#000000]"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -99,51 +364,61 @@
                 stroke-width="1.8"
                 stroke-linecap="round"
                 stroke-linejoin="round"
+                class="w-6 h-6 md:w-8 md:h-8"
               >
                 <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
                 <path d="M13.73 21a2 2 0 0 1-3.46 0" />
               </svg>
             </span>
             <div
-              class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs"
+              class="w-6 h-6 md:w-8 md:h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs"
             >
               TS
             </div>
-            <span class="text-[#09090B]"
-              >Tukai Saleh<br /><span class="text-sm text-gray-500"
+            <span class="text-[#09090B] text-sm md:text-base"
+              >Tukai Saleh<br /><span class="text-xs md:text-sm text-gray-500"
                 >Event Organiser</span
               ></span
             >
           </div>
         </div>
-        <div class="bg-[#E2E2E2] py-10 px-10 rounded-[10px] pt-10 pb-14">
+        <div
+          class="bg-[#E2E2E2] py-10 px-10 rounded-[10px] pt-10 pb-14 mobile-inner"
+        >
           <!-- Greeting and Controls -->
-          <div class="flex justify-between items-center mb-6">
-            <h2 class="text-[20px] font-[275] text-[#000000]">
+          <div class="flex justify-between items-center mb-6 mobile-greeting">
+            <h2
+              class="text-[20px] font-[275] text-[#000000] mobile-greeting-text"
+            >
               As-salamu Alaikum,<br /><span
-                class="text-[38px] text-[#000000] font-medium"
+                class="text-[38px] text-[#000000] font-medium mobile-greeting-name"
                 >Tukai Saleh</span
               >
             </h2>
-            <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-4 mobile-controls">
               <button
-                class="text-[#09090B] bg-white py-1 px-3 rounded-md flex items-center gap-2 shadow-[0_8px_32px_0_rgba(0,0,0,0.18)]"
+                class="text-[#09090B] bg-white py-1 px-3 rounded-md flex items-center gap-2 shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] mobile-button"
               >
-                <img src="./image/calendar.svg" />
+                <img src="./image/calendar.svg" class="w-4 h-4 md:w-5 md:h-5" />
                 <span class="text-[18px] font-karla">Last 30 Days</span>
               </button>
               <button
-                class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] text-[#000000] text-[18px] font-karla py-2 px-4 rounded-md flex items-center gap-2"
+                class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] text-[#000000] text-[18px] font-karla py-2 px-4 rounded-md flex items-center gap-2 mobile-button"
               >
-                <span><img src="./image/square-plus.svg" alt="" /></span> Create
-                Event
+                <span
+                  ><img
+                    src="./image/square-plus.svg"
+                    alt=""
+                    class="w-4 h-4 md:w-5 md:h-5"
+                /></span>
+                Create Event
               </button>
             </div>
           </div>
           <!-- Stats Cards -->
-          <div class="grid grid-cols-4 gap-[67px] mb-8">
+          <div class="grid grid-cols-4 gap-[67px] mb-8 mobile-stats">
             <div
-              class="bg-white p-4 rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)]"
+              class="bg-white p-4 rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] mobile-stat-card"
             >
               <div class="flex items-center justify-between mb-[34px]">
                 <div class="flex items-center gap-2">
@@ -166,7 +441,7 @@
               </p>
             </div>
             <div
-              class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] p-4 rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)]"
+              class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] p-4 rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] mobile-stat-card"
             >
               <div class="flex items-center justify-between mb-[34px]">
                 <div class="flex items-center gap-2">
@@ -187,7 +462,7 @@
               </p>
             </div>
             <div
-              class="bg-white p-4 rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)]"
+              class="bg-white p-4 rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] mobile-stat-card"
             >
               <div class="flex items-center justify-between mb-[34px]">
                 <div class="flex items-center gap-2">
@@ -210,7 +485,7 @@
               </p>
             </div>
             <div
-              class="bg-white p-4 rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)]"
+              class="bg-white p-4 rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] mobile-stat-card"
             >
               <div class="flex items-center justify-between mb-[34px]">
                 <div class="flex items-center gap-2">
@@ -235,10 +510,10 @@
             class="bg-[#F5F5F5] rounded-[16px] overflow-hidden p-8 shadow-[0_8px_32px_0_rgba(0,0,0,0.18)]"
           >
             <div
-              class="grid lg:grid-cols-[400px,1fr] items-start bg-[#E8E8E8] rounded-[16px]"
+              class="grid lg:grid-cols-[400px,1fr] items-start bg-[#E8E8E8] rounded-[16px] mobile-calendar-layout"
             >
               <!-- Calendar Section -->
-              <div class="bg-[#C9E6EB] rounded-3xl p-8">
+              <div class="bg-[#C9E6EB] rounded-3xl p-8 mobile-calendar">
                 <div class="flex items-center justify-between mb-8">
                   <h2 class="text-2xl font-semibold text-gray-800">
                     August 2025
@@ -357,10 +632,10 @@
               </div>
 
               <!-- Events Section -->
-              <div class="space-y-6 px-3 py-2">
+              <div class="space-y-6 px-3 py-2 mobile-events">
                 <!-- Event 1 -->
                 <div
-                  class="bg-white rounded-[8px] p-2 flex items-center justify-between"
+                  class="bg-white rounded-[8px] p-2 flex items-center justify-between mobile-event-card"
                 >
                   <div class="flex items-center gap-4">
                     <div
@@ -451,7 +726,7 @@
 
                 <!-- Event 2 -->
                 <div
-                  class="bg-white rounded-[8px] p-2 flex items-center justify-between"
+                  class="bg-white rounded-[8px] p-2 flex items-center justify-between mobile-event-card"
                 >
                   <div class="flex items-center gap-4">
                     <div
@@ -542,7 +817,7 @@
 
                 <!-- Event 3 -->
                 <div
-                  class="bg-white rounded-[8px] p-2 flex items-center justify-between"
+                  class="bg-white rounded-[8px] p-2 flex items-center justify-between mobile-event-card"
                 >
                   <div class="flex items-center gap-4">
                     <div
@@ -636,5 +911,42 @@
         </div>
       </div>
     </div>
+
+    <script>
+      // Mobile sidebar functionality
+      function toggleMobileSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+
+        if (sidebar.classList.contains("mobile-sidebar-open")) {
+          sidebar.classList.remove("mobile-sidebar-open");
+          overlay.classList.remove("overlay-visible");
+        } else {
+          sidebar.classList.add("mobile-sidebar-open");
+          overlay.classList.add("overlay-visible");
+        }
+      }
+
+      // Close sidebar when clicking overlay
+      document.getElementById("overlay").addEventListener("click", function () {
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+        sidebar.classList.remove("mobile-sidebar-open");
+        overlay.classList.remove("overlay-visible");
+      });
+
+      // Close sidebar when clicking a navigation link on mobile
+      const navLinks = document.querySelectorAll(".mobile-nav-link");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          if (window.innerWidth <= 768) {
+            const sidebar = document.getElementById("sidebar");
+            const overlay = document.getElementById("overlay");
+            sidebar.classList.remove("mobile-sidebar-open");
+            overlay.classList.remove("overlay-visible");
+          }
+        });
+      });
+    </script>
   </body>
 </html>

@@ -32,6 +32,48 @@
         font-size: 1.5rem;
         line-height: 1;
       }
+
+      /* Mobile sidebar overlay */
+      .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 40;
+        display: none;
+      }
+
+      .sidebar-overlay.active {
+        display: block;
+      }
+
+      /* Mobile sidebar */
+      .mobile-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .mobile-sidebar.active {
+        transform: translateX(0);
+      }
+
+      /* Responsive card adjustments */
+      @media (max-width: 768px) {
+        .card {
+          padding: 1rem;
+          min-height: 200px;
+        }
+
+        .chart-container {
+          height: 150px !important;
+        }
+
+        .chart-container canvas {
+          max-height: 150px !important;
+        }
+      }
     </style>
     <script>
       tailwind.config = {
@@ -49,42 +91,122 @@
     </script>
   </head>
   <body class="font-sans">
-    <div class="flex h-screen overflow-hidden p-4">
+    <!-- Mobile sidebar overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="flex h-screen overflow-hidden p-2 md:p-4">
+      <!-- Mobile Hamburger Button -->
+      <button
+        class="fixed top-4 left-4 z-50 md:hidden bg-[#CCFFCF] p-2 rounded-lg shadow-lg"
+        id="mobileMenuBtn"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+
       <!-- Sidebar -->
       <div
-        class="w-64 p-6 rounded-[20px] bg-[#CCFFCF] flex flex-col justify-between"
+        class="fixed inset-y-0 left-0 z-40 w-64 p-4 md:p-6 rounded-[20px] bg-[#CCFFCF] flex flex-col justify-between mobile-sidebar md:relative md:transform-none md:translate-x-0"
+        id="sidebar"
       >
         <div>
-          <div class="mb-8 flex justify-center h-[70px] w-[79px] mx-auto">
-            <img src="./image/Logo.svg" />
+          <!-- Close button for mobile -->
+          <button
+            class="absolute top-4 right-4 md:hidden text-[#09090B]"
+            id="closeSidebarBtn"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+
+          <div
+            class="mb-6 md:mb-8 flex justify-center h-[50px] md:h-[70px] w-[60px] md:w-[79px] mx-auto"
+          >
+            <img src="./image/Logo.svg" class="w-full h-full object-contain" />
           </div>
-          <h3 class="text-[25px] mb-4 text-[#09090B]">MAIN MENU</h3>
-          <ul class="space-y-4 mb-32">
-            <li class="text-[#09090B] text-[20px] flex items-center">
-              <span class="mr-2"><img src="./image/dashboard-icon.svg" /></span>
+          <h3 class="text-[20px] md:text-[25px] mb-3 md:mb-4 text-[#09090B]">
+            MAIN MENU
+          </h3>
+          <ul class="space-y-3 md:space-y-4 mb-16 md:mb-32">
+            <li
+              class="text-[#09090B] text-[16px] md:text-[20px] flex items-center hover:bg-[#A0F2A4] p-2 rounded-lg transition-colors cursor-pointer"
+            >
+              <span class="mr-2"
+                ><img
+                  src="./image/dashboard-icon.svg"
+                  class="w-5 h-5 md:w-6 md:h-6"
+              /></span>
               Dashboard
             </li>
-            <li class="text-[#09090B] text-[20px] flex items-center">
-              <span class="mr-2"><img src="./image/events.svg" /></span>
+            <li
+              class="text-[#09090B] text-[16px] md:text-[20px] flex items-center hover:bg-[#A0F2A4] p-2 rounded-lg transition-colors cursor-pointer"
+            >
+              <span class="mr-2"
+                ><img src="./image/events.svg" class="w-5 h-5 md:w-6 md:h-6"
+              /></span>
               Events
             </li>
-            <li class="text-[#09090B] text-[20px] flex items-center">
-              <span class="mr-2"><img src="./image/analycies.svg" /></span>
+            <li
+              class="text-[#09090B] text-[16px] md:text-[20px] flex items-center hover:bg-[#A0F2A4] p-2 rounded-lg transition-colors cursor-pointer"
+            >
+              <span class="mr-2"
+                ><img src="./image/analycies.svg" class="w-5 h-5 md:w-6 md:h-6"
+              /></span>
               Analytics
             </li>
-            <li class="text-[#09090B] text-[20px] flex items-center">
-              <span class="mr-2"><img src="./image/mail-open.svg" /></span>
+            <li
+              class="text-[#09090B] text-[16px] md:text-[20px] flex items-center hover:bg-[#A0F2A4] p-2 rounded-lg transition-colors cursor-pointer"
+            >
+              <span class="mr-2"
+                ><img src="./image/mail-open.svg" class="w-5 h-5 md:w-6 md:h-6"
+              /></span>
               Email
             </li>
           </ul>
-          <h3 class="text-[25px] font-normal mb-4 text-[#09090B]">OTHER</h3>
-          <ul class="space-y-4">
-            <li class="text-[#09090B] text-[20px] flex items-center">
-              <span class="mr-2"><img src="./image/settings.svg" /></span>
+          <h3
+            class="text-[20px] md:text-[25px] font-normal mb-3 md:mb-4 text-[#09090B]"
+          >
+            OTHER
+          </h3>
+          <ul class="space-y-3 md:space-y-4">
+            <li
+              class="text-[#09090B] text-[16px] md:text-[20px] flex items-center hover:bg-[#A0F2A4] p-2 rounded-lg transition-colors cursor-pointer"
+            >
+              <span class="mr-2"
+                ><img src="./image/settings.svg" class="w-5 h-5 md:w-6 md:h-6"
+              /></span>
               Settings
             </li>
-            <li class="text-[#09090B] text-[20px] flex items-center">
-              <span class="mr-2"><img src="./image/badge-help.svg" /></span>
+            <li
+              class="text-[#09090B] text-[16px] md:text-[20px] flex items-center hover:bg-[#A0F2A4] p-2 rounded-lg transition-colors cursor-pointer"
+            >
+              <span class="mr-2"
+                ><img
+                  src="./image/badge-help.svg"
+                  class="w-5 h-5 md:w-6 md:h-6"
+              /></span>
               Help & Support
             </li>
           </ul>
@@ -96,19 +218,24 @@
         </button>
       </div>
       <!-- Main Content -->
-      <div class="flex-1 pl-[10px] overflow-auto">
+      <div class="flex-1 pl-0 md:pl-[10px] overflow-auto">
         <!-- Header -->
         <div
-          class="flex justify-between items-center mb-4 bg-[#C3F8FF] px-10 rounded-[10px] py-3"
+          class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3 md:mb-4 bg-[#C3F8FF] px-4 md:px-10 rounded-[10px] py-3 ml-0 md:ml-0 mt-16 md:mt-0"
         >
-          <h1 class="text-2xl font-medium text-[#09090B]">Dashboard</h1>
-          <div class="flex items-center space-x-4">
+          <h1
+            class="text-xl md:text-2xl font-medium text-[#09090B] mb-2 sm:mb-0"
+          >
+            Dashboard
+          </h1>
+          <div class="flex items-center space-x-2 md:space-x-4">
             <span class="text-[#000000]"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                width="32"
-                height="32"
+                width="24"
+                height="24"
+                class="md:w-8 md:h-8"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="1.8"
@@ -120,70 +247,96 @@
               </svg>
             </span>
             <div
-              class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs"
+              class="w-6 h-6 md:w-8 md:h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs"
             >
               TS
             </div>
-            <span class="text-[#09090B]"
-              >Tukai Saleh<br /><span class="text-sm text-gray-500"
+            <span class="text-[#09090B] text-sm md:text-base"
+              >Tukai Saleh<br /><span class="text-xs md:text-sm text-gray-500"
                 >Event Organiser</span
               ></span
             >
           </div>
         </div>
-        <div class="bg-[#E2E2E2] px-10 py-[52px] rounded-[40px]">
-          <div class="grid grid-cols-3 gap-6">
+        <div
+          class="bg-[#E2E2E2] px-4 md:px-10 py-6 md:py-[52px] rounded-[20px] md:rounded-[40px]"
+        >
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+          >
+            <!-- Revenue Card -->
             <div class="card col-span-1">
               <div
                 class="flex justify-center space-x-2 text-gray-700 font-semibold mb-4"
               >
-                <img src="./image/report-money.svg" alt="" />
-                <h2 class="text-[20px] text-[#000000]">Revenue</h2>
+                <img
+                  src="./image/report-money.svg"
+                  alt=""
+                  class="w-5 h-5 md:w-6 md:h-6"
+                />
+                <h2 class="text-[16px] md:text-[20px] text-[#000000]">
+                  Revenue
+                </h2>
               </div>
-              <div class="h-[200px] mb-4">
+              <div class="h-[150px] md:h-[200px] mb-4 chart-container">
                 <canvas id="revenueChart"></canvas>
               </div>
               <div class="mt-4 text-center">
                 <p
-                  class="text-[38px] font-medium text-[#000000] mb-6 flex justify-center"
+                  class="text-[28px] md:text-[38px] font-medium text-[#000000] mb-4 md:mb-6 flex justify-center"
                 >
-                  <span class="text-[25px] text-[#000000] flex items-end"
+                  <span
+                    class="text-[20px] md:text-[25px] text-[#000000] flex items-end"
                     >€</span
                   >5840
                 </p>
                 <p
-                  class="text-[12px] text-[#5C5C5C] flex justify-center items-center"
+                  class="text-[10px] md:text-[12px] text-[#5C5C5C] flex justify-center items-center"
                 >
-                  <img src="./image/arrow-big-up.svg" alt="" />
+                  <img
+                    src="./image/arrow-big-up.svg"
+                    alt=""
+                    class="w-4 h-4 md:w-5 md:h-5"
+                  />
                   18% vs previous 30 days
                 </p>
               </div>
             </div>
 
-            <div class="card col-span-2">
+            <!-- Sales Trend Card -->
+            <div class="card col-span-1 md:col-span-2 lg:col-span-2">
               <div
                 class="flex justify-center space-x-2 text-gray-700 font-semibold mb-4"
               >
-                <img src="./image/report-money.svg" alt="" />
-                <h2 class="text-[20px] text-[#000000]">
+                <img
+                  src="./image/report-money.svg"
+                  alt=""
+                  class="w-5 h-5 md:w-6 md:h-6"
+                />
+                <h2 class="text-[16px] md:text-[20px] text-[#000000]">
                   Sales Trend Over Time
                 </h2>
               </div>
-              <div class="h-64">
+              <div class="h-48 md:h-64 chart-container">
                 <canvas id="salesTrendChart"></canvas>
               </div>
             </div>
 
-            <div class="card col-span-1 md:col-span-2">
+            <!-- Ticket Sales Overview Card -->
+            <div class="card col-span-1 md:col-span-2 lg:col-span-2">
               <div
                 class="flex justify-center space-x-2 text-gray-700 font-semibold mb-4"
               >
-                <img src="./image/events.svg" alt="" />
-                <h2 class="text-[20px] text-[#000000]">
+                <img
+                  src="./image/events.svg"
+                  alt=""
+                  class="w-5 h-5 md:w-6 md:h-6"
+                />
+                <h2 class="text-[16px] md:text-[20px] text-[#000000]">
                   Ticket Sales Overview
                 </h2>
               </div>
-              <div class="h-64 w-[600px] mx-auto">
+              <div class="h-48 md:h-64 w-full chart-container">
                 <canvas id="ticketSalesOverviewChart"></canvas>
               </div>
               <div class="flex justify-center space-x-4 mt-4 text-sm">
@@ -202,21 +355,30 @@
               </div>
             </div>
 
+            <!-- Ticket Sales by Type Card -->
             <div class="card col-span-1 md:col-span-2 lg:col-span-1">
               <div
                 class="flex justify-center space-x-2 text-gray-700 font-semibold mb-4"
               >
-                <img src="./image/events.svg" alt="" />
-                <h2 class="text-[20px] text-[#000000]">Ticket Sales by Type</h2>
+                <img
+                  src="./image/events.svg"
+                  alt=""
+                  class="w-5 h-5 md:w-6 md:h-6"
+                />
+                <h2 class="text-[16px] md:text-[20px] text-[#000000]">
+                  Ticket Sales by Type
+                </h2>
               </div>
 
-              <div class="h-64 flex items-center justify-center">
+              <div
+                class="h-48 md:h-64 flex items-center justify-center chart-container"
+              >
                 <canvas
                   id="ticketSalesByTypeChart"
-                  class="max-h-64 max-w-64"
+                  class="max-h-48 md:max-h-64 max-w-48 md:max-w-64"
                 ></canvas>
               </div>
-              <p class="text-center text-sm text-gray-500 mt-4">
+              <p class="text-center text-xs md:text-sm text-gray-500 mt-4">
                 Hover over a selection to gain more insights!
               </p>
             </div>
@@ -441,7 +603,36 @@
           },
         },
       });
-      // ...existing code...
+
+      // Mobile sidebar functionality
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const closeSidebarBtn = document.getElementById("closeSidebarBtn");
+      const sidebar = document.getElementById("sidebar");
+      const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+      // Open sidebar
+      mobileMenuBtn.addEventListener("click", () => {
+        sidebar.classList.add("active");
+        sidebarOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
+
+      // Close sidebar
+      function closeSidebar() {
+        sidebar.classList.remove("active");
+        sidebarOverlay.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+
+      closeSidebarBtn.addEventListener("click", closeSidebar);
+      sidebarOverlay.addEventListener("click", closeSidebar);
+
+      // Close sidebar on window resize if opened
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          closeSidebar();
+        }
+      });
     </script>
   </body>
 </html>
