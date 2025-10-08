@@ -45,19 +45,40 @@
         </div>
 
         <!-- Navigation -->
-        <nav class="flex-1 space-y-6 p-4">
+        <nav class="flex-1 p-4">
           <!-- User Profile Section -->
           <div>
             <button
               class="sidebar-link w-full flex items-center gap-2 py-2 rounded-lg text-left text-[#09090B]"
             >
-              <img src="./image/users.jpg" />
-              <span>User Profile</span>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.3333 17.5V15.8333C13.3333 14.9493 12.9821 14.1014 12.357 13.4763C11.7319 12.8512 10.8841 12.5 10 12.5H5C4.11594 12.5 3.2681 12.8512 2.64298 13.4763C2.01786 14.1014 1.66667 14.9493 1.66667 15.8333V17.5M18.3333 17.4999V15.8332C18.3328 15.0947 18.087 14.3772 17.6345 13.7935C17.182 13.2098 16.5484 12.7929 15.8333 12.6082M13.3333 2.60824C14.0503 2.79182 14.6859 3.20882 15.1397 3.79349C15.5935 4.37817 15.8399 5.09726 15.8399 5.8374C15.8399 6.57754 15.5935 7.29664 15.1397 7.88131C14.6859 8.46598 14.0503 8.88298 13.3333 9.06657M10.8333 5.83333C10.8333 7.67428 9.34095 9.16667 7.5 9.16667C5.65905 9.16667 4.16667 7.67428 4.16667 5.83333C4.16667 3.99238 5.65905 2.5 7.5 2.5C9.34095 2.5 10.8333 3.99238 10.8333 5.83333Z"
+                  stroke="#09090B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <span class="text-[18px] font-normal font-poppins text-[#000000]"
+                >User Profile</span
+              >
             </button>
-            <div class="space-y-2 text-sm text-gray-600">
-              <div class="sub-link cursor-pointer">Personal Information</div>
-              <div class="sub-link cursor-pointer">Location</div>
-              <div class="sub-link cursor-pointer">Preferences</div>
+            <div class="space-y-2 text-lg text-gray-600">
+              <div class="sub-link font-poppins cursor-pointer">
+                Personal Information
+              </div>
+              <div class="sub-link font-poppins cursor-pointer">Location</div>
+              <div class="sub-link font-poppins cursor-pointer">
+                Preferences
+              </div>
             </div>
           </div>
 
@@ -66,12 +87,33 @@
             <button
               class="sidebar-link w-full flex items-center gap-2 py-2 rounded-lg text-left text-[#09090B]"
             >
-              <img src="./image/ticket-check.jpg" />
-              <span>My Tickets</span>
+              <svg
+                width="20"
+                height="14"
+                viewBox="0 0 20 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.5 6.99984L9.16667 8.6665L12.5 5.33317M1.66667 4.49984C2.32971 4.49984 2.96559 4.76323 3.43443 5.23207C3.90327 5.70091 4.16667 6.3368 4.16667 6.99984C4.16667 7.66288 3.90327 8.29876 3.43443 8.76761C2.96559 9.23645 2.32971 9.49984 1.66667 9.49984V11.1665C1.66667 11.6085 1.84226 12.0325 2.15482 12.345C2.46738 12.6576 2.89131 12.8332 3.33333 12.8332H16.6667C17.1087 12.8332 17.5326 12.6576 17.8452 12.345C18.1577 12.0325 18.3333 11.6085 18.3333 11.1665V9.49984C17.6703 9.49984 17.0344 9.23645 16.5656 8.76761C16.0967 8.29876 15.8333 7.66288 15.8333 6.99984C15.8333 6.3368 16.0967 5.70091 16.5656 5.23207C17.0344 4.76323 17.6703 4.49984 18.3333 4.49984V2.83317C18.3333 2.39114 18.1577 1.96722 17.8452 1.65466C17.5326 1.3421 17.1087 1.1665 16.6667 1.1665H3.33333C2.89131 1.1665 2.46738 1.3421 2.15482 1.65466C1.84226 1.96722 1.66667 2.39114 1.66667 2.83317V4.49984Z"
+                  stroke="#09090B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <span class="text-lg font-normal font-poppins text-[#000000]"
+                >My Tickets</span
+              >
             </button>
-            <div class="space-y-2 text-sm text-gray-600">
-              <div class="sub-link cursor-pointer">Upcoming Events</div>
-              <div class="sub-link cursor-pointer">Order History</div>
+            <div class="space-y-2 text-lg text-gray-600">
+              <div class="sub-link font-poppins cursor-pointer">
+                Upcoming Events
+              </div>
+              <div class="sub-link font-poppins cursor-pointer">
+                Order History
+              </div>
             </div>
           </div>
 
@@ -81,29 +123,31 @@
               class="sidebar-link w-full flex items-center gap-2 py-2 rounded-lg text-left"
             >
               <svg
-                class="w-5 h-5"
+                width="20"
+                height="14"
+                viewBox="0 0 20 14"
                 fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
+                  d="M7.5 6.99984L9.16667 8.6665L12.5 5.33317M1.66667 4.49984C2.32971 4.49984 2.96559 4.76323 3.43443 5.23207C3.90327 5.70091 4.16667 6.3368 4.16667 6.99984C4.16667 7.66288 3.90327 8.29876 3.43443 8.76761C2.96559 9.23645 2.32971 9.49984 1.66667 9.49984V11.1665C1.66667 11.6085 1.84226 12.0325 2.15482 12.345C2.46738 12.6576 2.89131 12.8332 3.33333 12.8332H16.6667C17.1087 12.8332 17.5326 12.6576 17.8452 12.345C18.1577 12.0325 18.3333 11.6085 18.3333 11.1665V9.49984C17.6703 9.49984 17.0344 9.23645 16.5656 8.76761C16.0967 8.29876 15.8333 7.66288 15.8333 6.99984C15.8333 6.3368 16.0967 5.70091 16.5656 5.23207C17.0344 4.76323 17.6703 4.49984 18.3333 4.49984V2.83317C18.3333 2.39114 18.1577 1.96722 17.8452 1.65466C17.5326 1.3421 17.1087 1.1665 16.6667 1.1665H3.33333C2.89131 1.1665 2.46738 1.3421 2.15482 1.65466C1.84226 1.96722 1.66667 2.39114 1.66667 2.83317V4.49984Z"
+                  stroke="#09090B"
+                  stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                ></path>
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                ></path>
+                />
               </svg>
-              <span>General</span>
+              <span class="text-lg font-normal font-poppins text-[#000000]">
+                General
+              </span>
             </button>
-            <div class="space-y-2 text-sm text-gray-600">
-              <div class="sub-link cursor-pointer">Change Details</div>
-              <div class="sub-link cursor-pointer">Delete my Account</div>
+            <div class="space-y-2 text-lg text-gray-600">
+              <div class="sub-link font-poppins cursor-pointer">
+                Change Details
+              </div>
+              <div class="sub-link font-poppins cursor-pointer">
+                Delete my Account
+              </div>
             </div>
           </div>
         </nav>
@@ -147,12 +191,26 @@
         <!-- Content Container -->
         <div class="main-content p-4">
           <!-- Header -->
-          <div class="flex items-center mb-12 justify-center">
-            <img src="./image/users.jpg" />
+          <div class="flex sm:-ml-20 items-center mb-12 justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+            >
+              <path
+                d="M21.3334 28V25.3333C21.3334 23.9188 20.7715 22.5623 19.7713 21.5621C18.7711 20.5619 17.4145 20 16 20H8.00002C6.58553 20 5.22898 20.5619 4.22878 21.5621C3.22859 22.5623 2.66669 23.9188 2.66669 25.3333V28M29.3334 27.9998V25.3332C29.3325 24.1515 28.9392 23.0035 28.2152 22.0696C27.4912 21.1357 26.4775 20.4686 25.3334 20.1732M21.3334 4.17318C22.4806 4.46691 23.4974 5.13411 24.2235 6.06959C24.9497 7.00507 25.3438 8.15562 25.3438 9.33984C25.3438 10.5241 24.9497 11.6746 24.2235 12.6101C23.4974 13.5456 22.4806 14.2128 21.3334 14.5065M17.3334 9.33333C17.3334 12.2789 14.9455 14.6667 12 14.6667C9.0545 14.6667 6.66669 12.2789 6.66669 9.33333C6.66669 6.38781 9.0545 4 12 4C14.9455 4 17.3334 6.38781 17.3334 9.33333Z"
+                stroke="#09090B"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </div>
 
           <!-- Welcome Text -->
-          <div class="text-center mt-40">
+          <div class="text-center sm:-ml-20 mt-40">
             <h2 class="text-[18px] font-semibold text-[#000000]">
               Asalamu Alaikum Tukai!
             </h2>
@@ -173,7 +231,8 @@
                     type="text"
                     value="Tukai Saleh"
                     readonly
-                    class="w-full px-3 py-2 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
+                    class="px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-teal-400"
+                    style="width: 181px; height: 29px; border-radius: 0"
                   />
                 </div>
 
@@ -187,7 +246,8 @@
                     type="tel"
                     value="0892342456"
                     readonly
-                    class="w-full px-3 py-2 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
+                    class="px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-teal-400"
+                    style="width: 181px; height: 29px; border-radius: 0"
                   />
                 </div>
 
@@ -201,7 +261,8 @@
                     type="text"
                     value="Dublin, Ireland"
                     readonly
-                    class="w-full px-3 py-2 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
+                    class="px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-teal-400"
+                    style="width: 181px; height: 29px; border-radius: 0"
                   />
                 </div>
               </div>
@@ -218,7 +279,8 @@
                     type="email"
                     value="TukaiSaleh@halalticketin.com"
                     readonly
-                    class="w-full px-3 py-2 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
+                    class="px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-teal-400"
+                    style="width: 335px; height: 30px; border-radius: 0"
                   />
                 </div>
 
@@ -232,14 +294,15 @@
                     type="text"
                     value="131 lower dominick street, Dublin 1"
                     readonly
-                    class="w-full px-3 py-2 bg-white rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                    class="px-3 py-2 bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                    style="width: 335px; height: 30px; border-radius: 0"
                   />
                 </div>
               </div>
             </div>
 
             <!-- Edit Details Button -->
-            <div class="text-center mt-12">
+            <div class="text-center mt-12 sm:-ml-20">
               <button
                 class="bg-gray-900 text-white px-8 py-3 rounded-lg font-medium"
               >
