@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const monthYearElement = calendarContainer.querySelector("h2");
   const prevButton = calendarContainer.querySelector("button:first-of-type");
   const nextButton = calendarContainer.querySelector("button:last-of-type");
-  const calendarDatesGrid = calendarContainer.querySelector(".calendar-dates-grid");
+  const calendarDatesGrid = calendarContainer.querySelector(
+    ".calendar-dates-grid"
+  );
 
   // Current date state - start with October 2025 (current month)
   let currentDate = new Date();
@@ -97,23 +99,25 @@ document.addEventListener("DOMContentLoaded", function () {
     monthYearElement.textContent = `${monthNames[currentMonth]} ${currentYear}`;
 
     // Get all date rows
-    const dateRows = calendarDatesGrid.querySelectorAll('.date-group');
-    
+    const dateRows = calendarDatesGrid.querySelectorAll(".date-group");
+
     // Get first day of month and number of days
     const firstDay = new Date(currentYear, currentMonth, 1).getDay();
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
     // Get today's date for highlighting
     const today = new Date();
-    const isCurrentMonth = today.getFullYear() === currentYear && today.getMonth() === currentMonth;
+    const isCurrentMonth =
+      today.getFullYear() === currentYear && today.getMonth() === currentMonth;
     const todayDate = today.getDate();
 
     // Clear all existing dates and reset styles
-    dateRows.forEach(row => {
-      const cells = row.querySelectorAll('div');
-      cells.forEach(cell => {
-        cell.innerHTML = '';
-        cell.className = 'w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded';
+    dateRows.forEach((row) => {
+      const cells = row.querySelectorAll("div");
+      cells.forEach((cell) => {
+        cell.innerHTML = "";
+        cell.className =
+          "w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded";
         // Remove all event listeners
         cell.replaceWith(cell.cloneNode(true));
       });
@@ -121,9 +125,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Re-get cells after cloning (to remove event listeners)
     const allCells = [];
-    dateRows.forEach(row => {
-      const cells = row.querySelectorAll('div');
-      cells.forEach(cell => allCells.push(cell));
+    dateRows.forEach((row) => {
+      const cells = row.querySelectorAll("div");
+      cells.forEach((cell) => allCells.push(cell));
     });
 
     // Fill in the calendar days
@@ -142,7 +146,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (allCells[cellIndex]) {
         const dayElement = allCells[cellIndex];
         dayElement.textContent = day;
-        dayElement.className = 'w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded';
+        dayElement.className =
+          "w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded";
 
         // Check if this is today
         if (isCurrentMonth && day === todayDate) {
@@ -165,11 +170,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (hasEvents) {
           // Make it relative for absolute positioning of indicator
-          dayElement.classList.add('relative');
-          
+          dayElement.classList.add("relative");
+
           // Add event indicator
           const eventIndicator = document.createElement("div");
-          eventIndicator.className = "absolute top-1 right-1 w-2 h-2 bg-[#89EB8E] rounded-full";
+          eventIndicator.className =
+            "absolute top-1 right-1 w-2 h-2 bg-[#89EB8E] rounded-full";
           dayElement.appendChild(eventIndicator);
 
           // Add click event to show events
@@ -371,25 +377,25 @@ document.addEventListener("DOMContentLoaded", function () {
   resetEventsView();
 
   // Mobile sidebar functionality
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const sidebar = document.getElementById('sidebar');
-  const closeSidebarBtn = document.getElementById('closeSidebarBtn');
-  const sidebarOverlay = document.getElementById('sidebarOverlay');
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const sidebar = document.getElementById("sidebar");
+  const closeSidebarBtn = document.getElementById("closeSidebarBtn");
+  const sidebarOverlay = document.getElementById("sidebarOverlay");
 
   if (mobileMenuBtn && sidebar && closeSidebarBtn && sidebarOverlay) {
-    mobileMenuBtn.addEventListener('click', () => {
-      sidebar.classList.add('active');
-      sidebarOverlay.classList.add('active');
+    mobileMenuBtn.addEventListener("click", () => {
+      sidebar.classList.add("active");
+      sidebarOverlay.classList.add("active");
     });
 
-    closeSidebarBtn.addEventListener('click', () => {
-      sidebar.classList.remove('active');
-      sidebarOverlay.classList.remove('active');
+    closeSidebarBtn.addEventListener("click", () => {
+      sidebar.classList.remove("active");
+      sidebarOverlay.classList.remove("active");
     });
 
-    sidebarOverlay.addEventListener('click', () => {
-      sidebar.classList.remove('active');
-      sidebarOverlay.classList.remove('active');
+    sidebarOverlay.addEventListener("click", () => {
+      sidebar.classList.remove("active");
+      sidebarOverlay.classList.remove("active");
     });
   }
 });
