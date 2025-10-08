@@ -59,6 +59,79 @@
         transform: translateX(0);
       }
 
+      /* Card gradient styles */
+      .card-gradient {
+        position: relative;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+        background: linear-gradient(135deg, #89eb8e 0%, #11d8f5 100%);
+        background-color: rgba(137, 235, 142, 0.75);
+        width: 302px;
+        height: 104px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        padding: 16px;
+      }
+
+      .card-gradient::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(135deg, #89eb8e 0%, #11d8f5 100%);
+        border-radius: 10px;
+        z-index: -1;
+        filter: blur(4px);
+        opacity: 0.3;
+      }
+
+      .white-icon-box {
+        background: white;
+        border-radius: 8px;
+        width: 60px;
+        height: 68px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 16px;
+        flex-shrink: 0;
+      }
+
+      .event-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 68px;
+      }
+
+      .event-title {
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        color: #000000;
+        margin: 0 0 8px 0;
+        line-height: 1.2;
+      }
+
+      .event-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .event-info-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: #373737;
+        font-family: "Karla", sans-serif;
+      }
+
       /* Responsive card adjustments */
       @media (max-width: 768px) {
         .card {
@@ -72,6 +145,24 @@
 
         .chart-container canvas {
           max-height: 150px !important;
+        }
+
+        .card-gradient {
+          width: 100%;
+          max-width: 302px;
+          height: auto;
+          min-height: 104px;
+          padding: 12px;
+        }
+
+        .event-title {
+          font-size: 16px;
+        }
+
+        .white-icon-box {
+          width: 50px;
+          height: 58px;
+          margin-right: 12px;
         }
       }
     </style>
@@ -221,46 +312,260 @@
       <div class="flex-1 pl-0 md:pl-[10px] overflow-auto">
         <!-- Header -->
         <div
-          class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3 md:mb-4 bg-[#C3F8FF] px-4 md:px-10 rounded-[10px] py-3 ml-0 md:ml-0 mt-16 md:mt-0"
+          class="flex justify-between items-center mb-4 bg-[#C3F8FF] px-12 rounded-[10px] py-4 mobile-header"
         >
-          <h1
-            class="text-xl md:text-2xl font-medium text-[#09090B] mb-2 sm:mb-0"
-          >
+          <h1 class="text-4xl font-medium font-poppins text-[#09090B]">
             Dashboard
           </h1>
-          <div class="flex items-center space-x-2 md:space-x-4">
-            <span class="text-[#000000]"
+          <div class="flex items-center space-x-4 mobile-user-info">
+            <span class="mr-5"
               ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                class="md:w-8 md:h-8"
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
                 fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
-                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                <path
+                  d="M32.3333 24.8335C33.6667 27.3335 35 28.3335 35 28.3335H5C5 28.3335 10 25.0002 10 13.3335C10 7.8335 14.5 3.3335 20 3.3335C21.1667 3.3335 22.1667 3.50016 23.1667 3.8335M17.1667 35.0002C17.4457 35.5076 17.8558 35.9307 18.3542 36.2255C18.8526 36.5202 19.421 36.6757 20.0001 36.6757C20.5791 36.6757 21.1475 36.5202 21.6459 36.2255C22.1443 35.9307 22.5544 35.5076 22.8334 35.0002M35 13.3335C35 16.0949 32.7614 18.3335 30 18.3335C27.2386 18.3335 25 16.0949 25 13.3335C25 10.5721 27.2386 8.3335 30 8.3335C32.7614 8.3335 35 10.5721 35 13.3335Z"
+                  stroke="#09090B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </span>
             <div
-              class="w-6 h-6 md:w-8 md:h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs"
+              class="rounded-full flex items-center justify-center text-white text-xs"
             >
-              TS
+              <img src="../event-dashboard-6/image/profile.svg" alt="Profile" />
             </div>
-            <span class="text-[#09090B] text-sm md:text-base"
-              >Tukai Saleh<br /><span class="text-xs md:text-sm text-gray-500"
+            <span
+              class="text-[#09090B] text-lg font-korla font-medium md:text-base"
+              >Tukai Saleh<br /><span class="text-xs md:text-xs text-gray-700"
                 >Event Organiser</span
               ></span
             >
           </div>
         </div>
+
         <div
           class="bg-[#E2E2E2] px-4 md:px-10 py-6 md:py-[52px] rounded-[20px] md:rounded-[40px]"
         >
+          <div class="flex items-center justify-between gap-14 mb-10">
+            <!-- Card 1 - Charity Event -->
+            <div
+              class="card-gradient rounded-lg p-4 min-w-[302px] w-full shadow-lg"
+              style="
+                background: linear-gradient(135deg, #89eb8e 0%, #11d8f5 100%);
+                background-opacity: 0.75;
+              "
+            >
+              <div class="flex items-center gap-4">
+                <!-- White Icon Box -->
+                <div
+                  class="bg-white rounded-lg p-4 flex-shrink-0"
+                  style="
+                    width: 60px;
+                    height: 68px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#09090B]">11</div>
+                    <div class="text-xs text-[#09090B] font-[300]">Fri</div>
+                  </div>
+                </div>
+
+                <!-- Content Section -->
+                <div class="flex-1">
+                  <h3 class="text-2xl font-normal text-black mb-1">
+                    Charity Event
+                  </h3>
+
+                  <!-- Time Info -->
+                  <div class="flex items-center gap-2">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#09090B"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    <span class="text-sm text-[#373737]">10:00 AM-6:00 PM</span>
+                  </div>
+
+                  <!-- Location Info -->
+                  <div class="flex items-center gap-2">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#09090B"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"
+                      />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span class="text-sm text-[#373737]">Dublin, Ireland</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 - Family Event -->
+            <div
+              class="min-w-[302px] w-full rounded-lg px-6 py-4 shadow-lg"
+              style="background: white"
+            >
+              <div class="flex items-center gap-4">
+                <!-- White Icon Box -->
+                <div
+                  class="bg-[#89EB8EA6] rounded-lg p-4 flex-shrink-0"
+                  style="
+                    width: 60px;
+                    height: 68px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#09090B]">15</div>
+                    <div class="text-xs text-[#09090B] font-[300]">Tue</div>
+                  </div>
+                </div>
+
+                <!-- Content Section -->
+                <div class="flex-1">
+                  <h3 class="text-2xl font-normal text-black mb-1">
+                    Charity Event 2
+                  </h3>
+
+                  <!-- Time Info -->
+                  <div class="flex items-center gap-2">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#09090B"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    <span class="text-sm text-[#373737]">2:00 PM-8:00 PM</span>
+                  </div>
+
+                  <!-- Location Info -->
+                  <div class="flex items-center gap-2">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#09090B"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"
+                      />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span class="text-sm text-[#373737]">Manchester</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 - Community Event -->
+            <div
+              class="min-w-[302px] w-full rounded-lg px-6 py-4 shadow-lg"
+              style="background: white"
+            >
+              <div class="flex items-center gap-4">
+                <!-- White Icon Box -->
+                <div
+                  class="bg-[#89EB8EA6] rounded-lg p-4 flex-shrink-0"
+                  style="
+                    width: 60px;
+                    height: 68px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-[#09090B]">15</div>
+                    <div class="text-xs text-[#09090B] font-[300]">Tue</div>
+                  </div>
+                </div>
+
+                <!-- Content Section -->
+                <div class="flex-1">
+                  <h3 class="text-2xl font-normal text-black mb-1">
+                    Charity Event 3
+                  </h3>
+
+                  <!-- Time Info -->
+                  <div class="flex items-center gap-2">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#09090B"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    <span class="text-sm text-[#373737]">2:00 PM-8:00 PM</span>
+                  </div>
+
+                  <!-- Location Info -->
+                  <div class="flex items-center gap-2">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#09090B"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"
+                      />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span class="text-sm text-[#373737]">Manchester</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
           >
