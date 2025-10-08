@@ -40,15 +40,19 @@
     </style>
   </head>
   <body class="">
-    <nav class="bg-white text-black p-4 max-w-[1440px] mx-auto">
+    <nav class="bg-white text-black py-4 px-8 max-w-[1440px] mx-auto">
       <!-- Desktop View: Menu left, Logo center, Login right -->
-      <div class="hidden md:flex justify-between items-center font-medium">
-        <div class="flex space-x-6">
+      <div
+        class="hidden md:flex justify-between items-center font-medium relative"
+      >
+        <div class="flex space-x-8">
           <a href="#" class="hover:text-green-500 underline">Home Page</a>
           <a href="#" class="hover:text-green-500">Events List</a>
           <a href="#" class="hover:text-green-500">My Tickets</a>
         </div>
-        <div class="flex items-center space-x-2">
+        <div
+          class="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-2"
+        >
           <img src="./image/logo.jpg" alt="Logo Icon" class="h-8" />
         </div>
         <button
@@ -339,7 +343,7 @@
 
     <h1 class="border-b-[0.5px] border-[#404040] my-[40px] md:my-[80px]"></h1>
     <!-- Footer Section -->
-    <footer class="bg-white px-6 py-10 max-w-[1280px] mx-auto">
+    <footer class="bg-white px-6 py-10 max-w-[1380px] mx-auto">
       <!-- Top Section -->
       <div
         class="flex flex-col md:flex-row justify-between items-start gap-8 mb-8"
