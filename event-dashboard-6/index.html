@@ -120,13 +120,15 @@
 
         /* Calendar section */
         .mobile-calendar-layout {
-          grid-template-columns: 1fr !important;
+          flex-direction: column !important;
           gap: 1rem !important;
         }
 
         .mobile-calendar {
           order: 2;
           padding: 1.5rem !important;
+          width: 100% !important;
+          height: auto !important;
         }
 
         .mobile-events {
@@ -164,6 +166,65 @@
         .mobile-manage-btn {
           width: 100% !important;
           justify-content: center !important;
+        }
+      }
+
+      /* Calendar specific styles */
+      .day-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-self: stretch;
+      }
+
+      .date-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+      }
+
+      /* Calendar typography styles */
+      .calendar-month-title {
+        color: #000;
+        font-family: Poppins, sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 150%; /* 30px */
+        letter-spacing: -0.1px;
+      }
+
+      .calendar-date-text {
+        color: var(--text-default, #09090b);
+        font-family: Karla, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 150%; /* 24px */
+        letter-spacing: 0.08px;
+      }
+
+      /* Prevent text selection on calendar */
+      .calendar-container * {
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+      }
+
+      /* Event indicator animation */
+      .event-indicator {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.7;
         }
       }
     </style>
@@ -349,34 +410,37 @@
       <div class="flex-1 pl-[10px] overflow-auto mobile-main">
         <!-- Header -->
         <div
-          class="flex justify-between items-center mb-4 bg-[#C3F8FF] px-10 rounded-[10px] py-3 mobile-header"
+          class="flex justify-between items-center mb-4 bg-[#C3F8FF] px-12 rounded-[10px] py-4 mobile-header"
         >
-          <h1 class="text-2xl font-medium text-[#09090B]">Dashboard</h1>
+          <h1 class="text-4xl font-medium font-poppins text-[#09090B]">
+            Dashboard
+          </h1>
           <div class="flex items-center space-x-4 mobile-user-info">
-            <span class="text-[#000000]"
+            <span class="mr-5"
               ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="32"
-                height="32"
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
                 fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="w-6 h-6 md:w-8 md:h-8"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
-                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                <path
+                  d="M32.3333 24.8335C33.6667 27.3335 35 28.3335 35 28.3335H5C5 28.3335 10 25.0002 10 13.3335C10 7.8335 14.5 3.3335 20 3.3335C21.1667 3.3335 22.1667 3.50016 23.1667 3.8335M17.1667 35.0002C17.4457 35.5076 17.8558 35.9307 18.3542 36.2255C18.8526 36.5202 19.421 36.6757 20.0001 36.6757C20.5791 36.6757 21.1475 36.5202 21.6459 36.2255C22.1443 35.9307 22.5544 35.5076 22.8334 35.0002M35 13.3335C35 16.0949 32.7614 18.3335 30 18.3335C27.2386 18.3335 25 16.0949 25 13.3335C25 10.5721 27.2386 8.3335 30 8.3335C32.7614 8.3335 35 10.5721 35 13.3335Z"
+                  stroke="#09090B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </span>
             <div
-              class="w-6 h-6 md:w-8 md:h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs"
+              class="rounded-full flex items-center justify-center text-white text-xs"
             >
-              TS
+              <img src="./image/profile.svg" alt="Profile" />
             </div>
-            <span class="text-[#09090B] text-sm md:text-base"
-              >Tukai Saleh<br /><span class="text-xs md:text-sm text-gray-500"
+            <span
+              class="text-[#09090B] text-lg font-korla font-medium md:text-base"
+              >Tukai Saleh<br /><span class="text-xs md:text-xs text-gray-700"
                 >Event Organiser</span
               ></span
             >
@@ -397,64 +461,193 @@
             </h2>
             <div class="flex items-center space-x-4 mobile-controls">
               <button
-                class="text-[#09090B] bg-white py-1 px-3 rounded-md flex items-center gap-2 shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] mobile-button"
+                class="text-[#09090B] bg-white py-2 px-4 rounded-lg drop-shadow-lg flex items-center gap-2 shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] mobile-button"
               >
-                <img src="./image/calendar.svg" class="w-4 h-4 md:w-5 md:h-5" />
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.6667 2.6665V7.99984M21.3333 2.6665V7.99984M4 13.3332H28M6.66667 5.33317H25.3333C26.8061 5.33317 28 6.52708 28 7.99984V26.6665C28 28.1393 26.8061 29.3332 25.3333 29.3332H6.66667C5.19391 29.3332 4 28.1393 4 26.6665V7.99984C4 6.52708 5.19391 5.33317 6.66667 5.33317Z"
+                    stroke="#09090B"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+
                 <span class="text-[18px] font-karla">Last 30 Days</span>
               </button>
               <button
-                class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] text-[#000000] text-[18px] font-karla py-2 px-4 rounded-md flex items-center gap-2 mobile-button"
+                class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] text-[#000000] text-[18px] min-h-12 font-karla py-2 px-4 drop-shadow-lg rounded-lg flex items-center gap-2 mobile-button"
               >
                 <span
-                  ><img
-                    src="./image/square-plus.svg"
-                    alt=""
-                    class="w-4 h-4 md:w-5 md:h-5"
-                /></span>
+                  ><svg
+                    width="26"
+                    height="26"
+                    viewBox="0 0 26 26"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.66667 13H18.3333M13 7.66667V18.3333M3.66667 1H22.3333C23.8061 1 25 2.19391 25 3.66667V22.3333C25 23.8061 23.8061 25 22.3333 25H3.66667C2.19391 25 1 23.8061 1 22.3333V3.66667C1 2.19391 2.19391 1 3.66667 1Z"
+                      stroke="#09090B"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
                 Create Event
               </button>
             </div>
           </div>
           <!-- Stats Cards -->
-          <div class="grid grid-cols-4 gap-[67px] mb-8 mobile-stats">
+          <div
+            class="grid grid-cols-4 justify-evenly gap-[67px] mb-8 mobile-stats"
+          >
             <div
-              class="bg-white p-4 rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] mobile-stat-card"
+              class="bg-white p-4 max-w-[210px] h-[172px] rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] mobile-stat-card flex flex-col justify-between"
             >
-              <div class="flex items-center justify-between mb-[34px]">
+              <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2">
-                  <img src="./image//report-money.svg" alt="" />
-                  <h3 class="text-[18px] text-[#000000]">Revenue</h3>
+                  <span>
+                    <svg
+                      width="28"
+                      height="28"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10.5 5.8335H8.16668C7.54784 5.8335 6.95435 6.07933 6.51676 6.51691C6.07918 6.9545 5.83334 7.54799 5.83334 8.16683V22.1668C5.83334 22.7857 6.07918 23.3792 6.51676 23.8167C6.95435 24.2543 7.54784 24.5002 8.16668 24.5002H19.8333C20.4522 24.5002 21.0457 24.2543 21.4833 23.8167C21.9208 23.3792 22.1667 22.7857 22.1667 22.1668V8.16683C22.1667 7.54799 21.9208 6.9545 21.4833 6.51691C21.0457 6.07933 20.4522 5.8335 19.8333 5.8335H17.5"
+                        stroke="#09090B"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10.5 5.83333C10.5 5.21449 10.7458 4.621 11.1834 4.18342C11.621 3.74583 12.2145 3.5 12.8333 3.5H15.1667C15.7855 3.5 16.379 3.74583 16.8166 4.18342C17.2542 4.621 17.5 5.21449 17.5 5.83333C17.5 6.45217 17.2542 7.04566 16.8166 7.48325C16.379 7.92083 15.7855 8.16667 15.1667 8.16667H12.8333C12.2145 8.16667 11.621 7.92083 11.1834 7.48325C10.7458 7.04566 10.5 6.45217 10.5 5.83333Z"
+                        stroke="#09090B"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M16.3333 12.8335H13.4167C12.9525 12.8335 12.5074 13.0179 12.1792 13.3461C11.851 13.6742 11.6667 14.1194 11.6667 14.5835C11.6667 15.0476 11.851 15.4927 12.1792 15.8209C12.5074 16.1491 12.9525 16.3335 13.4167 16.3335H14.5833C15.0475 16.3335 15.4926 16.5179 15.8208 16.8461C16.1489 17.1742 16.3333 17.6194 16.3333 18.0835C16.3333 18.5476 16.1489 18.9927 15.8208 19.3209C15.4926 19.6491 15.0475 19.8335 14.5833 19.8335H11.6667"
+                        stroke="#09090B"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14 19.8332V20.9998M14 11.6665V12.8332"
+                        stroke="#09090B"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      /></svg
+                  ></span>
+
+                  <h3
+                    class="text-[18px] font-poppins font-[300] text-[#000000]"
+                  >
+                    Revenue
+                  </h3>
                 </div>
-                <img src="./image/square-arrow-out-up-right.svg" alt="" />
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17.5 10.8333V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H9.16667M17.5 2.5L10 10M17.5 2.5H12.5M17.5 2.5V7.5"
+                    stroke="#09090B"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="flex flex-col items-center justify-center flex-1">
+                <p
+                  class="text-[38px] font-normal font-poppins text-[#000000] flex items-center justify-center"
+                >
+                  <span class="text-[38px] mt-2"
+                    ><svg
+                      width="20"
+                      height="19"
+                      viewBox="0 0 20 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.35 16.1C12.6 16.1 13.675 15.825 14.575 15.275C15.4917 14.725 16.1917 13.9417 16.675 12.925H19.375C18.7417 14.5917 17.7167 15.8833 16.3 16.8C14.8833 17.7 13.2333 18.15 11.35 18.15C9.38333 18.15 7.65 17.6083 6.15 16.525C4.65 15.4417 3.61667 13.9917 3.05 12.175H0.625V10.575H2.7C2.65 10.1417 2.625 9.70833 2.625 9.275C2.625 8.85833 2.65 8.45 2.7 8.05H0.625V6.475H3.025C3.39167 5.25833 3.975 4.19167 4.775 3.275C5.59167 2.34167 6.55833 1.625 7.675 1.125C8.80833 0.608333 10.0333 0.349999 11.35 0.349999C13.2333 0.349999 14.8833 0.808333 16.3 1.725C17.7167 2.64167 18.7417 3.94167 19.375 5.625H16.675C16.1917 4.59167 15.5 3.8 14.6 3.25C13.7 2.7 12.6167 2.425 11.35 2.425C9.95 2.425 8.725 2.78333 7.675 3.5C6.64167 4.21667 5.9 5.20833 5.45 6.475H11.35V8.05H5.05C5 8.45 4.975 8.85833 4.975 9.275C4.975 9.75833 5.00833 10.1917 5.075 10.575H11.35V12.175H5.475C5.95833 13.4083 6.71667 14.375 7.75 15.075C8.8 15.7583 10 16.1 11.35 16.1Z"
+                        fill="black"
+                      /></svg></span
+                  >5840
+                </p>
               </div>
               <p
-                class="text-[38px] font-medium text-[#000000] mb-6 flex justify-center"
+                class="text-[12px] text-[#5C5C5C] flex justify-center items-center gap-1"
               >
-                <span class="text-[25px] text-[#000000] flex items-end">€</span
-                >5840
-              </p>
-              <p
-                class="text-[12px] text-[#5C5C5C] flex justify-center items-center"
-              >
-                <img src="./image/arrow-big-up.svg" alt="" />
+                <svg
+                  width="17"
+                  height="15"
+                  viewBox="0 0 17 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.5 14V8H1.5L8.5 1L15.5 8H11.5V14H5.5Z"
+                    stroke="url(#paint0_linear_241_1259)"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_241_1259"
+                      x1="4.18333"
+                      y1="2.57083"
+                      x2="11.6454"
+                      y2="13.2855"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#89EB8E" />
+                      <stop offset="1" stop-color="#11D8F5" />
+                    </linearGradient>
+                  </defs>
+                </svg>
                 18% vs previous 30 days
               </p>
             </div>
             <div
-              class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] p-4 rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] mobile-stat-card"
+              class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] p-4 max-w-[210px] h-[172px] rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] mobile-stat-card flex flex-col justify-between"
             >
-              <div class="flex items-center justify-between mb-[34px]">
+              <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2">
                   <img src="./image/calendar.svg" alt="" />
-                  <h3 class="text-[18px] text-[#000000]">Total Events</h3>
+                  <h3
+                    class="text-[18px] font-poppins font-[300] text-[#000000]"
+                  >
+                    Total Events
+                  </h3>
                 </div>
                 <img src="./image/square-arrow-out-up-right.svg" alt="" />
               </div>
-              <p
-                class="text-[38px] font-medium text-[#000000] mb-6 flex justify-center"
-              >
-                12
-              </p>
+              <div class="flex flex-col items-center justify-center flex-1">
+                <p
+                  class="text-[38px] font-normal font-poppins text-[#000000] flex items-center justify-center"
+                >
+                  12
+                </p>
+              </div>
               <p
                 class="text-[12px] text-[#5C5C5C] flex justify-center items-center"
               >
@@ -462,20 +655,26 @@
               </p>
             </div>
             <div
-              class="bg-white p-4 rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] mobile-stat-card"
+              class="bg-white p-4 max-w-[210px] h-[172px] rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] mobile-stat-card flex flex-col justify-between"
             >
-              <div class="flex items-center justify-between mb-[34px]">
+              <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2">
                   <img src="./image/events.svg" alt="" />
-                  <h3 class="text-[18px] text-[#000000]">Tickets Sold</h3>
+                  <h3
+                    class="text-[18px] font-poppins font-[300] text-[#000000]"
+                  >
+                    Tickets Sold
+                  </h3>
                 </div>
                 <img src="./image/square-arrow-out-up-right.svg" alt="" />
               </div>
-              <p
-                class="text-[38px] font-medium text-[#000000] mb-6 flex justify-center"
-              >
-                480
-              </p>
+              <div class="flex flex-col items-center justify-center flex-1">
+                <p
+                  class="text-[38px] font-normal font-poppins text-[#000000] flex items-center justify-center"
+                >
+                  480
+                </p>
+              </div>
               <p
                 class="text-[12px] text-[#5C5C5C] flex justify-center items-center gap-2"
               >
@@ -485,20 +684,26 @@
               </p>
             </div>
             <div
-              class="bg-white p-4 rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] mobile-stat-card"
+              class="bg-white p-4 max-w-[210px] h-[172px] rounded-[16px] shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] mobile-stat-card flex flex-col justify-between"
             >
-              <div class="flex items-center justify-between mb-[34px]">
+              <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2">
                   <img src="./image/view.svg" alt="" />
-                  <h3 class="text-[18px] text-[#000000]">Page Views</h3>
+                  <h3
+                    class="text-[18px] font-poppins font-[300] text-[#000000]"
+                  >
+                    Page Views
+                  </h3>
                 </div>
                 <img src="./image/square-arrow-out-up-right.svg" alt="" />
               </div>
-              <p
-                class="text-[38px] font-medium text-[#000000] mb-6 flex justify-center"
-              >
-                3750
-              </p>
+              <div class="flex flex-col items-center justify-center flex-1">
+                <p
+                  class="text-[38px] font-normal font-poppins text-[#000000] flex items-center justify-center"
+                >
+                  3750
+                </p>
+              </div>
               <p
                 class="text-[12px] text-[#5C5C5C] flex justify-center items-center gap-1"
               >
@@ -510,129 +715,310 @@
             class="bg-[#F5F5F5] rounded-[16px] overflow-hidden p-8 shadow-[0_8px_32px_0_rgba(0,0,0,0.18)]"
           >
             <div
-              class="grid lg:grid-cols-[400px,1fr] items-start bg-[#E8E8E8] rounded-[16px] mobile-calendar-layout"
+              class="flex items-start bg-[#E8E8E8] rounded-3xl mobile-calendar-layout"
             >
               <!-- Calendar Section -->
-              <div class="bg-[#C9E6EB] rounded-3xl p-8 mobile-calendar">
-                <div class="flex items-center justify-between mb-8">
-                  <h2 class="text-2xl font-semibold text-gray-800">
+              <div
+                class="bg-[#C9E6EB] rounded-l-3xl p-4 mobile-calendar flex-shrink-0"
+                style="width: 330px; min-height: 300px"
+              >
+                <div class="flex justify-between items-center mb-4 date-group">
+                  <h2
+                    class="text-[20px] font-poppins font-[300] text-[#000000] leading-[150%] tracking-[-0.1px]"
+                  >
                     August 2025
                   </h2>
-                  <div class="flex gap-2">
+                  <div class="flex gap-1">
                     <button
-                      class="p-2 rounded-full border-[2px] border-[#000000]"
+                      class="p-1 hover:bg-[#A0F2A4] transition-colors rounded"
                     >
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
+                        width="26"
+                        height="26"
+                        viewBox="0 0 26 26"
                         fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <path d="m15 18-6-6 6-6" />
+                        <path
+                          d="M15.3334 8.3335L10.6667 13.0002L15.3334 17.6668M1.33335 13.0002C1.33335 19.4435 6.5567 24.6668 13 24.6668C19.4433 24.6668 24.6667 19.4435 24.6667 13.0002C24.6667 6.55684 19.4433 1.3335 13 1.3335C6.5567 1.3335 1.33335 6.55684 1.33335 13.0002Z"
+                          stroke="#09090B"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
                       </svg>
                     </button>
                     <button
-                      class="p-2 rounded-full border-[2px] border-[#000000]"
+                      class="p-1 hover:bg-[#A0F2A4] transition-colors rounded"
                     >
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
+                        width="28"
+                        height="28"
+                        viewBox="0 0 28 28"
                         fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <path d="m9 18 6-6-6-6" />
+                        <path
+                          d="M11.6666 9.3335L16.3333 14.0002L11.6666 18.6668M25.6666 14.0002C25.6666 20.4435 20.4433 25.6668 14 25.6668C7.55666 25.6668 2.33331 20.4435 2.33331 14.0002C2.33331 7.55684 7.55666 2.3335 14 2.3335C20.4433 2.3335 25.6666 7.55684 25.6666 14.0002Z"
+                          stroke="#09090B"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
                       </svg>
                     </button>
                   </div>
                 </div>
 
-                <div class="grid grid-cols-7 gap-3">
+                <div class="calendar-container" style="height: 240px">
                   <!-- Day headers -->
-                  <div
-                    class="text-center text-sm font-medium text-gray-700 py-2"
-                  >
-                    Su
-                  </div>
-                  <div
-                    class="text-center text-sm font-medium text-gray-700 py-2"
-                  >
-                    Mo
-                  </div>
-                  <div
-                    class="text-center text-sm font-medium text-gray-700 py-2"
-                  >
-                    Tu
-                  </div>
-                  <div
-                    class="text-center text-sm font-medium text-gray-700 py-2"
-                  >
-                    We
-                  </div>
-                  <div
-                    class="text-center text-sm font-medium text-gray-700 py-2"
-                  >
-                    Th
-                  </div>
-                  <div
-                    class="text-center text-sm font-medium text-gray-700 py-2"
-                  >
-                    Fr
-                  </div>
-                  <div
-                    class="text-center text-sm font-medium text-gray-700 py-2"
-                  >
-                    Sa
+                  <div class="flex justify-between items-start day-group mb-2">
+                    <div
+                      class="text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] w-8 text-center"
+                    >
+                      Su
+                    </div>
+                    <div
+                      class="text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] w-8 text-center"
+                    >
+                      Mo
+                    </div>
+                    <div
+                      class="text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] w-8 text-center"
+                    >
+                      Tu
+                    </div>
+                    <div
+                      class="text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] w-8 text-center"
+                    >
+                      We
+                    </div>
+                    <div
+                      class="text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] w-8 text-center"
+                    >
+                      Th
+                    </div>
+                    <div
+                      class="text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] w-8 text-center"
+                    >
+                      Fr
+                    </div>
+                    <div
+                      class="text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] w-8 text-center"
+                    >
+                      Sa
+                    </div>
                   </div>
 
-                  <div class="text-center text-gray-700 font-medium">1</div>
-                  <div class="text-center text-gray-700 font-medium">2</div>
-                  <div class="text-center text-gray-700 font-medium">3</div>
-                  <div class="text-center text-gray-700 font-medium">4</div>
-                  <div class="text-center text-gray-700 font-medium">5</div>
-                  <div class="text-center text-gray-700 font-medium">6</div>
-                  <div class="text-center text-gray-700 font-medium">7</div>
-                  <div class="text-center text-gray-700 font-medium">8</div>
-                  <div class="text-center text-gray-700 font-medium">9</div>
-                  <div class="text-center text-gray-700 font-medium">10</div>
-                  <div class="text-center text-gray-700 font-medium">11</div>
-                  <div class="text-center text-gray-700 font-medium">12</div>
-                  <div class="text-center text-gray-700 font-medium">13</div>
-                  <div class="text-center text-gray-700 font-medium">14</div>
-                  <div class="text-center text-gray-700 font-medium">15</div>
-                  <div class="text-center text-gray-700 font-medium">16</div>
-
-                  <div class="text-center text-gray-700 font-medium">17</div>
-                  <div class="text-center text-gray-700 font-medium">18</div>
-                  <div class="text-center text-gray-700 font-medium">19</div>
-                  <div class="text-center text-gray-700 font-medium">20</div>
-                  <div class="text-center text-gray-700 font-medium">21</div>
-                  <div class="text-center text-gray-700 font-medium">22</div>
-                  <div class="text-center text-gray-700 font-medium">23</div>
-
-                  <div class="text-center text-gray-700 font-medium">24</div>
-                  <div class="text-center text-gray-700 font-medium">25</div>
-                  <div class="text-center text-gray-700 font-medium">26</div>
-                  <div class="text-center text-gray-700 font-medium">27</div>
-                  <div class="text-center text-gray-700 font-medium">28</div>
-                  <div class="text-center text-gray-700 font-medium">29</div>
-                  <div class="text-center text-gray-700 font-medium">30</div>
-
-                  <div class="text-center text-gray-700 font-medium">31</div>
+                  <!-- Calendar Grid -->
+                  <div class="calendar-dates-grid" style="height: 200px">
+                    <!-- Week 1 -->
+                    <div
+                      class="flex justify-between items-center date-group mb-1"
+                    >
+                      <div
+                        class="w-8 h-8 flex items-center justify-center"
+                      ></div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center"
+                      ></div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center"
+                      ></div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center"
+                      ></div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        2
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        3
+                      </div>
+                    </div>
+                    <!-- Week 2 -->
+                    <div
+                      class="flex justify-between items-center date-group mb-1"
+                    >
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        4
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        5
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded relative"
+                      >
+                        6
+                        <div
+                          class="absolute top-1 right-1 w-2 h-2 bg-[#89EB8E] rounded-full"
+                        ></div>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        7
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        8
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded relative"
+                      >
+                        9
+                        <div
+                          class="absolute top-1 right-1 w-2 h-2 bg-[#89EB8E] rounded-full"
+                        ></div>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        10
+                      </div>
+                    </div>
+                    <!-- Week 3 -->
+                    <div
+                      class="flex justify-between items-center date-group mb-1"
+                    >
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        11
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded relative"
+                      >
+                        12
+                        <div
+                          class="absolute top-1 right-1 w-2 h-2 bg-[#89EB8E] rounded-full"
+                        ></div>
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        13
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        14
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        15
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        16
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        17
+                      </div>
+                    </div>
+                    <!-- Week 4 -->
+                    <div
+                      class="flex justify-between items-center date-group mb-1"
+                    >
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        18
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        19
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        20
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        21
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        22
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        23
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        24
+                      </div>
+                    </div>
+                    <!-- Week 5 -->
+                    <div
+                      class="flex justify-between items-center date-group mb-1"
+                    >
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        25
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        26
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        27
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        28
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        29
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        30
+                      </div>
+                      <div
+                        class="w-8 h-8 flex items-center justify-center text-[16px] font-karla font-[300] text-[#09090B] leading-[150%] tracking-[0.08px] cursor-pointer hover:bg-[#A0F2A4] rounded"
+                      >
+                        31
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <!-- Events Section -->
-              <div class="space-y-6 px-3 py-2 mobile-events">
+              <div class="space-y-2 px-3 py-2 mobile-events flex-1">
                 <!-- Event 1 -->
                 <div
                   class="bg-white rounded-[8px] p-2 flex items-center justify-between mobile-event-card"
@@ -912,41 +1298,6 @@
       </div>
     </div>
 
-    <script>
-      // Mobile sidebar functionality
-      function toggleMobileSidebar() {
-        const sidebar = document.getElementById("sidebar");
-        const overlay = document.getElementById("overlay");
-
-        if (sidebar.classList.contains("mobile-sidebar-open")) {
-          sidebar.classList.remove("mobile-sidebar-open");
-          overlay.classList.remove("overlay-visible");
-        } else {
-          sidebar.classList.add("mobile-sidebar-open");
-          overlay.classList.add("overlay-visible");
-        }
-      }
-
-      // Close sidebar when clicking overlay
-      document.getElementById("overlay").addEventListener("click", function () {
-        const sidebar = document.getElementById("sidebar");
-        const overlay = document.getElementById("overlay");
-        sidebar.classList.remove("mobile-sidebar-open");
-        overlay.classList.remove("overlay-visible");
-      });
-
-      // Close sidebar when clicking a navigation link on mobile
-      const navLinks = document.querySelectorAll(".mobile-nav-link");
-      navLinks.forEach((link) => {
-        link.addEventListener("click", function () {
-          if (window.innerWidth <= 768) {
-            const sidebar = document.getElementById("sidebar");
-            const overlay = document.getElementById("overlay");
-            sidebar.classList.remove("mobile-sidebar-open");
-            overlay.classList.remove("overlay-visible");
-          }
-        });
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
