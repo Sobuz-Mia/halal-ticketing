@@ -22,19 +22,20 @@
         background-color: #fff;
       }
       .faq-content {
-        max-height: 0;
+        max-height: 500px;
         overflow: hidden;
         transition: max-height 0.3s ease-out;
       }
-      .faq-content.active {
-        max-height: 500px;
-        transition: max-height 0.5s ease-in;
+      .faq-content.collapsed {
+        max-height: 0;
+        transition: max-height 0.3s ease-out;
       }
       .chevron {
         transition: transform 0.3s ease;
-      }
-      .chevron.rotate {
         transform: rotate(180deg);
+      }
+      .chevron.collapsed {
+        transform: rotate(0deg);
       }
     </style>
   </head>
@@ -404,18 +405,25 @@
         const content = contents[index];
         const chevron = chevrons[index];
 
-        // Close all other FAQs
-        contents.forEach((item, i) => {
-          if (i !== index) {
-            item.classList.remove("active");
-            chevrons[i].classList.remove("rotate");
-          }
+        // Toggle current FAQ individually
+        content.classList.toggle("collapsed");
+        chevron.classList.toggle("collapsed");
+      }
+
+      // Initialize all FAQs as expanded on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        const contents = document.querySelectorAll(".faq-content");
+        const chevrons = document.querySelectorAll(".chevron");
+
+        // All FAQs start expanded (no collapsed class)
+        contents.forEach((content) => {
+          content.classList.remove("collapsed");
         });
 
-        // Toggle current FAQ
-        content.classList.toggle("active");
-        chevron.classList.toggle("rotate");
-      }
+        chevrons.forEach((chevron) => {
+          chevron.classList.remove("collapsed");
+        });
+      });
     </script>
   </body>
 </html>
