@@ -29,7 +29,15 @@
         background: none;
         cursor: pointer;
         position: relative;
-        transition: color 0.3s ease;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+      }
+
+      .tab-button:hover {
+        background: linear-gradient(to right, #89eb8e, #11d8f5);
+        color: #000;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
 
       .tab-button.active {
@@ -98,7 +106,7 @@
   </head>
   <body class="bg-white">
     <div
-      class="max-w-xl mx-auto mt-10 bg-[#DCF9FE] rounded-lg shadow-md p-6 relative"
+      class="max-w-2xl mx-auto mt-10 bg-[#DCF9FE] rounded-lg shadow-md p-6 relative"
     >
       <!-- Title and Close Button -->
       <div class="flex justify-between items-center mb-6">
@@ -257,13 +265,21 @@
             <div
               class="flex items-center border border-gray-300 bg-white rounded-md px-2 py-1"
             >
-              <button class="px-1">-</button>
+              <button
+                class="px-1 cursor-pointer hover:bg-gradient-to-r hover:from-[#89EB8E] hover:to-[#11D8F5] hover:text-black hover:rounded transition-all duration-300"
+              >
+                -
+              </button>
               <input
                 type="text"
                 value="2"
                 class="w-8 text-center border-none"
               />
-              <button class="px-1">+</button>
+              <button
+                class="px-1 cursor-pointer hover:bg-gradient-to-r hover:from-[#89EB8E] hover:to-[#11D8F5] hover:text-black hover:rounded transition-all duration-300"
+              >
+                +
+              </button>
             </div>
             <select class="border border-gray-300 rounded-md px-2 py-1">
               <option>Months</option>
@@ -318,11 +334,14 @@
 
         <!-- Buttons -->
         <div class="flex justify-between">
-          <button class="text-[#09090B] font-medium" onclick="prevTab()">
+          <button
+            class="text-[#09090B] font-medium cursor-pointer hover:bg-gradient-to-r hover:from-[#89EB8E] hover:to-[#11D8F5] hover:text-black hover:px-4 hover:py-2 hover:rounded-lg hover:shadow-lg transition-all duration-300"
+            onclick="prevTab()"
+          >
             Back
           </button>
           <button
-            class="bg-[#7CEAFA] text-[#09090B] rounded-[12px] px-4 py-2 font-medium flex items-center gap-2"
+            class="bg-[#7CEAFA] text-[#09090B] rounded-[12px] px-4 py-2 font-medium flex items-center gap-2 cursor-pointer hover:bg-gradient-to-r hover:from-[#89EB8E] hover:to-[#11D8F5] hover:shadow-lg hover:transform hover:scale-105 transition-all duration-300"
             onclick="nextTab()"
           >
             Next

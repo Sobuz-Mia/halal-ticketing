@@ -29,7 +29,15 @@
         background: none;
         cursor: pointer;
         position: relative;
-        transition: color 0.3s ease;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+      }
+
+      .tab-button:hover {
+        background: linear-gradient(to right, #89eb8e, #11d8f5);
+        color: #000;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
 
       .tab-button.active {
@@ -206,7 +214,7 @@
               <button
                 type="button"
                 onclick="nextTab()"
-                class="bg-[#7CEAFA] text-[#09090B] rounded-[12px] px-4 py-2 font-medium flex items-center gap-2 next-button"
+                class="bg-[#7CEAFA] text-[#09090B] rounded-[12px] px-4 py-2 font-medium flex items-center gap-2 next-button cursor-pointer hover:bg-gradient-to-r hover:from-[#89EB8E] hover:to-[#11D8F5] hover:shadow-lg hover:transform hover:scale-105 transition-all duration-300"
               >
                 Next
                 <svg
@@ -245,7 +253,7 @@
               <button
                 type="button"
                 onclick="prevTab()"
-                class="bg-gray-200 text-gray-700 rounded-[12px] px-4 py-2 font-medium flex items-center gap-2"
+                class="bg-gray-200 text-gray-700 rounded-[12px] px-4 py-2 font-medium flex items-center gap-2 cursor-pointer hover:bg-gradient-to-r hover:from-[#89EB8E] hover:to-[#11D8F5] hover:text-black hover:shadow-lg hover:transform hover:scale-105 transition-all duration-300"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -266,7 +274,7 @@
               <button
                 type="button"
                 onclick="nextTab()"
-                class="bg-[#7CEAFA] text-[#09090B] rounded-[12px] px-4 py-2 font-medium flex items-center gap-2 next-button"
+                class="bg-[#7CEAFA] text-[#09090B] rounded-[12px] px-4 py-2 font-medium flex items-center gap-2 next-button cursor-pointer hover:bg-gradient-to-r hover:from-[#89EB8E] hover:to-[#11D8F5] hover:shadow-lg hover:transform hover:scale-105 transition-all duration-300"
               >
                 Next
                 <svg
@@ -303,7 +311,7 @@
               <button
                 type="button"
                 onclick="prevTab()"
-                class="bg-gray-200 text-gray-700 rounded-[12px] px-4 py-2 font-medium flex items-center gap-2"
+                class="bg-gray-200 text-gray-700 rounded-[12px] px-4 py-2 font-medium flex items-center gap-2 cursor-pointer hover:bg-gradient-to-r hover:from-[#89EB8E] hover:to-[#11D8F5] hover:text-black hover:shadow-lg hover:transform hover:scale-105 transition-all duration-300"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -323,7 +331,7 @@
               </button>
               <button
                 type="button"
-                class="bg-[#7CEAFA] text-[#09090B] rounded-[12px] px-4 py-2 font-medium flex items-center gap-2 next-button"
+                class="bg-[#7CEAFA] text-[#09090B] rounded-[12px] px-4 py-2 font-medium flex items-center gap-2 next-button cursor-pointer hover:bg-gradient-to-r hover:from-[#89EB8E] hover:to-[#11D8F5] hover:shadow-lg hover:transform hover:scale-105 transition-all duration-300"
               >
                 Create Event
                 <svg
