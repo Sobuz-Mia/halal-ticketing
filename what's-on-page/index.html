@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Project</title>
+    <!-- google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS (optional) -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-[#F3FFEB]">
+    <nav class="bg-white text-black py-4 px-8">
+      <div class="max-w-[1440px] mx-auto">
+        <!-- Desktop View: Menu left, Logo center, Login right -->
+        <div class="flex justify-between items-center">
+          <div class="hidden md:block">
+            <img src="./image/logo.jpg" alt="Logo Icon" class="" />
+          </div>
+          <div class="hidden md:flex items-center font-medium gap-[100px]">
+            <div class="flex space-x-8">
+              <a href="#" class="hover:text-green-500">About us</a>
+              <a href="#" class="hover:text-green-500">What's on</a>
+              <a href="#" class="hover:text-green-500">Pricing</a>
+              <a href="#" class="hover:text-green-500">Support</a>
+            </div>
+
+            <button
+              class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] text-[20px] px-4 py-2 rounded-[10px] hover:from-green-500 hover:to-teal-600 font-normal"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile View: Dark bar with Hamburger, Icon, Sign up -->
+        <div class="md:hidden flex justify-between items-center bg-white">
+          <button class="focus:outline-none mr-4">
+            <img src="./image/menu.jpg" alt="menu" class="h-8" />
+          </button>
+          <img src="./image/mobile-logo.jpg" alt="Logo Icon" class="h-8" />
+          <button
+            class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] px-4 py-2 text-[24px] leading-[150%] rounded-[10px]"
+          >
+            Sign up
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <h1 class="border-b-[0.5px] border-[#404040] overflow-hidden"></h1>
+    <!-- Hero Section -->
+    <section class="w-full bg-[#262626] h-[767px]"></section>
+
+    <!-- Events Section -->
+    <section class="p-4 md:px-2 md:py-8 max-w-[1380px] mx-auto">
+      <div
+        class="flex flex-col md:flex-row gap-[25px] justify-center items-start md:items-center mb-8"
+      >
+        <img src="./image/Line.svg" alt="" />
+        <p>All events near You</p>
+        <img src="./image/Line.svg" alt="" />
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:mt-14">
+        <!-- Event Card 1 -->
+        <div class="bg-white rounded-[10px] border-[0.5px] border-[#404040]">
+          <div class="relative rounded-t-[10px] overflow-hidden">
+            <div class="bg-gray-200 flex items-center justify-center">
+              <img
+                src="./image/Placeholder Image.jpg"
+                alt="Event Image"
+                class="h-[270px] w-full object-cover rounded-t-[10px]"
+              />
+            </div>
+            <span
+              class="absolute top-2 right-2 bg-[#89EB8E] tex-[#09090B] text-sm font-semibold px-3 py-1 rounded-full"
+              >Category</span
+            >
+          </div>
+          <div class="p-5">
+            <div
+              class="flex items-center text-[#000000] tracking-[0.5%] text-[15px] my-3 font-korla"
+            >
+              <svg
+                class="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                ></path>
+              </svg>
+              Fri 09 Feb 2024
+              <svg
+                class="w-4 h-4 mx-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+              Location
+            </div>
+            <h2
+              class="text-[31px] font-medium mb-3 leading-[150%] tracking-[1.5%]"
+            >
+              Event Title Heading
+            </h2>
+            <p class="mb-4 text-[#000000] text-[15px] font-korla">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros.
+            </p>
+            <button
+              class="bg-[#89EB8E] text-[#09090B] hover:bg-gradient-r p-2 text-[12px] rounded-md flex items-center"
+            >
+              View More
+              <span class="ml-1"
+                ><img
+                  src="./image/arrow-right.png"
+                  alt="Event Image"
+                  class="h-full w-full object-cover"
+              /></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="bg-white rounded-[10px] border-[0.5px] border-[#404040]">
+          <div class="relative rounded-t-[10px] overflow-hidden">
+            <div class="bg-gray-200 flex items-center justify-center">
+              <img
+                src="./image/Placeholder Image.jpg"
+                alt="Event Image"
+                class="h-[270px] w-full object-cover rounded-t-[10px]"
+              />
+            </div>
+            <span
+              class="absolute top-2 right-2 bg-[#89EB8E] tex-[#09090B] text-sm font-semibold px-3 py-1 rounded-full"
+              >Category</span
+            >
+          </div>
+          <div class="p-5">
+            <div
+              class="flex items-center text-[#000000] tracking-[0.5%] text-[15px] my-3 font-korla"
+            >
+              <svg
+                class="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                ></path>
+              </svg>
+              Fri 09 Feb 2024
+              <svg
+                class="w-4 h-4 mx-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+              Location
+            </div>
+            <h2
+              class="text-[31px] font-medium mb-3 leading-[150%] tracking-[1.5%]"
+            >
+              Event Title Heading
+            </h2>
+            <p class="mb-4 text-[#000000] text-[15px] font-korla">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros.
+            </p>
+            <button
+              class="bg-[#89EB8E] tex-[#09090B] p-2 text-[12px] rounded-md flex items-center"
+            >
+              View More
+              <span class="ml-1"
+                ><img
+                  src="./image/arrow-right.png"
+                  alt="Event Image"
+                  class="h-full w-full object-cover"
+              /></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="bg-white rounded-[10px] border-[0.5px] border-[#404040]">
+          <div class="relative rounded-t-[10px] overflow-hidden">
+            <div class="bg-gray-200 flex items-center justify-center">
+              <img
+                src="./image/Placeholder Image.jpg"
+                alt="Event Image"
+                class="h-[270px] w-full object-cover rounded-t-[10px]"
+              />
+            </div>
+            <span
+              class="absolute top-2 right-2 bg-[#89EB8E] tex-[#09090B] text-sm font-semibold px-3 py-1 rounded-full"
+              >Category</span
+            >
+          </div>
+          <div class="p-5">
+            <div
+              class="flex items-center text-[#000000] tracking-[0.5%] text-[15px] my-3 font-korla"
+            >
+              <svg
+                class="w-4 h-4 mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                ></path>
+              </svg>
+              Fri 09 Feb 2024
+              <svg
+                class="w-4 h-4 mx-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+              Location
+            </div>
+            <h2
+              class="text-[31px] font-medium mb-3 leading-[150%] tracking-[1.5%]"
+            >
+              Event Title Heading
+            </h2>
+            <p class="mb-4 text-[#000000] text-[15px] font-korla">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros.
+            </p>
+            <button
+              class="bg-[#89EB8E] tex-[#09090B] p-2 text-[12px] rounded-md flex items-center"
+            >
+              View More
+              <span class="ml-1"
+                ><img
+                  src="./image/arrow-right.png"
+                  alt="Event Image"
+                  class="h-full w-full object-cover"
+              /></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <button class="border border-[#404040] px-6 py-3 block md:hidden mt-10">
+        View all
+      </button>
+    </section>
+
+    <section class="p-4 md:px-2 md:py-8 max-w-[1380px] mx-auto">
+      <img src="./image/create-img.svg" alt="" class="mx-auto" />
+      <div class="grid grid-cols-3 items-center max-w-[1280px] mx-auto">
+        <div class="text-center max-w-[260px] mx-auto w-full">
+          <h2 class="text-[#000000] text-[48px] font-semibold mb-[18px]">
+            Create
+          </h2>
+          <p class="text-[#000000] text-[20px] font-normal font-korla">
+            Craft your halal event with agendas, halal details, and
+            Brother/Sister ticketing
+          </p>
+        </div>
+        <div class="text-center max-w-[260px] mx-auto w-full">
+          <h2 class="text-[#000000] text-[48px] font-semibold mb-[18px]">
+            Sell
+          </h2>
+          <p class="text-[#000000] text-[20px] font-normal font-korla">
+            Promote instantly, sell tickets online with secure, trusted payment
+            options.
+          </p>
+        </div>
+        <div class="text-center max-w-[260px] mx-auto w-full">
+          <h2 class="text-[#000000] text-[48px] font-semibold mb-[18px]">
+            Manage
+          </h2>
+          <p class="text-[#000000] text-[20px] font-normal font-korla">
+            Track registrations and stay organized from all from one dashboard
+          </p>
+        </div>
+      </div>
+    </section>
+    <section
+      class="flex items-center lg:flex-row flex-col gap-[30px] max-w-[1380px] mx-auto pt-20 pb-[100px] justify-between"
+    >
+      <h1 class="font-semibold text-[64px] text-center lg:text-left">
+        Start your Ticketin’ Journey
+      </h1>
+      <button
+        class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] py-2 px-4 rounded-[100px] text-[25px] font-bold h-[80px] w-[250px]"
+      >
+        Create event
+      </button>
+    </section>
+    <!-- Footer Section -->
+    <footer class="bg-[#C8F1F7] p-20">
+      <div class="max-w-[1380px] mx-auto">
+        <!-- Top Section -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-start gap-8 pb-10"
+        >
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <img src="./image/footer-logo.svg" alt="Halal Ticketin Logo" />
+          </div>
+
+          <!-- Company Section -->
+          <div>
+            <h3 class="text-lg text-[#000000] mb-[34px]">Company</h3>
+            <ul class="text-[#000000] font-korla text-sm space-y-1">
+              <li>
+                <a href="#" class="hover:underline">Terms and Conditions</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">About HalalTicketin'</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">Customer Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- What's On Section -->
+          <div>
+            <h3 class="text-lg text-[#000000] mb-[34px]">What's On</h3>
+            <ul class="text-[#000000] font-korla text-sm space-y-1">
+              <li><a href="#" class="hover:underline">Events Near Me</a></li>
+            </ul>
+          </div>
+
+          <!-- Support Section -->
+          <div>
+            <h3 class="text-lg text-[#000000] mb-[34px]">Support</h3>
+            <ul class="text-[#000000] font-korla text-sm space-y-1">
+              <li>
+                <a href="#" class="hover:underline">Ticket Customer Help</a>
+              </li>
+              <li><a href="#" class="hover:underline">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="border-[#000000] mb-8 mt-20" />
+
+        <!-- Bottom Section -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-[#000000] text-sm"
+        >
+          <!-- Copyright -->
+          <p>© Halal Ticketin 2025</p>
+
+          <!-- Social Links -->
+          <div class="flex items-center space-x-2">
+            <span>Find Us On</span>
+            <img src="./image/instagram.svg" class="w-8 h-8" alt="" />
+            <img src="./image/brand-linkedin.svg" class="w-8 h-8" alt="" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
