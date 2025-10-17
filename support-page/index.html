@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Project</title>
+    <!-- google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS (optional) -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="bg-[#F3FFEB]">
+    <nav class="bg-white text-black py-4 px-8">
+      <div class="max-w-[1440px] mx-auto">
+        <!-- Desktop View: Menu left, Logo center, Login right -->
+        <div class="flex justify-between items-center">
+          <div class="hidden md:block">
+            <img src="./image/logo.jpg" alt="Logo Icon" class="" />
+          </div>
+          <div class="hidden md:flex items-center font-medium gap-[100px]">
+            <div class="flex space-x-8">
+              <a href="#" class="hover:text-green-500">About us</a>
+              <a href="#" class="hover:text-green-500">What's on</a>
+              <a href="#" class="hover:text-green-500">Pricing</a>
+              <a href="#" class="hover:text-green-500">Support</a>
+            </div>
+
+            <button
+              class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] text-[20px] px-4 py-2 rounded-[10px] hover:from-green-500 hover:to-teal-600 font-normal"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile View: Dark bar with Hamburger, Icon, Sign up -->
+        <div class="md:hidden flex justify-between items-center bg-white">
+          <button class="focus:outline-none mr-4">
+            <img src="./image/menu.jpg" alt="menu" class="h-8" />
+          </button>
+          <img src="./image/mobile-logo.jpg" alt="Logo Icon" class="h-8" />
+          <button
+            class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] px-4 py-2 text-[24px] leading-[150%] rounded-[10px]"
+          >
+            Sign up
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <h1 class="border-b-[0.5px] border-[#404040]"></h1>
+    <!-- Support Section -->
+    <section class="pt-[56px] pb-[106px] bg-[#F3FFEB] max-w-[1280px] mx-auto">
+      <div
+        class="p-[7px] rounded-xl bg-gradient-to-r from-[#89EB8E] to-[#11D8F5]"
+      >
+        <form class="p-6 bg-[#F3FFEB] rounded-[7px]">
+          <div class="pl-[81px]">
+            <h1 class="text-[38px] text-left text-[#000000]">
+              Send us a message
+            </h1>
+            <p class="text-left text-[#000000] mb-8 text-[15px]">
+              Please fill in the form below to get in touch with us
+            </p>
+          </div>
+          <div
+            class="flex flex-col md:flex-row justify-between pl-[20px] pr-[40px] mb-[90px]"
+          >
+            <div
+              class="p-[3px] rounded-xl bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+            >
+              <input
+                type="text"
+                placeholder="First name"
+                class="bg-[#F3FFEB] p-5 rounded-[10px] w-[445px]"
+              />
+            </div>
+            <div
+              class="p-[3px] rounded-xl bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+            >
+              <input
+                type="text"
+                placeholder="Last name"
+                class="bg-[#F3FFEB] p-5 rounded-[10px] w-[445px]"
+              />
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row justify-between pl-[20px] pr-[40px] mb-[69px]"
+          >
+            <div
+              class="p-[3px] rounded-xl bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+            >
+              <input
+                type="text"
+                placeholder="Email address"
+                class="bg-[#F3FFEB] p-5 rounded-[10px] w-[445px]"
+              />
+            </div>
+            <div
+              class="p-[3px] rounded-xl bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+            >
+              <input
+                type="text"
+                placeholder="Phone number"
+                class="bg-[#F3FFEB] p-5 rounded-[10px] w-[445px]"
+              />
+            </div>
+          </div>
+          <div class="mb-4 w-[991px] mx-auto">
+            <div
+              class="p-[3px] rounded-xl bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] shadow-[0_4px_4px_rgba(0,0,0,0.25)] h-[209px]"
+            >
+              <textarea
+                placeholder="Message"
+                class="bg-[#F3FFEB] p-5 rounded-[10px] w-full h-full"
+              ></textarea>
+            </div>
+            <label class="flex items-center mt-5 pl-5 mb-10 text-[15px]">
+              <input type="checkbox" class="mr-2" />
+              I've read and agree with the Terms of Service and Privacy Policy
+            </label>
+            <div
+              class="p-[3px] rounded-xl bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] shadow-[0_4px_4px_rgba(0,0,0,0.25)] w-[209px]"
+            >
+              <button
+                type="submit"
+                class="bg-[#F3FFEB] rounded-[10px] w-full px-5 py-2 text-[32px]"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="bg-[#C8F1F7] p-20">
+      <div class="max-w-[1380px] mx-auto">
+        <!-- Top Section -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-start gap-8 pb-10"
+        >
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <img src="./image/footer-logo.svg" alt="Halal Ticketin Logo" />
+          </div>
+
+          <!-- Company Section -->
+          <div>
+            <h3 class="text-lg text-[#000000] mb-[34px]">Company</h3>
+            <ul class="text-[#000000] font-korla text-sm space-y-1">
+              <li>
+                <a href="#" class="hover:underline">Terms and Conditions</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">About HalalTicketin'</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">Customer Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- What's On Section -->
+          <div>
+            <h3 class="text-lg text-[#000000] mb-[34px]">What's On</h3>
+            <ul class="text-[#000000] font-korla text-sm space-y-1">
+              <li><a href="#" class="hover:underline">Events Near Me</a></li>
+            </ul>
+          </div>
+
+          <!-- Support Section -->
+          <div>
+            <h3 class="text-lg text-[#000000] mb-[34px]">Support</h3>
+            <ul class="text-[#000000] font-korla text-sm space-y-1">
+              <li>
+                <a href="#" class="hover:underline">Ticket Customer Help</a>
+              </li>
+              <li><a href="#" class="hover:underline">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="border-[#000000] mb-8 mt-20" />
+
+        <!-- Bottom Section -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-[#000000] text-sm"
+        >
+          <!-- Copyright -->
+          <p>© Halal Ticketin 2025</p>
+
+          <!-- Social Links -->
+          <div class="flex items-center space-x-2">
+            <span>Find Us On</span>
+            <img src="./image/instagram.svg" class="w-8 h-8" alt="" />
+            <img src="./image/brand-linkedin.svg" class="w-8 h-8" alt="" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
