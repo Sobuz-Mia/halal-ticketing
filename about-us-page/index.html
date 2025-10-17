@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Project</title>
+    <!-- google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS (optional) -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="bg-[#F3FFEB]">
+    <nav class="bg-white text-black py-4 px-8">
+      <div class="max-w-[1440px] mx-auto">
+        <!-- Desktop View: Menu left, Logo center, Login right -->
+        <div class="flex justify-between items-center">
+          <div class="hidden md:block">
+            <img src="./image/logo.jpg" alt="Logo Icon" class="" />
+          </div>
+          <div class="hidden md:flex items-center font-medium gap-[100px]">
+            <div class="flex space-x-8">
+              <a href="#" class="hover:text-green-500">About us</a>
+              <a href="#" class="hover:text-green-500">What's on</a>
+              <a href="#" class="hover:text-green-500">Pricing</a>
+              <a href="#" class="hover:text-green-500">Support</a>
+            </div>
+
+            <button
+              class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] text-[20px] px-4 py-2 rounded-[10px] hover:from-green-500 hover:to-teal-600 font-normal"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile View: Dark bar with Hamburger, Icon, Sign up -->
+        <div class="md:hidden flex justify-between items-center bg-white">
+          <button class="focus:outline-none mr-4">
+            <img src="./image/menu.jpg" alt="menu" class="h-8" />
+          </button>
+          <img src="./image/mobile-logo.jpg" alt="Logo Icon" class="h-8" />
+          <button
+            class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] px-4 py-2 text-[24px] leading-[150%] rounded-[10px]"
+          >
+            Sign up
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <h1 class="border-b-[0.5px] border-[#404040]"></h1>
+    <section class="pt-[112px] pb-[74px] max-w-[1280px] w-full mx-auto">
+      <h1 class="text-[38px] text-center text-[#000000]">About us</h1>
+      <div class="flex justify-between gap-[100px] items-center">
+        <img src="./image/our-mission.svg" alt="" class="w-[467px]" />
+        <div>
+          <h2 class="mb-[58px] text-[48px] text-[#000000]">Our Mission</h2>
+          <p class="text-[20px] font-karla text-[#000000]">
+            Our mission is to make finding and attending halal-friendly events
+            effortless, accessible, and inspiring, We aim to empower organisers
+            with the tools they need to showcase their events, while giving
+            attendees the confidence that every experience aligns with their
+            values. By bridging the gap between communities and opportunites,
+            we’re helping create a world where meaningful connections and
+            memorable moments are always within reach.
+          </p>
+        </div>
+      </div>
+      <div class="flex justify-between gap-[220px] items-center">
+        <div>
+          <h2 class="mb-[49px] text-[48px] text-[#000000]">Community First</h2>
+          <p class="text-[20px] font-karla text-[#000000]">
+            At the heart of our platform is a commitment to bringing people
+            together through meaningful, halal-friendly experiences. We work
+            hand-in-hand with event organisers, vendors and attendees to create
+            spaces where everyone feels welcomed, respected and inspired. Our
+            focus is not just on selling tickets rather its on building
+            connections, supporting shared values, and nurturing a vibrant
+            community that celebrates diversity while staying true to its
+            principles.
+          </p>
+        </div>
+        <img src="./image/community.svg" alt="" class="w-[467px]" />
+      </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="bg-[#C8F1F7] p-20">
+      <div class="max-w-[1380px] mx-auto">
+        <!-- Top Section -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-start gap-8 pb-10"
+        >
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <img src="./image/footer-logo.svg" alt="Halal Ticketin Logo" />
+          </div>
+
+          <!-- Company Section -->
+          <div>
+            <h3 class="text-lg text-[#000000] mb-[34px]">Company</h3>
+            <ul class="text-[#000000] font-korla text-sm space-y-1">
+              <li>
+                <a href="#" class="hover:underline">Terms and Conditions</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">About HalalTicketin'</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">Customer Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- What's On Section -->
+          <div>
+            <h3 class="text-lg text-[#000000] mb-[34px]">What's On</h3>
+            <ul class="text-[#000000] font-korla text-sm space-y-1">
+              <li><a href="#" class="hover:underline">Events Near Me</a></li>
+            </ul>
+          </div>
+
+          <!-- Support Section -->
+          <div>
+            <h3 class="text-lg text-[#000000] mb-[34px]">Support</h3>
+            <ul class="text-[#000000] font-korla text-sm space-y-1">
+              <li>
+                <a href="#" class="hover:underline">Ticket Customer Help</a>
+              </li>
+              <li><a href="#" class="hover:underline">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="border-[#000000] mb-8 mt-20" />
+
+        <!-- Bottom Section -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-[#000000] text-sm"
+        >
+          <!-- Copyright -->
+          <p>© Halal Ticketin 2025</p>
+
+          <!-- Social Links -->
+          <div class="flex items-center space-x-2">
+            <span>Find Us On</span>
+            <img src="./image/instagram.svg" class="w-8 h-8" alt="" />
+            <img src="./image/brand-linkedin.svg" class="w-8 h-8" alt="" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
