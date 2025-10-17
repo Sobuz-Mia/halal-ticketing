@@ -14,40 +14,42 @@
     <!-- Custom CSS (optional) -->
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="">
-    <nav class="bg-white text-black py-4 px-8 max-w-[1440px] mx-auto">
-      <!-- Desktop View: Menu left, Logo center, Login right -->
-      <div
-        class="hidden md:flex justify-between items-center font-medium relative"
-      >
-        <div class="flex space-x-8">
-          <a href="#" class="hover:text-green-500 underline">Home Page</a>
-          <a href="#" class="hover:text-green-500">Events List</a>
-          <a href="#" class="hover:text-green-500">My Tickets</a>
-        </div>
-        <div
-          class="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-2"
-        >
-          <img src="./image/logo.jpg" alt="Logo Icon" class="h-8" />
-        </div>
-        <button
-          class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] text-[20px] px-4 py-2 rounded-[10px] hover:from-green-500 hover:to-teal-600 font-normal"
-        >
-          Login
-        </button>
-      </div>
+  <body class="bg-[#F3FFEB]">
+    <nav class="bg-white text-black py-4 px-8">
+      <div class="max-w-[1440px] mx-auto">
+        <!-- Desktop View: Menu left, Logo center, Login right -->
+        <div class="flex justify-between items-center">
+          <div class="hidden md:block">
+            <img src="./image/logo.jpg" alt="Logo Icon" class="" />
+          </div>
+          <div class="hidden md:flex items-center font-medium gap-[100px]">
+            <div class="flex space-x-8">
+              <a href="#" class="hover:text-green-500">About us</a>
+              <a href="#" class="hover:text-green-500">What's on</a>
+              <a href="#" class="hover:text-green-500">Pricing</a>
+              <a href="#" class="hover:text-green-500">Support</a>
+            </div>
 
-      <!-- Mobile View: Dark bar with Hamburger, Icon, Sign up -->
-      <div class="md:hidden flex justify-between items-center bg-white">
-        <button class="focus:outline-none mr-4">
-          <img src="./image/menu.jpg" alt="menu" class="h-8" />
-        </button>
-        <img src="./image/mobile-logo.jpg" alt="Logo Icon" class="h-8" />
-        <button
-          class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] px-4 py-2 text-[24px] leading-[150%] rounded-[10px]"
-        >
-          Sign up
-        </button>
+            <button
+              class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] text-[20px] px-4 py-2 rounded-[10px] hover:from-green-500 hover:to-teal-600 font-normal"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile View: Dark bar with Hamburger, Icon, Sign up -->
+        <div class="md:hidden flex justify-between items-center bg-white">
+          <button class="focus:outline-none mr-4">
+            <img src="./image/menu.jpg" alt="menu" class="h-8" />
+          </button>
+          <img src="./image/mobile-logo.jpg" alt="Logo Icon" class="h-8" />
+          <button
+            class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] px-4 py-2 text-[24px] leading-[150%] rounded-[10px]"
+          >
+            Sign up
+          </button>
+        </div>
       </div>
     </nav>
     <h1 class="border-b-[0.5px] border-[#404040]"></h1>
@@ -113,7 +115,7 @@
       </div>
     </div>
     <!-- Event Details Section -->
-    <div class="py-10 bg-white px-4">
+    <div class="py-[112px] bg-[#F3FFEB] px-4">
       <div
         class="flex flex-col md:flex-row gap-[80px] md:gap-[192px] max-w-[1280px] mx-auto"
       >
@@ -138,9 +140,6 @@
             class="space-y-6 text-black font-normal text-[18px] md:text-[20px]"
           >
             <li class="pl-[32px]">Featured Speakers</li>
-            <li class="pl-[48px]">Interactive Activities</li>
-            <li class="pl-[62px]">Networking Opportunities</li>
-            <li class="pl-[78px]">Registration Info</li>
           </ul>
         </aside>
         <main class="w-full md:w-3/4">
@@ -158,7 +157,7 @@
               vitae malesuada fringilla.
             </p>
             <p
-              class="text-[#000000] font-normal md:font-bold text-[14px] md:text-[15px]font-karla"
+              class="text-[#000000] font-normal text-[14px] md:text-[15px]font-karla"
             >
               Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
               suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum
@@ -174,7 +173,7 @@
             </h3>
             <p class="text-[#000000] font-[350] mb-2">9:30 AM – 9:50 AM</p>
             <p
-              class="mb-4 font-normal md:font-bold text-[14px] md:text-[15px] font-karla text-[#000000]"
+              class="mb-4 font-normal text-[14px] md:text-[15px] font-karla text-[#000000]"
             >
               Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat
               mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu
@@ -183,7 +182,7 @@
               molestie aliquet sodales id est ac volutpat.
             </p>
             <p
-              class="text-[#000000] font-normal md:font-bold text-[14px] md:text-[15px] font-karla"
+              class="text-[#000000] font-normal text-[14px] md:text-[15px] font-karla"
             >
               Tristique odio senectus nam posuere ornare leo metus, ultricies.
               Blandit duis ultricies vulputate morbi feugiat cras placerat elit.
@@ -198,7 +197,7 @@
             <h3 class="text-[20px] md:text-[38px]">Opening Remarks</h3>
             <p class="text-[#000000] font-[350] mb-2">9:50 AM – 10:00 AM</p>
             <p
-              class="mb-4 font-normal md:font-bold text-[14px] md:text-[15px] font-karla text-[#000000]"
+              class="mb-4 font-normal text-[14px] md:text-[15px] font-karla text-[#000000]"
             >
               Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus
               id scelerisque est ultricies ultricies. Duis est sit sed leo nisl,
@@ -213,7 +212,7 @@
             </h3>
             <p class="text-[#000000] font-[350] mb-2">10:00 AM – 10:45 AM</p>
             <p
-              class="mb-4 font-normal md:font-bold text-[14px] md:text-[15px] font-karla text-[#000000]"
+              class="mb-4 font-normal text-[14px] md:text-[15px] font-karla text-[#000000]"
             >
               Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus
               id scelerisque est ultricies ultricies. Duis est sit sed leo nisl,
@@ -228,7 +227,7 @@
             </h3>
             <p class="text-[#000000] font-[350] mb-2">10:45 AM – 11:30 AM</p>
             <p
-              class="mb-4 font-normal md:font-bold text-[14px] md:text-[15px] font-karla text-[#000000]"
+              class="mb-4 font-normal text-[14px] md:text-[15px] font-karla text-[#000000]"
             >
               Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas
               condimentum mi massa. In tincidunt pharetra consectetur sed duis
@@ -239,7 +238,7 @@
         </main>
       </div>
     </div>
-    <div class="md:py-8 bg-white px-4">
+    <div class="py-[112px] bg-[#F3FFEB] px-4">
       <div class="max-w-[1280px] mx-auto">
         <h2 class="font-semibold text-[48px] text-[#000000] mb-4">Reach Out</h2>
         <p class="text-[#000000] font-karla mb-6">
@@ -247,7 +246,7 @@
         </p>
         <div class="grid mt-[80px] grid-cols-1 md:grid-cols-3 gap-6">
           <div class="space-y-4">
-            <img src="./image/mail.jpg" alt="mail Icon" class="h-auto w-auto" />
+            <img src="./image/mail.svg" alt="mail Icon" class="h-auto w-auto" />
             <p class="font-semibold test-[20px] text-[#000000]">Email</p>
             <p class="text-[16px] font-karla font-normal text-[#000000]">
               info@eventplatform.com
@@ -257,7 +256,7 @@
             </p>
           </div>
           <div class="space-y-4">
-            <img src="./image/call.jpg" alt="call Icon" class="h-auto w-auto" />
+            <img src="./image/call.svg" alt="call Icon" class="h-auto w-auto" />
             <p class="font-semibold test-[20px] text-[#000000]">Phone</p>
             <p class="text-[16px] font-karla font-normal text-[#000000]">
               Call us anytime
@@ -268,7 +267,7 @@
           </div>
           <div class="space-y-4">
             <img
-              src="./image/location_on.jpg"
+              src="./image/location_on.svg"
               alt="location_on"
               class="h-auto w-auto"
             />
@@ -282,7 +281,7 @@
               Get Directions
               <span>
                 <img
-                  src="./image/chevron_right.jpg"
+                  src="./image/chevron_right.svg"
                   alt="chevron_right"
                   class="h-auto w-auto"
                 />
@@ -293,65 +292,71 @@
       </div>
     </div>
 
-    <h1 class="border-b-[0.5px] border-[#404040] my-[40px] md:my-[80px]"></h1>
     <!-- Footer Section -->
-    <footer class="bg-white px-6 py-10 max-w-[1380px] mx-auto">
-      <!-- Top Section -->
-      <div
-        class="flex flex-col md:flex-row justify-between items-start gap-8 mb-8"
-      >
-        <!-- Logo & Links -->
-        <div class="w-full md:w-1/2">
-          <div class="flex items-center space-x-2 mb-4">
-            <img src="./image/logo.jpg" alt="Logo Icon" class="h-10 w-auto" />
-          </div>
-          <div
-            class="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 text-black text-base leading-[150%]"
-          >
-            <a href="#" class="hover:underline">Support Center</a>
-            <a href="#" class="hover:underline">FAQs</a>
-            <a href="#" class="hover:underline">Contact Us</a>
-          </div>
-        </div>
-
-        <!-- Newsletter -->
-        <div class="w-full md:w-1/2">
-          <h3 class="text-lg text-[#000000] font-semibold mb-3">Newsletter</h3>
-          <div class="flex flex-col sm:flex-row gap-2 mb-3">
-            <input
-              type="email"
-              placeholder="Email"
-              class="border border-[#404040] rounded-md px-3 py-2 w-full sm:w-2/3 focus:outline-none"
-            />
-            <button
-              class="bg-black text-white px-4 py-2 rounded-md text-sm font-medium leading-[20px] w-full sm:w-auto"
-            >
-              Subscribe
-            </button>
-          </div>
-          <p class="text-[#000000] text-sm">
-            We respect your privacy and will never share your data.
-          </p>
-        </div>
-      </div>
-
-      <!-- Divider -->
-      <hr class="border-[#404040] mb-6" />
-
-      <!-- Bottom Section -->
-      <div
-        class="flex flex-col md:flex-row justify-between text-[#000000] text-sm space-y-4 md:space-y-0"
-      >
-        <!-- Links -->
+    <footer class="bg-[#C8F1F7] p-20 border-t-[0.5px] border-[#404040]">
+      <div class="max-w-[1380px] mx-auto">
+        <!-- Top Section -->
         <div
-          class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 underline text-left"
+          class="flex flex-col md:flex-row justify-between items-start gap-8 pb-10"
         >
-          <a href="#" class="hover:underline">Privacy Policy</a>
-          <a href="#" class="hover:underline">Terms of Service</a>
-          <a href="#" class="hover:underline">Cookies Settings</a>
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <img src="./image/footer-logo.svg" alt="Halal Ticketin Logo" />
+          </div>
+
+          <!-- Company Section -->
+          <div>
+            <h3 class="text-lg text-[#000000] mb-[34px]">Company</h3>
+            <ul class="text-[#000000] font-korla text-sm space-y-1">
+              <li>
+                <a href="#" class="hover:underline">Terms and Conditions</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">About HalalTicketin'</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">Customer Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- What's On Section -->
+          <div>
+            <h3 class="text-lg text-[#000000] mb-[34px]">What's On</h3>
+            <ul class="text-[#000000] font-korla text-sm space-y-1">
+              <li><a href="#" class="hover:underline">Events Near Me</a></li>
+            </ul>
+          </div>
+
+          <!-- Support Section -->
+          <div>
+            <h3 class="text-lg text-[#000000] mb-[34px]">Support</h3>
+            <ul class="text-[#000000] font-korla text-sm space-y-1">
+              <li>
+                <a href="#" class="hover:underline">Ticket Customer Help</a>
+              </li>
+              <li><a href="#" class="hover:underline">Contact Us</a></li>
+            </ul>
+          </div>
         </div>
-        <!-- Copyright -->
-        <p>© 2025 Event Platform. All rights reserved.</p>
+
+        <!-- Divider -->
+        <hr class="border-[#000000] mb-8 mt-20" />
+
+        <!-- Bottom Section -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-[#000000] text-sm"
+        >
+          <!-- Copyright -->
+          <p>© Halal Ticketin 2025</p>
+
+          <!-- Social Links -->
+          <div class="flex items-center space-x-2">
+            <span>Find Us On</span>
+            <img src="./image/instagram.svg" class="w-8 h-8" alt="" />
+            <img src="./image/brand-linkedin.svg" class="w-8 h-8" alt="" />
+          </div>
+        </div>
       </div>
     </footer>
   </body>
