@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Project</title>
+    <!-- google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS (optional) -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="bg-[#F3FFEB]">
+    <nav class="bg-white text-black py-4 px-8">
+      <div class="max-w-[1440px] mx-auto">
+        <!-- Desktop View: Menu left, Logo center, Login right -->
+        <div class="flex justify-between items-center">
+          <div class="hidden md:block">
+            <img src="./image/logo.jpg" alt="Logo Icon" class="" />
+          </div>
+          <div class="hidden md:flex items-center font-medium gap-[100px]">
+            <div class="flex space-x-8">
+              <a href="#" class="hover:text-green-500">About us</a>
+              <a href="#" class="hover:text-green-500">What's on</a>
+              <a href="#" class="hover:text-green-500">Pricing</a>
+              <a href="#" class="hover:text-green-500">Support</a>
+            </div>
+
+            <button
+              class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] text-[20px] px-4 py-2 rounded-[10px] hover:from-green-500 hover:to-teal-600 font-normal"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile View: Dark bar with Hamburger, Icon, Sign up -->
+        <div class="md:hidden flex justify-between items-center bg-white">
+          <button class="focus:outline-none mr-4">
+            <img src="./image/menu.jpg" alt="menu" class="h-8" />
+          </button>
+          <img src="./image/mobile-logo.jpg" alt="Logo Icon" class="h-8" />
+          <button
+            class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] px-4 py-2 text-[24px] leading-[150%] rounded-[10px]"
+          >
+            Sign up
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <h1 class="border-b-[0.5px] border-[#404040]"></h1>
+    <!-- Support Section -->
+    <section class="pt-[48px] pb-[72px] bg-[#F3FFEB] relative">
+      <!-- ticket in our right way section -->
+      <div class="max-w-[1440px] mx-auto w-full relative overflow-hidden">
+        <div>
+          <h2
+            class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] text-[48px] w-[377px] text-center mx-auto rounded-[16px]"
+          >
+            Halal Ticketin'
+          </h2>
+          <p class="text-center text-[#09090B] text-[38px]">
+            Ticketin' the right way
+          </p>
+        </div>
+        <!-- card section -->
+        <div
+          class="flex items-end gap-6 mt-16 relative z-20 max-w-[1011px] mx-auto w-full"
+        >
+          <img
+            src="./image/Eur.svg"
+            alt=""
+            class="absolute top-0 right-[42%] z-10"
+          />
+          <div
+            class="border border-[#000000] relative h-[340px] rounded-t-[20px] w-[320px] shadow-[0_4px_4px_rgba(0,0,0,0.25)] bg-[#F3FFEB] z-30"
+          >
+            <div class="absolute inset-0">
+              <img
+                src="./image/free-for-free.svg"
+                alt="Free for free promotion"
+                class="pt-5 px-[5px]"
+              />
+            </div>
+            <div class="mt-8 relative z-50">
+              <h3 class="text-center text-[31px] font-normal text-[#000000]">
+                Free for free
+              </h3>
+              <p
+                class="text-center text-[18px] font-korla font-normal text-[#000000]"
+              >
+                No fees for issuing up to 5,000 <br />
+                free tickets per year.
+              </p>
+            </div>
+
+            <h4
+              class="text-center text-[48px] font-normal text-[#000000] absolute bottom-24 left-1/2 transform -translate-x-1/2"
+            >
+              €0
+            </h4>
+          </div>
+          <div
+            class="border border-[#000000] relative h-[383px] rounded-t-[20px] w-[320px] shadow-[0_4px_4px_rgba(0,0,0,0.25)] bg-[#F3FFEB] z-30"
+          >
+            <div class="absolute inset-0">
+              <img
+                src="./image/pay-upfornt.svg"
+                alt="Free for free promotion"
+                class="pt-5 px-[5px]"
+              />
+            </div>
+            <div class="mt-8 relative z-50">
+              <h3 class="text-center text-[31px] font-normal text-[#000000]">
+                Pay upfront
+              </h3>
+              <p
+                class="text-center text-[20px] font-korla font-normal text-[#000000]"
+              >
+                Buy credits in advance <br />
+                and save
+              </p>
+            </div>
+
+            <span
+              class="absolute bottom-[45%] left-1/2 transform -translate-x-1/2 text-[16px] font-korla text-[#535353]"
+              >from</span
+            >
+            <h4
+              class="text-center text-[48px] font-normal text-[#000000] absolute bottom-[28%] left-1/2 transform -translate-x-1/2"
+            >
+              €0.22
+            </h4>
+            <span
+              class="absolute bottom-[23%] left-1/2 transform -translate-x-1/2 text-[16px] font-korla text-[#535353]"
+              >per ticket (+ VAT)</span
+            >
+            <p
+              class="absolute bottom-[8%] left-1/2 transform -translate-x-1/2 text-[16px] text-[#000000] font-bold font-korla underline w-full text-center"
+            >
+              Calculate your price
+            </p>
+          </div>
+          <div
+            class="border border-[#000000] relative h-[440px] z-30 overflow-hidden rounded-t-[20px] w-[320px] shadow-[0_4px_4px_rgba(0,0,0,0.25)] bg-[#F3FFEB]"
+          >
+            <div class="absolute inset-0">
+              <img
+                src="./image/free-for-free.svg"
+                alt="Free for free promotion"
+                class="pt-5 px-[5px]"
+              />
+            </div>
+            <div class="mt-8 relative z-50">
+              <h3 class="text-center text-[31px] font-normal text-[#000000]">
+                Pay as u sell
+              </h3>
+              <p
+                class="text-center text-[20px] font-korla font-normal text-[#000000]"
+              >
+                Simple, low pricing to <br />
+                get your started
+              </p>
+            </div>
+
+            <h4
+              class="text-center text-[48px] font-normal text-[#000000] absolute bottom-[40%] left-1/2 transform -translate-x-1/2"
+            >
+              €0.60
+            </h4>
+            <span
+              class="absolute bottom-[35%] left-1/2 transform -translate-x-1/2 text-[16px] font-korla text-[#535353]"
+              >per ticket (+ VAT)</span
+            >
+          </div>
+        </div>
+        <!-- right icons - positioned behind cards -->
+        <img
+          src="./image/tikatin-right-1.svg"
+          alt=""
+          class="absolute right-0 top-0 z-10"
+        />
+        <img
+          src="./image/tikatin-right-2.svg"
+          alt=""
+          class="absolute right-0 bottom-0 z-10"
+        />
+        <!-- left icons - positioned behind cards -->
+        <img
+          src="./image/tikatin-left-1.svg"
+          class="absolute left-0 top-0 z-10"
+          alt=""
+        />
+        <img
+          src="./image/tiketin-left-2.svg"
+          class="absolute left-0 top-20 z-10"
+          alt=""
+        />
+      </div>
+    </section>
+    <section>
+      <div
+        class="max-w-[1011px] mx-auto w-full flex justify-between items-center mb-8"
+      >
+        <div class="px-4 mb-2">
+          <div class="flex items-center gap-4">
+            <img src="./image/rosette-discount.svg" alt="" />
+            <p class="text-[31px] text-[#000000]">50% Charity Discount</p>
+          </div>
+          <p class="text-[16px] text-center font-korla">
+            If your event is for a good cause then we'll give you a generous
+            discount. Discounts also available for B Corps, PTAs and
+            not-for-profits.
+          </p>
+        </div>
+        <div class="px-4 mb-2">
+          <div class="flex items-center gap-4">
+            <img src="./image/ticket-percent.svg" alt="" />
+            <p class="text-[31px] text-[#000000]">Low Fees for Free Events</p>
+          </div>
+          <p class="text-[16px] text-center font-korla">
+            If you're selling tickets with very low priced tickets, then we'll
+            reduce our fees to make sure you keep as much money as possible.
+          </p>
+        </div>
+      </div>
+      <div class="max-w-[1230px] w-full mx-auto flex items-center gap-[48px]">
+        <div class="text-center flex flex-col justify-center items-center">
+          <img src="./image/ticket.svg" alt="" />
+          <h3 class="mt-2 mb-1 text-[18px] font-bold font-karla text-[#000000]">
+            Get started for free
+          </h3>
+          <p class="text-[16px] font-karla text-[#000000]">
+            Sell your first 5 tickets and pay us nothing.
+          </p>
+        </div>
+        <div class="text-center flex flex-col justify-center items-center">
+          <img src="./image/ticket.svg" alt="" />
+          <h3 class="mt-2 mb-1 text-[18px] font-bold font-karla text-[#000000]">
+            Free check-in app
+          </h3>
+          <p class="text-[16px] font-karla text-[#000000]">
+            Scan your guests in at the door with our mobile app.
+          </p>
+        </div>
+        <div class="text-center flex flex-col justify-center items-center">
+          <img src="./image/ticket.svg" alt="" />
+          <h3 class="mt-2 mb-1 text-[18px] font-bold font-karla text-[#000000]">
+            You have full control
+          </h3>
+          <p class="text-[16px] font-karla text-[#000000]">
+            Optimise your event from our Event Dashboard.
+          </p>
+        </div>
+      </div>
+      <div class="pt-[36px] relative max-w-[1230px] w-full mx-auto">
+        <button
+          class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] mb-16 mx-auto shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] text-[#000000] text-[18px] min-h-12 font-karla py-2 px-4 drop-shadow-lg rounded-lg flex items-center gap-2 mobile-button"
+        >
+          Create Event
+        </button>
+        <div class="w-[455px] mx-auto">
+          <div class="flex items-center gap-4">
+            <img src="./image/calculator.svg" alt="" />
+            <h3 class="text-[31px] text-[#000000]">Calculate Your Fees</h3>
+          </div>
+          <p class="text-[16px] font-karla">
+            The most cost-effective way of using Halal Ticketin’ is by
+            purchasing credits upfront!
+          </p>
+          <img src="./image/calculate-free.svg" alt="" />
+        </div>
+        <h1
+          class="border-b-[0.5px] border-[#404040] my-16 max-w-[1112px] w-full"
+        ></h1>
+
+        <img
+          src="./image/event-ractangle-1.svg"
+          class="absolute top-0 right-0"
+          alt=""
+        />
+        <img
+          src="./image/event-ranctabgle-2.svg"
+          class="absolute bottom-8 right-0"
+          alt=""
+        />
+      </div>
+      <div
+        class="max-w-[1142px] w-full mx-auto border-[#404040] border flex items-center rounded-[16px] mb-[72px]"
+      >
+        <img src="./image/ticket-price.svg" alt="" class="w-[740px]" />
+        <img src="./image/per-ticket.svg" alt="" />
+      </div>
+      <div class="max-w-[800px] w-full mx-auto space-y-8 mb-[100px]">
+        <h2
+          class="pt-4 text-[48px] font-bold text-center text-[#000000] mb-[100px]"
+        >
+          Your Cost Breakdown
+        </h2>
+        <div class="flex justify-between items-center text-center">
+          <p class="text-[20px] text-karla text-[#000000]">Ticket Fee</p>
+          <p class="text-[20px] text-karla text-[#000000]">€15</p>
+        </div>
+        <h1 class="border-b-[4px] border-[#11D8F5] w-full"></h1>
+        <div class="flex justify-between items-center text-center">
+          <p class="text-[20px] text-karla text-[#000000]">
+            HalalTicketin’ Fee
+          </p>
+          <p class="text-[20px] text-karla text-[#000000]">40c</p>
+        </div>
+        <div class="flex justify-between items-center text-center">
+          <p class="text-[20px] text-karla text-[#000000]">
+            Payment Processing Fee
+          </p>
+          <p class="text-[20px] text-karla text-[#000000]">45c</p>
+        </div>
+        <h1 class="border-b-[4px] border-[#11D8F5] w-full"></h1>
+        <div class="flex justify-between items-center text-center">
+          <p class="text-[20px] text-karla text-[#000000]">
+            Your Customers Pay
+          </p>
+          <p class="text-[20px] text-karla text-[#000000]">€15.75</p>
+        </div>
+        <div class="flex justify-between items-center text-center">
+          <p class="text-[20px] text-karla text-[#000000]">Your Profit</p>
+          <p class="text-[20px] text-karla text-[#000000]">€15</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 justify-center pb-4">
+        <p class="text-[20px] text-[#000000]">Absorb all fees</p>
+        <img src="./image/toggle-icon.svg" alt="" />
+        <p class="text-[20px] text-[#000000]">Pass on fees</p>
+      </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="bg-[#C8F1F7] p-20">
+      <div class="max-w-[1380px] mx-auto">
+        <!-- Top Section -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-start gap-8 pb-10"
+        >
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <img src="./image/footer-logo.svg" alt="Halal Ticketin Logo" />
+          </div>
+
+          <!-- Company Section -->
+          <div>
+            <h3 class="text-lg text-[#000000] mb-[34px]">Company</h3>
+            <ul class="text-[#000000] font-korla text-sm space-y-1">
+              <li>
+                <a href="#" class="hover:underline">Terms and Conditions</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">About HalalTicketin'</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">Customer Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- What's On Section -->
+          <div>
+            <h3 class="text-lg text-[#000000] mb-[34px]">What's On</h3>
+            <ul class="text-[#000000] font-korla text-sm space-y-1">
+              <li><a href="#" class="hover:underline">Events Near Me</a></li>
+            </ul>
+          </div>
+
+          <!-- Support Section -->
+          <div>
+            <h3 class="text-lg text-[#000000] mb-[34px]">Support</h3>
+            <ul class="text-[#000000] font-korla text-sm space-y-1">
+              <li>
+                <a href="#" class="hover:underline">Ticket Customer Help</a>
+              </li>
+              <li><a href="#" class="hover:underline">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="border-[#000000] mb-8 mt-20" />
+
+        <!-- Bottom Section -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-[#000000] text-sm"
+        >
+          <!-- Copyright -->
+          <p>© Halal Ticketin 2025</p>
+
+          <!-- Social Links -->
+          <div class="flex items-center space-x-2">
+            <span>Find Us On</span>
+            <img src="./image/instagram.svg" class="w-8 h-8" alt="" />
+            <img src="./image/brand-linkedin.svg" class="w-8 h-8" alt="" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
