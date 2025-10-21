@@ -61,7 +61,7 @@
       <div class="max-w-[1440px] mx-auto w-full relative overflow-hidden">
         <div class="px-4 z-50 relative">
           <h2
-            class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] text-[48px] w-[377px] text-center mx-auto rounded-[16px]"
+            class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] text-[#09090B] text-[48px] max-w-[377px] text-center mx-auto rounded-[16px]"
           >
             Halal Ticketin'
           </h2>
@@ -191,7 +191,7 @@
         <img
           src="./image/tikatin-right-2.svg"
           alt=""
-          class="absolute right-0 bottom-0 z-10"
+          class="absolute right-0 bottom-0 z-10 hidden md:block"
         />
         <img
           src="./image/tikatin-left-1.svg"
@@ -205,14 +205,16 @@
         />
       </div>
     </section>
-    <!-- <section>
+    <section>
       <div
-        class="max-w-[1011px] mx-auto w-full flex justify-between items-center mb-8"
+        class="max-w-[1011px] mx-auto w-full flex flex-col md:flex-row justify-between items-center mb-8 px-4"
       >
-        <div class="px-4 mb-2">
+        <div class="md:px-4 mb-2">
           <div class="flex items-center gap-4">
             <img src="./image/rosette-discount.svg" alt="" />
-            <p class="text-[31px] text-[#000000]">50% Charity Discount</p>
+            <p class="text-[26px] md:text-[31px] text-[#000000]">
+              50% Charity Discount
+            </p>
           </div>
           <p class="text-[16px] text-center font-korla">
             If your event is for a good cause then we'll give you a generous
@@ -220,10 +222,12 @@
             not-for-profits.
           </p>
         </div>
-        <div class="px-4 mb-2">
+        <div class="md:px-4 mb-2">
           <div class="flex items-center gap-4">
             <img src="./image/ticket-percent.svg" alt="" />
-            <p class="text-[31px] text-[#000000]">Low Fees for Free Events</p>
+            <p class="text-[26px] md:text-[31px] text-[#000000]">
+              Low Fees for Free Events
+            </p>
           </div>
           <p class="text-[16px] text-center font-korla">
             If you're selling tickets with very low priced tickets, then we'll
@@ -231,10 +235,14 @@
           </p>
         </div>
       </div>
-      <div class="max-w-[1230px] w-full mx-auto flex items-center gap-[48px]">
+      <div
+        class="max-w-[1230px] w-full mx-auto flex flex-col md:flex-row items-center gap-5 md:gap-[48px] px-4"
+      >
         <div class="text-center flex flex-col justify-center items-center">
           <img src="./image/ticket.svg" alt="" />
-          <h3 class="mt-2 mb-1 text-[18px] font-bold font-karla text-[#000000]">
+          <h3
+            class="mt-2 mb-1 text-[18px] font-semibold font-karla text-[#000000]"
+          >
             Get started for free
           </h3>
           <p class="text-[16px] font-karla text-[#000000]">
@@ -243,7 +251,9 @@
         </div>
         <div class="text-center flex flex-col justify-center items-center">
           <img src="./image/ticket.svg" alt="" />
-          <h3 class="mt-2 mb-1 text-[18px] font-bold font-karla text-[#000000]">
+          <h3
+            class="mt-2 mb-1 text-[18px] font-semibold font-karla text-[#000000]"
+          >
             Free check-in app
           </h3>
           <p class="text-[16px] font-karla text-[#000000]">
@@ -252,7 +262,9 @@
         </div>
         <div class="text-center flex flex-col justify-center items-center">
           <img src="./image/ticket.svg" alt="" />
-          <h3 class="mt-2 mb-1 text-[18px] font-bold font-karla text-[#000000]">
+          <h3
+            class="mt-2 mb-1 text-[18px] font-semibold font-karla text-[#000000]"
+          >
             You have full control
           </h3>
           <p class="text-[16px] font-karla text-[#000000]">
@@ -266,16 +278,43 @@
         >
           Create Event
         </button>
-        <div class="w-[455px] mx-auto">
+        <div class="max-w-[455px] w-full px-4 mx-auto">
           <div class="flex items-center gap-4">
             <img src="./image/calculator.svg" alt="" />
-            <h3 class="text-[31px] text-[#000000]">Calculate Your Fees</h3>
+            <h3 class="text-[25px] md:text-[31px] text-[#000000]">
+              Calculate Your Fees
+            </h3>
           </div>
-          <p class="text-[16px] font-karla">
+          <p class="text-[16px] font-karla mt-4 mb-2 px-[17.5px]">
             The most cost-effective way of using Halal Ticketin’ is by
             purchasing credits upfront!
           </p>
-          <img src="./image/calculate-free.svg" alt="" />
+          <div class="text-center max-w-[330px] mx-auto w-full">
+            <div class="flex items-center gap-2">
+              <img src="./image/square-check-big.svg" alt="" />
+              <p class="text-[14px] font-karla text-[#000000]">
+                Each ticket sold equals one credit used
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <img src="./image/square-check-big.svg" alt="" />
+              <p class="text-[14px] font-karla text-[#000000]">
+                Buy credits now use later
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <img src="./image/square-check-big.svg" alt="" />
+              <p class="text-[14px] font-karla text-[#000000]">
+                Automate your top-ups
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <img src="./image/square-check-big.svg" alt="" />
+              <p class="text-[14px] font-karla text-[#000000]">
+                Pass fees on to your ticket buyer
+              </p>
+            </div>
+          </div>
         </div>
         <h1
           class="border-b-[0.5px] border-[#404040] my-16 max-w-[1112px] w-full"
@@ -283,24 +322,67 @@
 
         <img
           src="./image/event-ractangle-1.svg"
-          class="absolute top-0 right-0"
+          class="absolute top-0 right-0 hidden md:block"
           alt=""
         />
         <img
           src="./image/event-ranctabgle-2.svg"
-          class="absolute bottom-8 right-0"
+          class="absolute bottom-8 right-0 hidden md:block"
           alt=""
         />
       </div>
-      <div
-        class="max-w-[1142px] w-full mx-auto border-[#404040] border flex items-center rounded-[16px] mb-[72px]"
-      >
-        <img src="./image/ticket-price.svg" alt="" class="w-[740px]" />
-        <img src="./image/per-ticket.svg" alt="" />
+      <div class="px-4">
+        <div
+          class="max-w-[1142px] w-full h-fit mx-auto border-[#404040] border flex items-center md:flex-row flex-col rounded-[16px] mb-5 md:mb-[72px]"
+        >
+          <div class="max-w-[740px] w-full px-5 mb-5">
+            <div
+              class="flex md:items-start items-center gap-2 justify-end pb-4 flex-col md:flex-row md:-mt-10"
+            >
+              <p class="text-[20px] text-[#000000]">Pay upfront</p>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  value="check-in"
+                  class="sr-only peer"
+                  defaultChecked
+                  checked
+                />
+                <div
+                  class="w-20 h-9 peer-focus:outline-none peer-focus:border peer-focus:border-[#000000] rounded-full peer dark:bg-gray-400 peer-checked:after:translate-x-full peer-checked:after:border-[#000000] after:content-[''] after:absolute top-1 after:top-1 after:left-[15px] before:left-2 after:bg-[#11D8F5] after:border after:rounded-full after:h-7 after:w-7 after:transition-all peer-checked:bg-[#F3FFEB] peer-checked:border peer-checked:border-[#000000]"
+                ></div>
+              </label>
+              <p class="text-[20px] text-[#000000]">Pay as you go</p>
+            </div>
+            <!-- Ticket Price Input -->
+            <div
+              class="flex items-start flex-col h-[100px] justify-end md:mt-5"
+            >
+              <label for="ticketPrice" class="text-sm font-medium text-gray-700"
+                >Ticket Price</label
+              >
+              <input
+                type="text"
+                id="ticketPrice"
+                value="€10"
+                class="w-[280px] px-2 py-[10px] border border-[#000000] rounded-md focus:outline-none"
+              />
+            </div>
+          </div>
+          <div
+            class="bg-gradient-to-r from-[#89EB8E] to-[#11D8F5] max-w-[400px] w-full h-full py-10 px-8 rounded-b-[16px] md:rounded-r-[16px] flex flex-col items-center"
+          >
+            <h2 class="text-[80px] text-[#09090B]">€0.70</h2>
+            <p class="text-[25px] text-[#000000]">per ticket</p>
+            <p class="text-[16px] text-[#000000]">
+              ( 30c + 4% of ticket (40c) )
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="max-w-[800px] w-full mx-auto space-y-8 mb-[100px]">
+      <div class="max-w-[800px] w-full mx-auto space-y-8 mb-[100px] px-4">
         <h2
-          class="pt-4 text-[48px] font-bold text-center text-[#000000] mb-[100px]"
+          class="pt-2 md:pt-4 text-[25px] md:text-[48px] font-bold text-center text-[#000000] mb-5 md:mb-[100px]"
         >
           Your Cost Breakdown
         </h2>
@@ -333,12 +415,25 @@
           <p class="text-[20px] text-karla text-[#000000]">€15</p>
         </div>
       </div>
-      <div class="flex items-center gap-2 justify-center pb-4">
+      <div
+        class="flex items-center gap-2 justify-center pb-4 flex-col md:flex-row"
+      >
         <p class="text-[20px] text-[#000000]">Absorb all fees</p>
-        <img src="./image/toggle-icon.svg" alt="" />
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input
+            type="checkbox"
+            value="check-in"
+            class="sr-only peer"
+            defaultChecked
+            checked
+          />
+          <div
+            class="w-20 h-9 peer-focus:outline-none peer-focus:border peer-focus:border-[#000000] rounded-full peer dark:bg-gray-400 peer-checked:after:translate-x-full peer-checked:after:border-[#000000] after:content-[''] after:absolute top-1 after:top-1 after:left-[15px] before:left-2 after:bg-[#89EB8E] after:border after:rounded-full after:h-7 after:w-7 after:transition-all peer-checked:bg-[#F3FFEB] peer-checked:border peer-checked:border-[#000000]"
+          ></div>
+        </label>
         <p class="text-[20px] text-[#000000]">Pass on fees</p>
       </div>
-    </section> -->
+    </section>
     <!-- Footer Section -->
     <footer class="bg-[#C8F1F7] p-20">
       <div class="max-w-[1380px] mx-auto">
